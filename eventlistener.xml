@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE import SYSTEM "DTD/import.dtd">
+<data>
+	<import>
+		<eventlistener>
+			<eventClassName>UserAuth</eventClassName>
+			<eventName>loadInstance</eventName>
+			<listenerClassFile>lib/system/event/listener/UserAuthCPListener.class.php</listenerClassFile>
+		</eventlistener>
+	</import>
+</data>

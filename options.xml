@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/options.dtd">
+<data>
+	<import>
+		<categories>
+			<category name="offline"></category>
+			<category name="offline.general">
+				<parent>offline</parent>
+			</category>
+
+			<category name="system"></category>
+			<category name="system.general">
+				<parent>system</parent>
+			</category>
+
+			<category name="links"></category>
+			<category name="links.general">
+				<parent>links</parent>
+			</category>
+
+			<category name="customer"></category>
+			<category name="customer.general">
+				<parent>customer</parent>
+			</category>
+
+			<category name="php"></category>
+			<category name="php.general">
+				<parent>php</parent>
+			</category>
+		</categories>
+
+		<options>
+		  	<!-- links -->
+		    <option name="webftp_url">
+		        <categoryname>links.general</categoryname>
+
+		        <defaultvalue></defaultvalue>
+		    </option>
+		    <!-- links -->
+
+		    <!-- customer -->
+		    <option name="accountprefix">
+		        <categoryname>customer.general</categoryname>
+
+		        <defaultvalue>web</defaultvalue>
+		    </option>
+
+		    <option name="ftpprefix">
+		        <categoryname>customer.general</categoryname>
+
+		        <defaultvalue>_ftp</defaultvalue>
+		    </option>
+		    <!-- customer -->
+
+		    <!-- system -->
+		    <option name="lastaccountnumber">
+		        <categoryname>system.general</categoryname>
+
+		        <defaultvalue>0</defaultvalue>
+		    </option>
+
+		    <option name="lastguid">
+		        <categoryname>system.general</categoryname>
+
+		        <defaultvalue>10000</defaultvalue>
+		    </option>
+
+		    <option name="documentroot_prefix">
+		        <categoryname>system.general</categoryname>
+
+		        <defaultvalue>/home/</defaultvalue>
+		    </option>
+
+		    <option name="logfiles_directory">
+		        <categoryname>system.general</categoryname>
+
+		        <defaultvalue>/var/log/syscp/</defaultvalue>
+		    </option>
+
+		    <option name="ipaddress">
+		        <categoryname>system.general</categoryname>
+
+		        <defaultvalue>83.151.25.254</defaultvalue>
+		    </option>
+
+		    <option name="hostname">
+		        <categoryname>system.general</categoryname>
+
+		        <defaultvalue></defaultvalue>
+		    </option>
+
+			<option name="lastcronrun">
+		        <categoryname>system.general</categoryname>
+
+		        <defaultvalue>1207430401</defaultvalue>
+		    </option>
+
+		    <option name="defaultip">
+		        <categoryname>system.general</categoryname>
+
+		        <defaultvalue>1</defaultvalue>
+		    </option>
+		    <!-- system -->
+
+		    <!-- php -->
+		    <option name="phpappendopenbasedir">
+		        <categoryname>php.general</categoryname>
+
+		        <defaultvalue></defaultvalue>
+		    </option>
+			<!-- php -->
+
+			<!-- apache -->
+		    <option name="apachereload_command">
+		        <categoryname>apache.general</categoryname>
+
+		        <defaultvalue>/etc/init.d/apache2 reload</defaultvalue>
+		    </option>
+
+		    <option name="apacheconf_filename">
+		        <categoryname>apache.general</categoryname>
+
+		        <defaultvalue>vhosts.conf</defaultvalue>
+		    </option>
+
+		    <option name="apacheconf_vhost">
+		        <categoryname>apache.general</categoryname>
+
+		        <defaultvalue>/etc/apache2/sites-enabled/</defaultvalue>
+		    </option>
+
+		    <option name="apacheconf_directory">
+		        <categoryname>apache.general</categoryname>
+
+		        <defaultvalue>/etc/apache2/sites-available/</defaultvalue>
+		    </option>
+
+		    <option name="deactivateddocroot">
+		        <categoryname>apache.general</categoryname>
+
+		        <defaultvalue></defaultvalue>
+		    </option>
+
+		    <option name="default_vhostconf">
+		        <categoryname>apache.general</categoryname>
+
+		        <defaultvalue></defaultvalue>
+		    </option>
+			<!-- apache -->
+
+			<!-- general.cookie -->
+			<option name="cookie_path">
+				<categoryname>general.cookie</categoryname>
+				<optiontype>text</optiontype>
+				<defaultvalue></defaultvalue>
+			</option>
+			<!-- /general.cookie-->
+
+			<!-- general -->
+			<option name="install_date">
+				<categoryname>general</categoryname>
+				<optiontype>integer</optiontype>
+				<hidden>1</hidden>
+			</option>
+			<!-- /general -->
+
+			<!-- offline -->
+			<option name="offline">
+				<categoryname>offline.general</categoryname>
+				<optiontype>boolean</optiontype>
+				<enableoptions><![CDATA[offline_message,offline_message_allow_html]]></enableoptions>
+			</option>
+			<option name="offline_message">
+				<categoryname>offline.general</categoryname>
+				<optiontype>textarea</optiontype>
+			</option>
+			<option name="offline_message_allow_html">
+				<categoryname>offline.general</categoryname>
+				<optiontype>boolean</optiontype>
+			</option>
+			<!-- offline -->
+		</options>
+	</import>
+</data>

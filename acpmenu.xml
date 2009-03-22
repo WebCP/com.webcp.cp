@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "DTDs/acpMenu.dtd">
+<data>
+	<import>
+		<acpmenuitem name="cp.acp.menu.link">
+			<icon>icon/systemL.png</icon>
+			<showorder>3</showorder>
+		</acpmenuitem>
+
+		<acpmenuitem name="cp.acp.menu.link.domains">
+			<parent>cp.acp.menu.link</parent>
+		</acpmenuitem>
+
+		<acpmenuitem name="cp.acp.menu.link.domains.view">
+			<icon>icon/groupM.png</icon>
+			<link>index.php?page=DomainsList</link>
+			<parent>cp.acp.menu.link.domains</parent>
+			<permissions>admin.cp.canShowDomains</permissions>
+			<showorder>1</showorder>
+		</acpmenuitem>
+
+		<acpmenuitem name="cp.acp.menu.link.domains.add">
+			<icon>icon/groupM.png</icon>
+			<link>index.php?form=DomainAdd</link>
+			<parent>cp.acp.menu.link.domains</parent>
+			<permissions>admin.cp.canAddDomain</permissions>
+			<showorder>2</showorder>
+		</acpmenuitem>
+	</import>
+</data>

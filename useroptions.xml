@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTD/options.dtd">
+<data>
+	<import>
+		<categories>
+			<category name="profile.address">
+				<parent>profile</parent>
+			</category>
+		</categories>
+
+		<options>
+			<option name="title">
+				<categoryname>profile.address</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>0</editable>
+			</option>
+			<option name="firstname">
+				<categoryname>profile.address</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>0</editable>
+			</option>
+			<option name="lastname">
+				<categoryname>profile.address</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>0</editable>
+			</option>
+			<option name="company">
+				<categoryname>profile.address</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>0</editable>
+			</option>
+			<option name="street">
+				<categoryname>profile.address</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>0</editable>
+			</option>
+			<option name="zipCode">
+				<categoryname>profile.address</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>0</editable>
+			</option>
+			<option name="city">
+				<categoryname>profile.address</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>0</editable>
+			</option>
+			<option name="country">
+				<categoryname>profile.address</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>0</editable>
+			</option>
+			<option name="phone">
+				<categoryname>profile.address</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>0</editable>
+			</option>
+			<option name="fax">
+				<categoryname>profile.address</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>0</editable>
+			</option>
+		</options>
+	</import>
+
+</data>

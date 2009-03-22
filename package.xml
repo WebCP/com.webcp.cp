@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE package SYSTEM "DTD/package.dtd">
+<package name="com.toby.cp">
+
+	<packageInformation>
+		<packageName>WCF Controlpanel</packageName>
+		<packageDescription>Ein Servercontrolpanel, inspiriert von SysCP</packageDescription>
+		<version>0.0.7-alpha</version>
+		<standalone>1</standalone>
+		<date>2009-03-14</date>
+	</packageInformation>
+
+	<authorInformation>
+		<author>Tobias Friebel</author>
+		<authorURL>http://cp.tobyf.de/</authorURL>
+		<license>GPL</license>
+	</authorInformation>
+
+	<requiredpackages>
+		<requiredpackage>com.woltlab.wcf</requiredpackage>
+		<requiredpackage file="requirements/com.woltlab.wcf.data.page.tar.gz">com.woltlab.wcf.data.page</requiredpackage>
+		<requiredpackage file="requirements/com.woltlab.wcf.data.help.tar.gz">com.woltlab.wcf.data.help</requiredpackage>
+		<requiredpackage file="requirements/com.woltlab.wcf.form.user.tar.gz">com.woltlab.wcf.form.user</requiredpackage>
+		<requiredpackage file="requirements/com.woltlab.wcf.data.cronjobs.tar.gz">com.woltlab.wcf.data.cronjobs</requiredpackage>
+		<requiredpackage file="requirements/com.woltlab.wcf.data.feed.reader.tar.gz">com.woltlab.wcf.data.feed.reader</requiredpackage>
+		<requiredpackage file="requirements/com.toby.inputvalidation.tar.gz">com.toby.inputvalidation</requiredpackage>
+		<requiredpackage file="requirements/com.toby.wcf.userloginsecurity.tar.gz">com.toby.wcf.userloginsecurity</requiredpackage>
+		<requiredpackage file="requirements/com.toby.wcf.systemlogger.tar.gz">com.toby.wcf.systemlogger</requiredpackage>
+	</requiredpackages>
+
+	<instructions type="install">
+		<languages languagecode="de">de.xml</languages>
+		<options>options.xml</options>
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<acpmenu>acpmenu.xml</acpmenu>
+		<groupoptions>groupoptions.xml</groupoptions>
+		<sql>install.sql</sql>
+		<headermenu>headermenu.xml</headermenu>
+		<eventlistener>eventlistener.xml</eventlistener>
+		<useroptions>useroptions.xml</useroptions>
+	</instructions>
+
+	<instructions type="update" fromversion="0.0.*">
+		<languages languagecode="de">de.xml</languages>
+		<options>options.xml</options>
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<acpmenu>acpmenu.xml</acpmenu>
+		<groupoptions>groupoptions.xml</groupoptions>
+		<headermenu>headermenu.xml</headermenu>
+		<eventlistener>eventlistener.xml</eventlistener>
+		<useroptions>useroptions.xml</useroptions>
+	</instructions>
+
+</package>
