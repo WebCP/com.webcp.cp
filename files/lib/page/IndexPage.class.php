@@ -16,15 +16,5 @@ require_once(WCF_DIR . 'lib/page/AbstractPage.class.php');
 class IndexPage extends AbstractPage
 {
 	public $templateName = 'index';
-
-	public function __construct()
-	{
-		if (!WCF :: getUser()->userID)
-		{
-			$this->templateName = 'login';
-		}
-
-		parent :: __construct();
-	}
 }
 ?>

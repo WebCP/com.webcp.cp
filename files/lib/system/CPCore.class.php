@@ -11,13 +11,13 @@
  * $Id$
  */
 
-require_once (WCF_DIR . 'lib/page/util/menu/HeaderMenuContainer.class.php');
+require_once (WCF_DIR . 'lib/page/util/menu/PageMenuContainer.class.php');
 require_once (WCF_DIR . 'lib/page/util/menu/UserCPMenuContainer.class.php');
-require_once (WCF_DIR . 'lib/system/style/Style.class.php');
+require_once (WCF_DIR . 'lib/system/style/StyleManager.class.php');
 
-class CPCore extends WCF implements HeaderMenuContainer, UserCPMenuContainer
+class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 {
-	protected static $headerMenuObj= null;
+	protected static $pageMenuObj= null;
 	protected static $userCPMenuObj= null;
 
 	/**
@@ -54,7 +54,7 @@ class CPCore extends WCF implements HeaderMenuContainer, UserCPMenuContainer
 	protected function initTPL()
 	{
 		// init style to get template pack id
-		Style::changeStyle(0);
+		StyleManager :: changeStyle(0);
 
 		global $packageDirs;
 		require_once (WCF_DIR . 'lib/system/template/StructuredTemplate.class.php');
@@ -120,19 +120,19 @@ class CPCore extends WCF implements HeaderMenuContainer, UserCPMenuContainer
 	 */
 	public static final function getStyle()
 	{
-		return Style::getStyle();
+		return StyleManager :: getStyle();
 	}
 
 	/**
 	 * Initialises the page header menu.
 	 */
-	protected static function initHeaderMenu()
+	protected static function initPageMenu()
 	{
-		require_once (WCF_DIR . 'lib/page/util/menu/HeaderMenu.class.php');
-		self :: $headerMenuObj= new HeaderMenu();
+		require_once (WCF_DIR . 'lib/page/util/menu/PageMenu.class.php');
+		self :: $pageMenuObj= new PageMenu();
 
-		if (HeaderMenu :: getActiveMenuItem() == '')
-			HeaderMenu :: setActiveMenuItem('cp.header.menu.start');
+		if (PageMenu :: getActiveMenuItem() == '')
+			PageMenu :: setActiveMenuItem('cp.header.menu.start');
 	}
 
 	/**
@@ -155,14 +155,14 @@ class CPCore extends WCF implements HeaderMenuContainer, UserCPMenuContainer
 	/**
 	 * @see HeaderMenuContainer::getHeaderMenu()
 	 */
-	public static final function getHeaderMenu()
+	public static final function getPageMenu()
 	{
-		if (self :: $headerMenuObj === null)
+		if (self :: $pageMenuObj === null)
 		{
-			self :: initHeaderMenu();
+			self :: initPageMenu();
 		}
 
-		return self :: $headerMenuObj;
+		return self :: $pageMenuObj;
 	}
 
 	/**

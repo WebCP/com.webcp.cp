@@ -2,20 +2,20 @@
 <!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/headerMenu.dtd">
 <data>
 	<import>
-		<headermenuitem name="cp.header.menu.start">
+		<pagemenuitem name="cp.header.menu.start">
 			<icon>icon/portalM.png</icon>
 			<link>index.php</link>
 			<showorder>1</showorder>
-		</headermenuitem>
-		<headermenuitem name="cp.header.menu.useredit">
+		</pagemenuitem>
+		<pagemenuitem name="cp.header.menu.useredit">
 			<icon>icon/portalM.png</icon>
 			<link>index.php?form=UserProfileEdit</link>
 			<showorder>2</showorder>
-		</headermenuitem>
-		<headermenuitem name="cp.header.menu.logout">
+		</pagemenuitem>
+		<pagemenuitem name="cp.header.menu.logout">
 			<icon>icon/portalM.png</icon>
-			<link>index.php?action=UserLogout&amp;t={@SECURITY_TOKEN}</link>
+			<link>index.php?action=UserLogout</link>
 			<showorder>10</showorder>
-		</headermenuitem>
+		</pagemenuitem>
 	</import>
 </data>
