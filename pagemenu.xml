@@ -7,15 +7,5 @@
 			<link>index.php</link>
 			<showorder>1</showorder>
 		</pagemenuitem>
-		<pagemenuitem name="cp.header.menu.useredit">
-			<icon>icon/portalM.png</icon>
-			<link>index.php?form=UserProfileEdit</link>
-			<showorder>2</showorder>
-		</pagemenuitem>
-		<pagemenuitem name="cp.header.menu.logout">
-			<icon>icon/portalM.png</icon>
-			<link>index.php?action=UserLogout</link>
-			<showorder>10</showorder>
-		</pagemenuitem>
 	</import>
 </data>

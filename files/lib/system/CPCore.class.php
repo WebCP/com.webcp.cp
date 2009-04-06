@@ -96,7 +96,7 @@ class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 		}
 
 		// user ban
-		if (self :: getUser()->banned && (!isset ($_REQUEST['page']) || $_REQUEST['page'] != 'LegalNotice'))
+		if (self :: getUser()->banned && (!isset ($_REQUEST['page']) || $_REQUEST['page'] != 'LegalNotice') && (!isset ($_REQUEST['action']) || $_REQUEST['action'] != 'UserLogout'))
 		{
 			require_once (WCF_DIR . 'lib/system/exception/PermissionDeniedException.class.php');
 			throw new PermissionDeniedException();
@@ -121,6 +121,18 @@ class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 	public static final function getStyle()
 	{
 		return StyleManager :: getStyle();
+	}
+
+	/**
+	 * @see WCF::initSession()
+	 */
+	protected function initSession()
+	{
+		// start session
+		require_once(CP_DIR.'lib/system/session/CPSessionFactory.class.php');
+		$factory = new CPSessionFactory();
+		self::$sessionObj = $factory->get();
+		self::$userObj = self::getSession()->getUser();
 	}
 
 	/**

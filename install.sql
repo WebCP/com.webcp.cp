@@ -1,32 +1,18 @@
 CREATE TABLE cp1_1_user (
-  userID int(11) unsigned NOT NULL auto_increment,
-  customernumber varchar(255) NOT NULL default '0',
-  diskspace bigint(30) NOT NULL default '0',
-  diskspace_used bigint(30) NOT NULL default '0',
-  ftps int(15) NOT NULL default '0',
-  ftps_used int(15) NOT NULL default '0',
-  subdomains int(15) NOT NULL default '0',
-  subdomains_used int(15) NOT NULL default '0',
-  documentroot varchar(255) NOT NULL default '/',
-  standardsubdomain int(11) NOT NULL default '0',
+  userID int(11) unsigned NOT NULL auto_increment PRIMARY KEY,
   guid int(5) NOT NULL default '0',
-  ftp_lastaccountnumber int(11) NOT NULL default '0',
-  phpenabled tinyint(1) NOT NULL default '1',
-  PRIMARY KEY  (userID)
+  cpLastActivityTime int(10) NOT NULL default '0',
+  homeDir varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE cp1_1_diskspace (
-  id int(11) unsigned NOT NULL auto_increment,
+  diskspaceid int(11) unsigned NOT NULL auto_increment PRIMARY KEY,
   userID int(11) NOT NULL default '0',
-  year int(4) unsigned zerofill NOT NULL default '0000',
-  month int(2) unsigned zerofill NOT NULL default '00',
-  day int(2) unsigned zerofill NOT NULL default '00',
-  stamp int(11) unsigned NOT NULL default '0',
-  webspace bigint(30) unsigned NOT NULL default '0',
-  mail bigint(30) unsigned NOT NULL default '0',
-  mysql bigint(30) unsigned NOT NULL default '0',
-  PRIMARY KEY  (`id`),
-  KEY `userID` (`userID`)
+  day date NOT NULL,
+  diskspace bigint(30) unsigned NOT NULL default '0',
+  mailspace bigint(30) unsigned NOT NULL default '0',
+  mysqlspace bigint(30) unsigned NOT NULL default '0',
+  KEY userID (userID)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE cp1_1_cron_tasks (

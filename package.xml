@@ -12,20 +12,24 @@
 
 	<authorInformation>
 		<author>Tobias Friebel</author>
-		<authorURL>http://cp.tobyf.de/</authorURL>
+		<authorURL>http://dev.hugin-hosting.de/</authorURL>
 		<license>GPL</license>
 	</authorInformation>
 
 	<requiredpackages>
 		<requiredpackage minversion="1.1.0 Alpha 1">com.woltlab.wcf</requiredpackage>
+		<requiredpackage file="requirements/com.woltlab.wcf.data.image.tar">com.woltlab.wcf.data.image</requiredpackage>
+		<requiredpackage file="requirements/com.woltlab.wcf.system.style.tar">com.woltlab.wcf.system.style</requiredpackage>
+		<requiredpackage file="requirements/com.woltlab.wcf.data.page.headerMenu.tar">com.woltlab.wcf.data.page.headerMenu</requiredpackage>
 		<requiredpackage file="requirements/com.woltlab.wcf.data.page.tar">com.woltlab.wcf.data.page</requiredpackage>
 		<requiredpackage file="requirements/com.woltlab.wcf.data.help.tar">com.woltlab.wcf.data.help</requiredpackage>
+		<requiredpackage file="requirements/com.woltlab.wcf.data.image.captcha.tar">com.woltlab.wcf.data.image.captcha</requiredpackage>
 		<requiredpackage file="requirements/com.woltlab.wcf.form.user.tar">com.woltlab.wcf.form.user</requiredpackage>
 		<requiredpackage file="requirements/com.woltlab.wcf.data.cronjobs.tar">com.woltlab.wcf.data.cronjobs</requiredpackage>
 		<requiredpackage file="requirements/com.woltlab.wcf.data.feed.reader.tar">com.woltlab.wcf.data.feed.reader</requiredpackage>
 		<requiredpackage file="requirements/com.toby.inputvalidation.tar">com.toby.inputvalidation</requiredpackage>
 		<requiredpackage file="requirements/com.toby.wcf.userloginsecurity.tar">com.toby.wcf.userloginsecurity</requiredpackage>
-		<requiredpackage file="requirements/com.toby.wcf.systemlogger.tar">com.toby.wcf.systemlogger</requiredpackage>
+		<requiredpackage file="requirements/com.toby.wcf.userlog.tar">com.toby.wcf.userlog</requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">

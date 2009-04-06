@@ -6,6 +6,11 @@
 			<category name="profile.address">
 				<parent>profile</parent>
 			</category>
+			<category name="account">
+			</category>
+			<category name="account.service">
+				<parent>account</parent>
+			</category>
 		</categories>
 
 		<options>
@@ -13,21 +18,35 @@
 				<categoryname>profile.address</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
-				<editable>0</editable>
+				<editable>3</editable>
 			</option>
 			<option name="firstname">
 				<categoryname>profile.address</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
-				<editable>0</editable>
+				<editable>3</editable>
+				<required>1</required>
 			</option>
 			<option name="lastname">
 				<categoryname>profile.address</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
-				<editable>0</editable>
+				<editable>3</editable>
+				<required>1</required>
+			</option>
+			<option name="customerID">
+				<categoryname>profile.address</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>3</editable>
 			</option>
 			<option name="company">
+				<categoryname>profile.address</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>3</editable>
+			</option>
+			<option name="ustID">
 				<categoryname>profile.address</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
@@ -38,36 +57,55 @@
 				<optiontype>text</optiontype>
 				<visible>0</visible>
 				<editable>0</editable>
+				<required>1</required>
 			</option>
 			<option name="zipCode">
 				<categoryname>profile.address</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
 				<editable>0</editable>
+				<required>1</required>
 			</option>
 			<option name="city">
 				<categoryname>profile.address</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
 				<editable>0</editable>
+				<required>1</required>
 			</option>
 			<option name="country">
 				<categoryname>profile.address</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
 				<editable>0</editable>
+				<required>1</required>
 			</option>
 			<option name="phone">
 				<categoryname>profile.address</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
 				<editable>0</editable>
+				<required>1</required>
 			</option>
 			<option name="fax">
 				<categoryname>profile.address</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
 				<editable>0</editable>
+			</option>
+
+			<option name="diskspace">
+				<categoryname>account.service</categoryname>
+				<optiontype>integer</optiontype>
+				<visible>0</visible>
+				<editable>3</editable>
+				<defaultvalue>500</defaultvalue>
+			</option>
+			<option name="diskspaceUsed">
+				<categoryname>account.service</categoryname>
+				<optiontype>integer</optiontype>
+				<visible>0</visible>
+				<editable>4</editable>
 			</option>
 		</options>
 	</import>

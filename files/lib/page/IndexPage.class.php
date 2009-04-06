@@ -16,5 +16,39 @@ require_once(WCF_DIR . 'lib/page/AbstractPage.class.php');
 class IndexPage extends AbstractPage
 {
 	public $templateName = 'index';
+
+	protected $displayData = array();
+
+	/**
+	 * @see Page::readData()
+	 */
+	public function readData()
+	{
+		$this->addDisplay('wcf.user.option.diskspace', WCF :: getUser()->diskspaceUsed.' ('.WCF :: getUser()->diskspace.')');
+
+		parent :: readData();
+	}
+
+	/**
+	 * @see Page::assignVariables()
+	 */
+	public function assignVariables()
+	{
+		parent :: assignVariables();
+
+		WCF :: getTPL()->assign('displayData', $this->displayData);
+	}
+
+	/**
+	 * add something to indexdisplay
+	 *
+	 * @param string $lang
+	 * @param string $var
+	 */
+	public function addDisplay($lang, $var)
+	{
+		if (!array_key_exists($lang, $this->displayData))
+			$this->displayData[$lang] = $var;
+	}
 }
 ?>
