@@ -33,13 +33,11 @@ class CPUserSession extends UserSession
 		{
 			// define default values
 			$this->data['cpLastActivityTime'] = TIME_NOW;
-			$this->data['homedir'] = CPUtils :: getHomeDir($this->username);
-			$this->data['guid'] = CPUtils :: getNewGUID();
 
 			// create cp user record
 			$sql = "INSERT IGNORE INTO	cp" . CP_N . "_user
-							(userID, cpLastActivityTime, homedir, guid)
-					VALUES	(" . $this->userID . ", " . $this->cpLastActivityTime . ", '" . $this->homedir . "', " . $this->guid . ")";
+							(userID, cpLastActivityTime)
+					VALUES	(" . $this->userID . ", " . $this->cpLastActivityTime . ")";
 			WCF :: getDB()->registerShutdownUpdate($sql);
 		}
 		else

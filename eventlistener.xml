@@ -7,5 +7,21 @@
 			<eventName>loadInstance</eventName>
 			<listenerClassFile>lib/system/event/listener/UserAuthCPListener.class.php</listenerClassFile>
 		</eventlistener>
+		<eventlistener>
+			<eventClassName>UserAddForm</eventClassName>
+			<eventName>validate</eventName>
+			<listenerClassFile>lib/system/event/listener/UserAddCPListener.class.php</listenerClassFile>
+			<environment>admin</environment>
+			<inherit>1</inherit>
+			<nice>-127</nice>
+		</eventlistener>
+		<eventlistener>
+			<eventClassName>UserAddForm</eventClassName>
+			<eventName>saved</eventName>
+			<listenerClassFile>lib/system/event/listener/UserAddCPListener.class.php</listenerClassFile>
+			<environment>admin</environment>
+			<inherit>1</inherit>
+			<nice>-127</nice>
+		</eventlistener>
 	</import>
 </data>

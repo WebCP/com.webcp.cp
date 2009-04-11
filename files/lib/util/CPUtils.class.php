@@ -10,6 +10,11 @@
 
 class CPUtils
 {
+	/**
+	 * Get next GID/UID from DB
+	 *
+	 * @return integer
+	 */
 	public static function getNewGUID()
 	{
 		$sql = "SELECT 	MAX(guid) AS GUID
@@ -23,9 +28,47 @@ class CPUtils
 			return ++$guid['GUID'];
 	}
 
+	/**
+	 * Get homedir from username
+	 *
+	 * @param string $username
+	 *
+	 * @return string
+	 */
 	public static function getHomeDir($username)
 	{
 		return FileUtil :: getRealPath(HOMEDIR_PREFIX . '/' . $username);
+	}
+
+	/**
+	 * validate if path is correct
+	 *
+	 * @param string $path
+	 * @param string $homePath
+	 * @param boolean $homeIsOK
+	 *
+	 * @return boolean
+	 */
+	public static function validatePath($path, $homePath, $homeIsOK = false)
+	{
+		$path = FileUtil :: removeTrailingSlash(FileUtil :: getRealPath($path));
+
+		if (file_exists($path) && !is_dir($path))
+			return false;
+
+		//check if path begins with homePath
+		if (stripos($path, $homePath) !== 0)
+			return false;
+
+		//if homePath no further checks are neccessary
+		if ($homeIsOK)
+			return true;
+
+		//if path is different to homePath
+		if ($path != $homePath)
+			return true;
+
+		return false;
 	}
 }
 ?>

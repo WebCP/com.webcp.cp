@@ -30,6 +30,19 @@ class UserAuthCP extends UserAuthDefault
 	{
 		return false;
 	}
+
+	/**
+	 * @see UserAuth::loginManually()
+	 */
+	public function loginManually($username, $password, $userClassname = 'CPUserSession')
+	{
+		$user = parent :: loginManually($username, $password, $userClassname);
+
+		if ($user->isCustomer == 0)
+			throw new UserInputException('username', 'notFound');
+
+		return $user;
+	}
 }
 
 ?>

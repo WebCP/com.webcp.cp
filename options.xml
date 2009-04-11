@@ -12,6 +12,9 @@
 			<category name="system.general">
 				<parent>system</parent>
 			</category>
+
+			<category name="customer"></category>
+			<category name="links"></category>
 		</categories>
 
 		<options>

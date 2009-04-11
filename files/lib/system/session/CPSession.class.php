@@ -1,6 +1,6 @@
 <?php
 
-require_once (CP_DIR . 'lib/data/user/CPUserSession.class.php');
+require_once (CP_DIR . 'lib/system/session/CPUserSession.class.php');
 
 // wcf imports
 require_once (WCF_DIR . 'lib/system/session/CookieSession.class.php');

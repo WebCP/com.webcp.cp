@@ -1,44 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language languagecode="de">
-	<category name="wcf.acp.option">
-	<item name="wcf.acp.option.category.wcfdevnet"><![CDATA[Packageserver - WCF DevNet]]></item>
-	<item name="wcf.acp.option.category.wcfdevnet.description"><![CDATA[WCF DevNet - Packageserver für WBB AddOns]]></item>
-	</category>
-	<category name="wcf.acp.option">
-		<item name="wcf.acp.option.wcfdevnet_pool"><![CDATA[Paketspeicherverzeichnis]]></item>
-		<item name="wcf.acp.option.wcfdevnet_pool.description"><![CDATA[Hier den absoluten Pfad zum Verzeichnis angeben, in dem die Pakete gespeichert werden sollen.]]></item>
-		<item name="wcf.acp.option.category.wcfdevnet.general"><![CDATA[WCF DevNet Eistellungen]]></item>
-		<item name="wcf.acp.option.category.wcfdevnet.general.description"><![CDATA[WCF DevNet - Pool Eistellungen<br><br>Anweisungen zur Bedienung:<br><br>Die Pools sind via index.php?page=GetXML aufrufbar. Wenn man &pool=development oder security aufruft, kann man auf die anderen Pools zugreifen.<br><br>Der Defaultpool ist immer Release.
-Der Paketserver wird über den Aufruf index.php?action=CronjobsExec aktualisiert.<br>
-Beispiel: http://devnet.tobyf.de/index.php?page=GetXML<br><br>]]></item>
-	</category>
-		<category name="wcfdevnet.header">
-		<item name="wcfdevnet.header.menu.packages"><![CDATA[Pakete]]></item>
-		<item name="wcfdevnet.header.menu.start"><![CDATA[Paket Hauptseite]]></item>
-		<item name="wcfdevnet.header.userMenu.login"><![CDATA[Anmelden]]></item>
-		<item name="wcfdevnet.header.userMenu.register"><![CDATA[Registrieren]]></item>
-		<item name="wcfdevnet.header.userMenu.logout"><![CDATA[Registrieren]]></item>
-		<item name="wcfdevnet.header.userMenu.profile"><![CDATA[Mein Profil]]></item>
-		<item name="wcfdevnet.header.userMenu.acp"><![CDATA[Admnistration]]></item>
-		<item name="wcfdevnet.header.userNote.guest"><![CDATA[Sie sind nicht angemeldet.]]></item>
-	</category>
-		<category name="wcfdevnet.packages">
-		<item name="wcfdevnet.packages.packagesList.title"><![CDATA[Packageserver]]></item>
-		<item name="wcfdevnet.packages.packagesList.description"><![CDATA[Hier eine Übersicht der Verfügbaren Pakete.]]></item>
-		<item name="wcfdevnet.packages.packagesList.all"><![CDATA[Alle]]></item>
-		<item name="wcfdevnet.packages.packagesList.error.noPackages"><![CDATA[Zur Zeit keine Pakete verfügbar.]]></item>
-		<item name="wcfdevnet.packages.packagesList.packageName"><![CDATA[Paket Name]]></item>
-		<item name="wcfdevnet.packages.packagesList.packageDescription"><![CDATA[Paket Beschreibung]]></item>
-		<item name="wcfdevnet.packages.packagesList.author"><![CDATA[Paket Author]]></item>
-		<item name="wcfdevnet.packages.packagesList.versions"><![CDATA[Version]]></item>
-		<item name="wcfdevnet.packages.packagesList.downloads"><![CDATA[Downloads]]></item>
-		<item name="wcfdevnet.packages.packagesList.lastUpdate"><![CDATA[Letztes Update]]></item>
-	</category>
-			<category name="wcfdevnet.index">
-		<item name="wcfdevnet.index.title"><![CDATA[Packageserver]]></item>
-	</category>
-			<category name="wcfdevnet.global">
-		<item name="wcfdevnet.global.copyright"><![CDATA[Copyright (c) 2008 Tobias Friebel]]></item>
-	</category>
+
 </language>

@@ -14,6 +14,12 @@
 		</categories>
 
 		<options>
+			<option name="isCustomer">
+				<categoryname>profile.address</categoryname>
+				<optiontype>boolean</optiontype>
+				<visible>0</visible>
+				<editable>3</editable>
+			</option>
 			<option name="title">
 				<categoryname>profile.address</categoryname>
 				<optiontype>text</optiontype>
