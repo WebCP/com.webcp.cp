@@ -37,7 +37,7 @@ class CPUtils
 	 */
 	public static function getHomeDir($username)
 	{
-		return FileUtil :: getRealPath(HOMEDIR_PREFIX . '/' . $username);
+		return FileUtil :: addTrailingSlash(FileUtil :: getRealPath(HOMEDIR_PREFIX . '/' . $username));
 	}
 
 	/**
@@ -46,14 +46,15 @@ class CPUtils
 	 * @param string $path
 	 * @param string $homePath
 	 * @param boolean $homeIsOK
+	 * @param boolean $checkExist
 	 *
 	 * @return boolean
 	 */
-	public static function validatePath($path, $homePath, $homeIsOK = false)
+	public static function validatePath($path, $homePath, $homeIsOK = true, $checkExist = true)
 	{
-		$path = FileUtil :: removeTrailingSlash(FileUtil :: getRealPath($path));
+		$path = FileUtil :: getRealPath($path);
 
-		if (file_exists($path) && !is_dir($path))
+		if ((file_exists($path) || $checkExist) && !is_dir($path))
 			return false;
 
 		//check if path begins with homePath
