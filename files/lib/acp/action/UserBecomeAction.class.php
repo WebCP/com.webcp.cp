@@ -2,6 +2,7 @@
 // wcf imports
 require_once (WCF_DIR . 'lib/action/AbstractAction.class.php');
 require_once (CP_DIR . 'lib/system/session/CPSessionFactory.class.php');
+require_once (CP_DIR . 'lib/data/user/CPUser.class.php');
 
 class UserBecomeAction extends AbstractAction
 {
@@ -28,12 +29,17 @@ class UserBecomeAction extends AbstractAction
 
 		if (WCF :: getUser()->getPermission('admin.user.canBecomeUser') && $this->userID != 0)
 		{
-			$factory = new CPSessionFactory();
-			$sessionObj = $factory->create($this->userID);
+			$user = new CPUser($this->userID);
 
-			$url = '../index.php?s=' . $sessionObj->sessionID;
-			HeaderUtil::redirect($url);
-			exit;
+			if (Group :: isAccessibleGroup($user->getGroupIDs()))
+			{
+				$factory = new CPSessionFactory();
+				$sessionObj = $factory->create($this->userID);
+
+				$url = '../index.php?s=' . $sessionObj->sessionID;
+				HeaderUtil::redirect($url);
+				exit;
+			}
 		}
 
 		if (!empty($this->url) && (strpos($this->url, 'searchID=0') !== false || strpos($this->url, 'searchID=') === false))
