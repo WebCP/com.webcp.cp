@@ -23,5 +23,11 @@
 			<inherit>1</inherit>
 			<nice>-127</nice>
 		</eventlistener>
+		<eventlistener>
+			<eventClassName>UserListPage</eventClassName>
+			<eventName>assignVariables</eventName>
+			<listenerClassFile>lib/system/event/listener/UserListPageChangeUserListener.class.php</listenerClassFile>
+			<environment>admin</environment>
+		</eventlistener>
 	</import>
 </data>

@@ -49,5 +49,16 @@ class CPSession extends CookieSession
 	{
 		return $this->styleID;
 	}
+
+	/**
+	 * Examines whether cookies are enabled.
+	 */
+	protected function handleCookie()
+	{
+		if ($this->getVar('foreign'))
+			$this->useCookies = false;
+		else
+			parent :: handleCookie();
+	}
 }
 ?>
