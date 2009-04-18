@@ -19,7 +19,7 @@ class UserAddCPListener implements EventListener
 	{
 		if ($eventName == 'validate')
 		{
-			if (strpos($eventObj->username, ' ') !== false)
+			if (!preg_match('/^[a-z0-9\-_]+$/i', $eventObj->username))
 			{
 				$eventObj->errorType['username'] = 'notValid';
 			}
