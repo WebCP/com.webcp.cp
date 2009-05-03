@@ -37,7 +37,7 @@ class CPUtils
 	 */
 	public static function getHomeDir($username)
 	{
-		return FileUtil :: addTrailingSlash(FileUtil :: getRealPath(HOMEDIR_PREFIX . '/' . $username));
+		return FileUtil :: addTrailingSlash(FileUtil :: getRealPath(HOMEDIR_PREFIX . '/' . $username . '/'));
 	}
 
 	/**
