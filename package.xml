@@ -5,7 +5,7 @@
 	<packageInformation>
 		<packageName>WCF Controlpanel</packageName>
 		<packageDescription>Ein Servercontrolpanel, inspiriert von SysCP</packageDescription>
-		<version>0.0.11-alpha</version>
+		<version>0.0.12-alpha</version>
 		<standalone>1</standalone>
 		<date>2009-03-14</date>
 	</packageInformation>
@@ -28,7 +28,7 @@
 		<requiredpackage file="requirements/com.woltlab.wcf.data.cronjobs.tar">com.woltlab.wcf.data.cronjobs</requiredpackage>
 		<requiredpackage file="requirements/com.woltlab.wcf.data.feed.reader.tar">com.woltlab.wcf.data.feed.reader</requiredpackage>
 		<requiredpackage file="requirements/com.toby.inputvalidation.tar">com.toby.inputvalidation</requiredpackage>
-		<requiredpackage file="requirements/com.toby.wcf.userloginsecurity.tar">com.toby.wcf.userloginsecurity</requiredpackage>
+		<!-- <requiredpackage file="requirements/com.toby.wcf.userloginsecurity.tar">com.toby.wcf.userloginsecurity</requiredpackage> -->
 		<requiredpackage file="requirements/com.toby.wcf.userlog.tar">com.toby.wcf.userlog</requiredpackage>
 	</requiredpackages>
 
@@ -43,6 +43,7 @@
 		<pagemenu>pagemenu.xml</pagemenu>
 		<eventlistener>eventlistener.xml</eventlistener>
 		<useroptions>useroptions.xml</useroptions>
+		<packageinstallationplugins>pip.tar</packageinstallationplugins>
 	</instructions>
 
 	<instructions type="update" fromversion="0.0.*">
@@ -55,6 +56,7 @@
 		<pagemenu>pagemenu.xml</pagemenu>
 		<eventlistener>eventlistener.xml</eventlistener>
 		<useroptions>useroptions.xml</useroptions>
+		<packageinstallationplugins>pip.tar</packageinstallationplugins>
 	</instructions>
 
 </package>

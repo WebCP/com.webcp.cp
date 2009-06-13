@@ -31,7 +31,7 @@
 				<td>{$this->user->title} {$this->user->firstname} {$this->user->lastname}</td>
 			</tr>
 			<tr class="container-2">
-				<td>{lang} wcf.user.option.company{/lang}</td>
+				<td>{lang}wcf.user.option.company{/lang}</td>
 				<td>{$this->user->company}</td>
 			</tr>
 			<tr class="container-1">

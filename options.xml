@@ -3,28 +3,28 @@
 <data>
 	<import>
 		<categories>
-			<category name="offline"></category>
-			<category name="offline.general">
-				<parent>offline</parent>
+			<category name="general.offline">
+				<parent>general</parent>
 			</category>
-
-			<category name="system"></category>
-			<category name="system.general">
-				<parent>system</parent>
+			
+			<category name="general.system_message">
+				<parent>general</parent>
 			</category>
-
-			<category name="customer"></category>
-			<category name="links"></category>
+			
+			<category name="cp"></category>
+			<category name="cp.global">
+				<parent>cp</parent>
+			</category>
 		</categories>
 
 		<options>
-		    <!-- system -->
+		    <!-- cp -->
 		    <option name="homedir_prefix">
-		        <categoryname>system.general</categoryname>
+		        <categoryname>cp.global</categoryname>
 				<optiontype>text</optiontype>
 		        <defaultvalue>/home/</defaultvalue>
 		    </option>
-		    <!-- system -->
+		    <!-- cp -->
 
 			<!-- general.cookie -->
 			<option name="cookie_path">
@@ -40,23 +40,96 @@
 				<optiontype>integer</optiontype>
 				<hidden>1</hidden>
 			</option>
+			<option name="last_run_backend">
+				<categoryname>general</categoryname>
+				<optiontype>integer</optiontype>
+				<hidden>1</hidden>
+			</option>
 			<!-- /general -->
 
 			<!-- offline -->
 			<option name="offline">
-				<categoryname>offline.general</categoryname>
+				<categoryname>general.offline</categoryname>
 				<optiontype>boolean</optiontype>
 				<enableoptions><![CDATA[offline_message,offline_message_allow_html]]></enableoptions>
 			</option>
 			<option name="offline_message">
-				<categoryname>offline.general</categoryname>
+				<categoryname>general.offline</categoryname>
 				<optiontype>textarea</optiontype>
 			</option>
 			<option name="offline_message_allow_html">
-				<categoryname>offline.general</categoryname>
+				<categoryname>general.offline</categoryname>
 				<optiontype>boolean</optiontype>
 			</option>
-			<!-- offline -->
+			<!-- /offline -->
+			
+			<!-- sysmessage -->
+			<option name="system_message">
+				<categoryname>general.system_message</categoryname>
+				<optiontype>boolean</optiontype>
+				<enableoptions><![CDATA[system_message_text,system_message_allow_html]]></enableoptions>
+			</option>
+			<option name="system_message_text">
+				<categoryname>general.system_message</categoryname>
+				<optiontype>textarea</optiontype>
+			</option>
+			<option name="system_message_allow_html">
+				<categoryname>general.system_message</categoryname>
+				<optiontype>boolean</optiontype>
+			</option>
+			<!-- /sysmessage -->
+			
+			
+			<!-- overwrite some options -->
+			
+			<!-- user.register -->
+			<option name="register_disabled">
+				<categoryname>user.register</categoryname>
+				<optiontype>boolean</optiontype>
+				<enableoptions><![CDATA[!register_enable_disclaimer,!register_admin_notification,!register_activation_method,!register_unique_ip_address]]></enableoptions>
+				<defaultvalue><![CDATA[1]]></defaultvalue>
+				<hidden>1</hidden>
+			</option>
+			<option name="register_enable_disclaimer">
+				<categoryname>user.register</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue><![CDATA[1]]></defaultvalue>
+				<hidden>1</hidden>
+			</option>
+			<option name="register_admin_notification">
+				<categoryname>user.register</categoryname>
+				<optiontype>boolean</optiontype>
+				<hidden>1</hidden>
+			</option>
+			<option name="register_activation_method">
+				<categoryname>user.register</categoryname>
+				<optiontype>radiobuttons</optiontype>
+				<defaultvalue><![CDATA[2]]></defaultvalue>
+				<selectoptions><![CDATA[0:wcf.acp.option.register_activation_method.disabled
+1:wcf.acp.option.register_activation_method.byUser
+2:wcf.acp.option.register_activation_method.byAdmin]]></selectoptions>
+				<hidden>1</hidden>
+			</option>
+			<option name="register_unique_ip_address">
+				<categoryname>user.register</categoryname>
+				<optiontype>integer</optiontype>
+				<defaultvalue><![CDATA[3600]]></defaultvalue>
+				<hidden>1</hidden>
+			</option>
+			<!-- /user.register -->
+			
+			<!-- user.security -->
+			<option name="login_use_captcha">
+				<categoryname>security.antispam</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue><![CDATA[1]]></defaultvalue>
+			</option>
+			<option name="lost_password_use_captcha">
+				<categoryname>security.antispam</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue><![CDATA[1]]></defaultvalue>
+			</option>
+			<!-- /user.security -->
 		</options>
 	</import>
 </data>

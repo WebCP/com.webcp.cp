@@ -58,32 +58,50 @@ class CPSessionFactory extends CookieSessionFactory
 		{
 			// user is no guest
 			// delete all other sessions of this user
-			$sql = "DELETE FROM 	wcf" . WCF_N . "_session
-				WHERE 		userID = " . $user->userID;
-			WCF :: getDB()->sendQuery($sql);
+			Session::deleteSessions($user->userID, true, false);
 		}
 		$requestMethod = (!empty($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : '');
 
 		// insert session into database
-		$serializedUserData = serialize($user);
-		$serializedSessionData = serialize(array('foreign' => $foreign));
-		$sql = "INSERT INTO 	wcf" . WCF_N . "_session
+		$sql = "INSERT INTO 	wcf".WCF_N."_session
 					(sessionID, packageID, userID, ipAddress, userAgent,
-					lastActivityTime, requestURI, requestMethod, userData, sessionVariables,
-					username" . ($spider ? ", spiderID" : "") . ")
-			VALUES		('" . $sessionID . "',
-					" . PACKAGE_ID . ",
-					" . $user->userID . ",
-					'" . escapeString(UserUtil :: getIpAddress()) . "',
-					'" . escapeString(UserUtil :: getUserAgent()) . "',
-					" . TIME_NOW . ",
-					'" . escapeString(UserUtil :: getRequestURI()) . "',
-					'" . escapeString($requestMethod) . "',
-					'" . escapeString($serializedUserData) . "',
-					'" . escapeString($serializedSessionData) . "',
-					'" . ($spider ? escapeString($spider['spiderName']) : escapeString($user->username)) . "'
-					" . ($spider ? ", " . $spider['spiderID'] : "") . ")";
-		WCF :: getDB()->sendQuery($sql);
+					lastActivityTime, requestURI, requestMethod,
+					username".($spider ? ", spiderID" : "").")
+			VALUES		('".$sessionID."',
+					".PACKAGE_ID.",
+					".$user->userID.",
+					'".escapeString(UserUtil::getIpAddress())."',
+					'".escapeString(UserUtil::getUserAgent())."',
+					".TIME_NOW.",
+					'".escapeString(UserUtil::getRequestURI())."',
+					'".escapeString($requestMethod)."',
+					'".($spider ? escapeString($spider['spiderName']) : escapeString($user->username))."'
+					".($spider ? ", ".$spider['spiderID'] : "").")";
+		WCF::getDB()->sendQuery($sql);
+		
+		// save user data
+		$serializedUserData = '';
+		if (ENABLE_SESSION_DATA_CACHE && get_class(WCF::getCache()->getCacheSource()) == 'MemcacheCacheSource') {
+			require_once(WCF_DIR.'lib/system/cache/source/MemcacheAdapter.class.php');
+			MemcacheAdapter::getInstance()->getMemcache()->set('session_userdata_-'.$sessionID, $user);
+		}
+		else {
+			$serializedUserData = serialize($user);
+			try {
+				$sql = "INSERT INTO 	wcf".WCF_N."_session_data
+							(sessionID, userData)
+					VALUES 		('".$sessionID."',
+							'".escapeString($serializedUserData)."')";
+				WCF::getDB()->sendQuery($sql);
+			}
+			catch (DatabaseException $e) {
+				// horizon update workaround
+				$sql = "UPDATE 	wcf".WCF_N."_session
+					SET	userData = '".escapeString($serializedUserData)."'
+					WHERE	sessionID = '".$sessionID."'";
+				WCF::getDB()->sendQuery($sql);
+			}
+		}
 
 		// return new session object
 		return new $this->sessionClassName(null, array (

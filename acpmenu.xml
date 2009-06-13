@@ -6,24 +6,21 @@
 			<icon>icon/systemL.png</icon>
 			<showorder>3</showorder>
 		</acpmenuitem>
-
-		<acpmenuitem name="cp.acp.menu.link.domains">
+		
+		<acpmenuitem name="cp.acp.menu.link.jobhandler">
 			<parent>cp.acp.menu.link</parent>
 		</acpmenuitem>
-
-		<acpmenuitem name="cp.acp.menu.link.domains.view">
-			<icon>icon/groupM.png</icon>
-			<link>index.php?page=DomainsList</link>
-			<parent>cp.acp.menu.link.domains</parent>
-			<permissions>admin.cp.canShowDomains</permissions>
+		
+		<acpmenuitem name="cp.acp.menu.link.jobhandler.view">
+			<icon>icon/cronjobsM.png</icon>
+			<link>index.php?page=JobhandlerList</link>
+			<parent>cp.acp.menu.link.jobhandler</parent>
 			<showorder>1</showorder>
 		</acpmenuitem>
-
-		<acpmenuitem name="cp.acp.menu.link.domains.add">
-			<icon>icon/groupM.png</icon>
-			<link>index.php?form=DomainAdd</link>
-			<parent>cp.acp.menu.link.domains</parent>
-			<permissions>admin.cp.canAddDomain</permissions>
+		<acpmenuitem name="cp.acp.menu.link.jobhandlertasks.view">
+			<icon>icon/cronjobsM.png</icon>
+			<link>index.php?page=JobhandlerTaskList</link>
+			<parent>cp.acp.menu.link.jobhandler</parent>
 			<showorder>2</showorder>
 		</acpmenuitem>
 	</import>
