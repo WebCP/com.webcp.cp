@@ -94,7 +94,7 @@ class JobhandlerListPage extends SortablePage
 		switch ($this->sortField)
 		{
 			case 'jobhandlerName':
-			case 'jobhandlerFile':
+			case 'jobhandlerModule':
 			case 'jobhandlerDescription':
 			break;
 			default:

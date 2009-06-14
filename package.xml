@@ -5,7 +5,7 @@
 	<packageInformation>
 		<packageName>WCF Controlpanel</packageName>
 		<packageDescription>Ein Servercontrolpanel, inspiriert von SysCP</packageDescription>
-		<version>0.0.12-alpha</version>
+		<version>0.0.13-alpha</version>
 		<standalone>1</standalone>
 		<date>2009-03-14</date>
 	</packageInformation>
@@ -37,6 +37,7 @@
 		<options>options.xml</options>
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
+		<acptemplates>acptemplates.tar</acptemplates>
 		<acpmenu>acpmenu.xml</acpmenu>
 		<groupoptions>groupoptions.xml</groupoptions>
 		<sql>install.sql</sql>
@@ -51,6 +52,7 @@
 		<options>options.xml</options>
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
+		<acptemplates>acptemplates.tar</acptemplates>
 		<acpmenu>acpmenu.xml</acpmenu>
 		<groupoptions>groupoptions.xml</groupoptions>
 		<pagemenu>pagemenu.xml</pagemenu>

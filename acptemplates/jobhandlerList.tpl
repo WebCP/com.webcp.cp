@@ -21,8 +21,8 @@
 		<thead>
 			<tr class="tableHead">
 				<th class="columnJobhandlerName{if $sortField == 'jobhandlerName'} active{/if}"><div><a href="index.php?page=JobhandlerList&amp;pageNo={@$pageNo}&amp;sortField=jobhandlerName&amp;sortOrder={if $sortField == 'jobhandlerName' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{@SID_ARG_2ND}">{lang}cp.acp.jobhandler.jobhandlerName{/lang}{if $sortField == 'jobhandlerName'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
-				<th class="columnJobhandlerFile{if $sortField == 'jobhandlerFile'} active{/if}"><div><a href="index.php?page=JobhandlerList&amp;pageNo={@$pageNo}&amp;sortField=jobhandlerFile&amp;sortOrder={if $sortField == 'jobhandlerFile' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{@SID_ARG_2ND}">{lang}wcf.acp.cronjobs.startMinuteShort{/lang}{if $sortField == 'jobhandlerFile'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
-				<th class="columnJobhandlerDescription{if $sortField == 'jobhandlerDescription'} active{/if}"><div><a href="index.php?page=JobhandlerList&amp;pageNo={@$pageNo}&amp;sortField=jobhandlerDescription&amp;sortOrder={if $sortField == 'jobhandlerDescription' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{@SID_ARG_2ND}">{lang}wcf.acp.cronjobs.startHourShort{/lang}{if $sortField == 'jobhandlerDescription'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
+				<th class="columnJobhandlerModule{if $sortField == 'jobhandlerModule'} active{/if}"><div><a href="index.php?page=JobhandlerList&amp;pageNo={@$pageNo}&amp;sortField=jobhandlerModule&amp;sortOrder={if $sortField == 'jobhandlerModule' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{@SID_ARG_2ND}">{lang}cp.acp.jobhandler.jobhandlerModule{/lang}{if $sortField == 'jobhandlerFile'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
+				<th class="columnJobhandlerDescription{if $sortField == 'jobhandlerDescription'} active{/if}"><div><a href="index.php?page=JobhandlerList&amp;pageNo={@$pageNo}&amp;sortField=jobhandlerDescription&amp;sortOrder={if $sortField == 'jobhandlerDescription' && $sortOrder == 'ASC'}DESC{else}ASC{/if}{@SID_ARG_2ND}">{lang}cp.acp.jobhandler.jobhandlerDescription{/lang}{if $sortField == 'jobhandlerDescription'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
 				
 				{if $additionalColumns|isset}{@$additionalColumns}{/if}
 			</tr>
@@ -31,7 +31,7 @@
 		{foreach from=$jobhandler item=jh}
 			<tr class="{cycle values="container-1,container-2"}">
 				<td class="columnJobhandlerName">{$jh.jobhandlerName}</td>
-				<td class="columnJobhandlerFile">{$jh.jobhandlerFile}</td>
+				<td class="columnJobhandlerModule">{$jh.jobhandlerModule}</td>
 				<td class="columnJobhandlerDescription">{$jh.jobhandlerDescription|nl2br}</td>
 				
 				{if $jh.additionalColumns|isset}{@$jh.additionalColumns}{/if}

@@ -55,30 +55,30 @@ class JobHandlerPackageInstallationPlugin extends AbstractXMLPackageInstallation
 							throw new SystemException("Required 'name' attribute for jobhandler tag is missing.", 13023);
 						}
 						
-						if (!isset($item['file'])) 
+						if (!isset($item['module'])) 
 						{
 							throw new SystemException("Required 'file' attribute for jobhandler tag is missing.", 13023);
 						}
 						
-						$jobhandlerFile = $jobhandlerName = $jobhandlerDescription = '';
-						$timeExec = $data = '';
+						$jobhandlerModule = $jobhandlerName = $jobhandlerDescription = '';
+						$nextExec = $data = '';
 						$volatile = 1;
 						
 						// make xml tags-names (keys in array) to lower case
 						$this->keysToLowerCase($item);
 						
 						$jobhandlerName = $item['name'];
-						$jobhandlerFile = $item['file'];
+						$jobhandlerModule = $item['module'];
 						
 						if (isset($item['description']))
 							$jobhandlerDescription = $item['description'];
 						
-						if (isset($item['timeExec']))
+						if (isset($item['nextExec']))
 						{
-							$timeExec = $item['timeExec'];
+							$nextExec = $item['nextExec'];
 							
 							if (!in_array($timeExec, array('immediately','hourchange','daychange','weekchange','monthchange','yearchange')))
-								throw new SystemException("unknown 'timeExec' attribute for jobhandler tag");
+								throw new SystemException("unknown 'nextExec' attribute for jobhandler tag");
 						}
 							
 						if (isset($item['volatile']))
@@ -87,22 +87,21 @@ class JobHandlerPackageInstallationPlugin extends AbstractXMLPackageInstallation
 						if (isset($item['data']))
 							$data = $item['data'];
 							
-						if ($volatile == 0 && $timeExec)
+						if ($volatile == 0 && $nextExec)
 						{
 							$sql = "INSERT INTO		cp" . CP_N . "_jobhandler_tasks 
-													(jobhandlerName, timeExec, nextExec, volatile, data) 
+													(jobhandlerName, nextExec, volatile, data) 
 									VALUES 			('" . escapeString($jobhandlerName) . "',
-													'" . escapeString($timeExec) . "',
-													" . TIME_NOW . ",
+													'" . escapeString($nextExec) . "',
 													" . intval($volatile) . ",
 													'" . escapeString($data) . "')";
 							WCF :: getDB()->sendQuery($sql);
 						}
 						
 						$sql = "INSERT INTO		cp" . CP_N . "_jobhandler 
-												(jobhandlerName, jobhandlerFile, jobhandlerDescription) 
+												(jobhandlerName, jobhandlerModule, jobhandlerDescription) 
 								VALUES 			('" . escapeString($jobhandlerName) . "', 
-												 '" . escapeString($jobhandlerFile) . "',
+												 '" . escapeString($jobhandlerModule) . "',
 												 '" . escapeString($jobhandlerDescription) . "')";
 						WCF :: getDB()->sendQuery($sql); 
 					}

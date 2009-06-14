@@ -10,7 +10,7 @@
 
 require_once (WCF_DIR . 'lib/page/SortablePage.class.php');
 
-class JobhandlerListPage extends SortablePage
+class JobhandlerTaskListPage extends SortablePage
 {
 	// system
 	public $templateName = 'jobhandlerTaskList';
@@ -45,7 +45,7 @@ class JobhandlerListPage extends SortablePage
 	/**
 	 * Gets the list of cronjobs.
 	 */
-	protected function readCronjobs()
+	protected function readJobhandler()
 	{
 		$sql = "SELECT		jobhandler.*
 				FROM		cp" . CP_N . "_jobhandler_tasks jobhandler
@@ -97,11 +97,6 @@ class JobhandlerListPage extends SortablePage
 			case 'jobhandlerName':
 			case 'lastExec':
 			case 'nextExec':
-			case 'startMinute':
-			case 'startHour':
-			case 'startDom':
-			case 'startMonth':
-			case 'startDow':
 			case 'volatile':
 			case 'data':
 			break;

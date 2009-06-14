@@ -18,8 +18,7 @@ CREATE TABLE cp1_1_diskspace (
 CREATE TABLE cp1_1_jobhandler_tasks (
 	jobhandlerTaskID int(10) unsigned NOT NULL auto_increment,
 	jobhandlerName varchar(20) NOT NULL,
-	timeExec varchar(20) NOT NULL,
-	lastExec int(10) unsigned NOT NULL default 0,
+	lastExec varchar(20) unsigned NOT NULL default 0,
 	nextExec int(10) unsigned NOT NULL default 0,
 	volatile TINYINT NOT NULL default 1,
 	data TEXT NOT NULL,
@@ -29,7 +28,7 @@ CREATE TABLE cp1_1_jobhandler_tasks (
 
 CREATE TABLE cp1_1_jobhandler (
 	jobhandlerName varchar(20) NOT NULL,
-	jobhandlerFile varchar(100) NOT NULL,
+	jobhandlerModule varchar(100) NOT NULL,
 	jobhandlerDescription text NOT NULL,
 	PRIMARY KEY (jobhandlerName)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
