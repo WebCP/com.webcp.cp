@@ -29,22 +29,6 @@ class CPUtils
 	}
 	
 	/**
-	 * will get the time of the last run of backend from database
-	 *
-	 * @return integer
-	 */
-	public static function getTimeOfLastRun()
-	{
-		$sql = "SELECT 	optionValue
-				FROM 	wcf" . WCF_N . "_option
-				WHERE 	optionName = 'last_run_backend' AND packageID = " . PACKAGE_ID;
-		
-		$time = WCF :: getDB()->getFirstRow($sql);
-		
-		return $time['optionValue'];
-	}
-
-	/**
 	 * Get homedir from username
 	 *
 	 * @param string $username

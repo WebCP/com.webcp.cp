@@ -24,6 +24,11 @@
 				<optiontype>text</optiontype>
 		        <defaultvalue>/home/</defaultvalue>
 		    </option>
+		    <option name="user_postfix">
+		        <categoryname>cp.global</categoryname>
+				<optiontype>text</optiontype>
+		        <defaultvalue>web_</defaultvalue>
+		    </option>
 		    <!-- cp -->
 
 			<!-- general.cookie -->

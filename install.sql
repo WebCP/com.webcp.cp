@@ -15,20 +15,15 @@ CREATE TABLE cp1_1_diskspace (
   	KEY userID (userID)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE cp1_1_jobhandler_tasks (
+CREATE TABLE cp1_1_jobhandler_task (
 	jobhandlerTaskID int(10) unsigned NOT NULL auto_increment,
-	jobhandlerName varchar(20) NOT NULL,
-	lastExec varchar(20) unsigned NOT NULL default 0,
-	nextExec int(10) unsigned NOT NULL default 0,
+	jobhandler varchar(20) NOT NULL,
+	nextExec varchar(20) unsigned NOT NULL default 'asap',
+	lastExec int(10) unsigned NOT NULL default 0,
 	volatile TINYINT NOT NULL default 1,
 	data TEXT NOT NULL,
+	packageID int(10) unsigned NOT NULL default 0,
 	PRIMARY KEY (jobhandlerTaskID),
-	KEY (jobhandlerName)
+	KEY (jobhandler),
+	KEY (packageID)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-CREATE TABLE cp1_1_jobhandler (
-	jobhandlerName varchar(20) NOT NULL,
-	jobhandlerModule varchar(100) NOT NULL,
-	jobhandlerDescription text NOT NULL,
-	PRIMARY KEY (jobhandlerName)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;

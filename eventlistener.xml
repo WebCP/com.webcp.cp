@@ -17,6 +17,14 @@
 		</eventlistener>
 		<eventlistener>
 			<eventClassName>UserAddForm</eventClassName>
+			<eventName>readParameters</eventName>
+			<listenerClassFile>lib/system/event/listener/UserAddCPListener.class.php</listenerClassFile>
+			<environment>admin</environment>
+			<inherit>1</inherit>
+			<nice>-127</nice>
+		</eventlistener>
+		<eventlistener>
+			<eventClassName>UserAddForm</eventClassName>
 			<eventName>saved</eventName>
 			<listenerClassFile>lib/system/event/listener/UserAddCPListener.class.php</listenerClassFile>
 			<environment>admin</environment>
