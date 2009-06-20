@@ -24,10 +24,20 @@
 				<optiontype>text</optiontype>
 		        <defaultvalue>/home/</defaultvalue>
 		    </option>
-		    <option name="user_postfix">
+		    <option name="user_prefix">
 		        <categoryname>cp.global</categoryname>
 				<optiontype>text</optiontype>
 		        <defaultvalue>web_</defaultvalue>
+		    </option>
+		    <option name="home_dirs">
+		        <categoryname>cp.global</categoryname>
+				<optiontype>textarea</optiontype>
+		        <defaultvalue>d:{HOMEDIR_PREFIX}/{USERNAME}:0555:{GUID}.{GUID}
+d:{HOMEDIR_PREFIX}/{USERNAME}/webalizer:0555:{GUID}.{GUID}
+d:{HOMEDIR_PREFIX}/{USERNAME}/logfiles:0750:www-data.{GUID}
+l:/var/log/syscp/{USERNAME}->{HOMEDIR_PREFIX}/{USERNAME}/logfiles:0777:www-data.www-data
+d:{HOMEDIR_PREFIX}/{USERNAME}/tmp:0777:{GUID}.{GUID}
+d:{HOMEDIR_PREFIX}/{USERNAME}/files:0777:{GUID}.{GUID}</defaultvalue>
 		    </option>
 		    <!-- cp -->
 

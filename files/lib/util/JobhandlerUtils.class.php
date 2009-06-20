@@ -30,21 +30,26 @@ class JobhandlerUtils
 	 * Add an temporary job
 	 *
 	 * @param string $jobhandler
-	 * @param mixed $data
+	 * @param integer $userID
+	 * @param array $data
 	 * @param string $nextExec
 	 * 
 	 * @return null
 	 */
-	public static function addJob($jobhandler, $data, $nextExec = 'asap')
+	public static function addJob($jobhandler, $userID, array $data = array(), $nextExec = 'asap')
 	{
 		if (!in_array($nextExec, array('asap','hourchange','daychange','weekchange','monthchange','yearchange')))
 			throw new SystemException('Unknown "'.$nextExec.'" nextExec, allowed are: asap, hourchange, daychange, weekchange, monthchange, yearchange');
 		
-		$sql = "INSERT INTO cp" . CP_N . "_jobhandler_task 
-				(jobhandler, data, nextExec)
+		if (empty($data))
+			$data['userID'] = $userID;	
+		
+		$sql = "INSERT IGNORE INTO cp" . CP_N . "_jobhandler_task 
+				(jobhandler, data, nextExec, userID)
 				VALUES ('" . escapeString($jobhandler) . "',
 						'" . escapeString(serialize($data)) . "',
-						'" . escapeString($nextExec) . "')";
+						'" . escapeString($nextExec) . "',
+						" . intval($userID) . ")";
 		
 		WCF :: getDB()->sendQuery($sql);
 	}

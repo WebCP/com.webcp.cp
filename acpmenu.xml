@@ -11,17 +11,11 @@
 			<parent>cp.acp.menu.link</parent>
 		</acpmenuitem>
 		
-		<acpmenuitem name="cp.acp.menu.link.jobhandler.view">
-			<icon>icon/cronjobsM.png</icon>
-			<link>index.php?page=JobhandlerList</link>
-			<parent>cp.acp.menu.link.jobhandler</parent>
-			<showorder>1</showorder>
-		</acpmenuitem>
 		<acpmenuitem name="cp.acp.menu.link.jobhandlertasks.view">
 			<icon>icon/cronjobsM.png</icon>
 			<link>index.php?page=JobhandlerTaskList</link>
 			<parent>cp.acp.menu.link.jobhandler</parent>
-			<showorder>2</showorder>
+			<showorder>1</showorder>
 		</acpmenuitem>
 	</import>
 </data>
