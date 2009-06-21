@@ -27,8 +27,8 @@
 		<requiredpackage file="requirements/com.woltlab.wcf.form.user.tar">com.woltlab.wcf.form.user</requiredpackage>
 		<requiredpackage file="requirements/com.woltlab.wcf.data.cronjobs.tar">com.woltlab.wcf.data.cronjobs</requiredpackage>
 		<requiredpackage file="requirements/com.woltlab.wcf.data.feed.reader.tar">com.woltlab.wcf.data.feed.reader</requiredpackage>
-		<requiredpackage file="requirements/com.toby.inputvalidation.tar">com.toby.inputvalidation</requiredpackage>
-		<!-- <requiredpackage file="requirements/com.toby.wcf.userloginsecurity.tar">com.toby.wcf.userloginsecurity</requiredpackage> -->
+		<!-- <requiredpackage file="requirements/com.toby.inputvalidation.tar">com.toby.inputvalidation</requiredpackage>
+		<requiredpackage file="requirements/com.toby.wcf.userloginsecurity.tar">com.toby.wcf.userloginsecurity</requiredpackage> -->
 		<requiredpackage file="requirements/com.toby.wcf.userlog.tar">com.toby.wcf.userlog</requiredpackage>
 	</requiredpackages>
 

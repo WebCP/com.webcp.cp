@@ -15,6 +15,9 @@
 			<category name="cp.global">
 				<parent>cp</parent>
 			</category>
+			<category name="cp.global.homedirs">
+				<parent>cp.global</parent>
+			</category>
 		</categories>
 
 		<options>
@@ -30,7 +33,7 @@
 		        <defaultvalue>web_</defaultvalue>
 		    </option>
 		    <option name="home_dirs">
-		        <categoryname>cp.global</categoryname>
+		        <categoryname>cp.global.homedirs</categoryname>
 				<optiontype>textarea</optiontype>
 		        <defaultvalue>d:{HOMEDIR_PREFIX}/{USERNAME}:0555:{GUID}.{GUID}
 d:{HOMEDIR_PREFIX}/{USERNAME}/webalizer:0555:{GUID}.{GUID}
