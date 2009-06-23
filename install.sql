@@ -18,7 +18,7 @@ CREATE TABLE cp1_1_diskspace (
 CREATE TABLE cp1_1_jobhandler_task (
 	jobhandlerTaskID int(10) unsigned NOT NULL auto_increment,
 	jobhandler varchar(20) NOT NULL,
-	nextExec varchar(20) unsigned NOT NULL default 'asap',
+	nextExec varchar(20) NOT NULL default 'asap',
 	lastExec int(10) unsigned NOT NULL default 0,
 	volatile TINYINT NOT NULL default 1,
 	userID int(10) unsigned NOT NULL default 0,

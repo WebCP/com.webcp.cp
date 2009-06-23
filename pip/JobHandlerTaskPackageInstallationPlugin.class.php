@@ -56,15 +56,15 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 						if (!isset($item['jobhandler'])) 
 							throw new SystemException("Required 'jobhandler' attribute for jobhandlertask tag is missing.", 13023);
 							
-						if (!in_array($item['nextExec'], array('asap','hourchange','daychange','weekchange','monthchange','yearchange')))
-							throw new SystemException("unknown 'nextExec' attribute for jobhandlertask tag");
+						if (!in_array($item['nextexec'], array('asap','hourchange','daychange','weekchange','monthchange','yearchange')))
+							throw new SystemException("unknown 'nextexec' attribute for jobhandlertask tag");
 											
 						$data = '';
-						$volatile = 1;
+						$volatile = 0;
 						
 						$jobhandler = $item['jobhandler'];
 						
-						$nextExec = $item['nextExec'];
+						$nextExec = $item['nextexec'];
 													
 						if (isset($item['volatile']))
 							$volatile = $item['volatile'];
@@ -78,7 +78,10 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 												'" . escapeString($nextExec) . "',
 												" . intval($volatile) . ",
 												'" . escapeString($data) . "',
-												".$this->installation->getPackageID().")";
+												".$this->installation->getPackageID().")
+								ON DUPLICATE KEY UPDATE 	nextExec = VALUES(nextExec	),
+															volatile = VALUES(volatile),
+															data = VALUES(data)";
 						WCF :: getDB()->sendQuery($sql);
 					}
 				}

@@ -5,9 +5,9 @@
 	<packageInformation>
 		<packageName>WCF Controlpanel</packageName>
 		<packageDescription>Ein Servercontrolpanel, inspiriert von SysCP</packageDescription>
-		<version>0.0.15-alpha</version>
+		<version>0.5.3-beta</version>
 		<standalone>1</standalone>
-		<date>2009-03-14</date>
+		<date>2009-06-23</date>
 	</packageInformation>
 
 	<authorInformation>
@@ -45,9 +45,10 @@
 		<eventlistener>eventlistener.xml</eventlistener>
 		<useroptions>useroptions.xml</useroptions>
 		<packageinstallationplugins>pip.tar</packageinstallationplugins>
+		<jobhandlertask>jobhandlertasks.xml</jobhandlertask>
 	</instructions>
-
-	<instructions type="update" fromversion="0.0.*">
+	
+	<instructions type="update" fromversion="0.*">
 		<languages languagecode="de">de.xml</languages>
 		<options>options.xml</options>
 		<files>files.tar</files>
@@ -59,6 +60,7 @@
 		<eventlistener>eventlistener.xml</eventlistener>
 		<useroptions>useroptions.xml</useroptions>
 		<packageinstallationplugins>pip.tar</packageinstallationplugins>
+		<jobhandlertask>jobhandlertasks.xml</jobhandlertask>
 	</instructions>
 
 </package>

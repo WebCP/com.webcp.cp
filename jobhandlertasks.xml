@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "DTDs/jobHandlerTasks.dtd">
+<data>
+	<import>
+		<jobhandlertask>
+			<jobhandler>counthome</jobhandler>
+			<nextexec>daychange</nextexec>
+		</jobhandlertask>
+	</import>
+</data>
