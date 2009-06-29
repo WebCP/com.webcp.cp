@@ -30,6 +30,7 @@
 		<!-- <requiredpackage file="requirements/com.toby.inputvalidation.tar">com.toby.inputvalidation</requiredpackage>
 		<requiredpackage file="requirements/com.toby.wcf.userloginsecurity.tar">com.toby.wcf.userloginsecurity</requiredpackage> -->
 		<requiredpackage file="requirements/com.toby.wcf.userlog.tar">com.toby.wcf.userlog</requiredpackage>
+		<requiredpackage file="requirements/com.toby.templatemodifier.float.tar">com.toby.templatemodifier.float</requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">
