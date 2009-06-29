@@ -3,7 +3,7 @@
 <data>
 	<import>
 		<acpmenuitem name="cp.acp.menu.link">
-			<icon>icon/systemL.png</icon>
+			<icon>icon/cpL.png</icon>
 			<showorder>3</showorder>
 		</acpmenuitem>
 		
@@ -12,7 +12,7 @@
 		</acpmenuitem>
 		
 		<acpmenuitem name="cp.acp.menu.link.jobhandlertasks.view">
-			<icon>icon/cronjobsM.png</icon>
+			<icon>icon/jobhandlertaskM.png</icon>
 			<link>index.php?page=JobhandlerTaskList</link>
 			<parent>cp.acp.menu.link.jobhandler</parent>
 			<showorder>1</showorder>

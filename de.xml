@@ -2,4 +2,7 @@
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language languagecode="de">
 
+		<category name="wcf.user.option">
+			<item name="wcf.user.option.diskspace.values"><![CDATA[<span{if $used > $avail} class="red"{/if}>{$used|float}</span> / {$avail}]]></item>
+		</category>		
 </language>

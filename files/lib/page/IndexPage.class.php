@@ -11,21 +11,22 @@
  * $Id$
  */
 
-require_once(WCF_DIR . 'lib/page/AbstractPage.class.php');
+require_once (WCF_DIR . 'lib/page/AbstractPage.class.php');
 
 class IndexPage extends AbstractPage
 {
 	public $templateName = 'index';
-
-	protected $displayData = array();
+	
+	protected $displayData = array ();
 
 	/**
 	 * @see Page::readData()
 	 */
 	public function readData()
 	{
-		$this->addDisplay('wcf.user.option.diskspace', WCF :: getUser()->diskspaceUsed.' ('.WCF :: getUser()->diskspace.')');
-
+		$this->addDisplay('wcf.user.option.diskspace', WCF :: getLanguage()->getDynamicVariable('wcf.user.option.diskspace.values', array('used' => WCF :: getUser()->diskspaceUsed, 
+			'avail' => WCF :: getUser()->diskspace)));
+		
 		parent :: readData();
 	}
 
@@ -35,7 +36,7 @@ class IndexPage extends AbstractPage
 	public function assignVariables()
 	{
 		parent :: assignVariables();
-
+		
 		WCF :: getTPL()->assign('displayData', $this->displayData);
 	}
 

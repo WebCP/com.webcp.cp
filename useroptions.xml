@@ -109,7 +109,7 @@
 			</option>
 			<option name="diskspaceUsed">
 				<categoryname>account.service</categoryname>
-				<optiontype>integer</optiontype>
+				<optiontype>float</optiontype>
 				<visible>0</visible>
 				<editable>4</editable>
 			</option>

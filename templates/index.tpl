@@ -64,10 +64,10 @@
 				<td>{lang}wcf.user.username{/lang}</td>
 				<td>{$this->user->username}</td>
 			</tr>
-			{foreach from=$displayData key=lang item=item}
+			{foreach from=$displayData key=desc item=item}
 				<tr class="container-{cycle values='2,1'}">
-					<td>{lang}{$lang}{/lang}</td>
-					<td>{$item}</td>
+					<td>{lang}{$desc}{/lang}</td>
+					<td>{@$item}</td>
 				</tr>
 			{/foreach}
 		</tbody>
