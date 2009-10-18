@@ -33,10 +33,11 @@ class JobhandlerUtils
 	 * @param integer $userID
 	 * @param array $data
 	 * @param string $nextExec
+	 * @param int $priority
 	 * 
 	 * @return null
 	 */
-	public static function addJob($jobhandler, $userID, array $data = array(), $nextExec = 'asap')
+	public static function addJob($jobhandler, $userID, array $data = array(), $nextExec = 'asap', $priority = 0)
 	{
 		if (!in_array($nextExec, array('asap','hourchange','daychange','weekchange','monthchange','yearchange')))
 			throw new SystemException('Unknown "'.$nextExec.'" nextExec, allowed are: asap, hourchange, daychange, weekchange, monthchange, yearchange');
@@ -45,11 +46,12 @@ class JobhandlerUtils
 			$data['userID'] = $userID;	
 		
 		$sql = "INSERT IGNORE INTO cp" . CP_N . "_jobhandler_task 
-				(jobhandler, data, nextExec, userID)
+				(jobhandler, data, nextExec, userID, priority)
 				VALUES ('" . escapeString($jobhandler) . "',
 						'" . escapeString(serialize($data)) . "',
 						'" . escapeString($nextExec) . "',
-						" . intval($userID) . ")";
+						" . intval($userID) . ",
+						" . intval($priority) . ")";
 		
 		WCF :: getDB()->sendQuery($sql);
 	}

@@ -20,6 +20,7 @@ CREATE TABLE cp1_1_jobhandler_task (
 	jobhandler varchar(20) NOT NULL,
 	nextExec varchar(20) NOT NULL default 'asap',
 	lastExec int(10) unsigned NOT NULL default 0,
+	priority tinyint(1) unsigned NOT NULL default 0,
 	volatile TINYINT NOT NULL default 1,
 	userID int(10) unsigned NOT NULL default 0,
 	data TEXT NOT NULL,
@@ -29,3 +30,7 @@ CREATE TABLE cp1_1_jobhandler_task (
 	KEY (packageID),
 	UNIQUE (jobhandler, nextExec, userID)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO 	wcf1_package_update_server
+		(packageUpdateServerID, server, status, statusUpdate, errorText, updatesFile, timestamp, htUsername, htPassword)
+VALUES 		(0, 'http://dev.hugin-hosting.de/packageserver', 'online', 1, NULL, 0, 1168257450, '', '');

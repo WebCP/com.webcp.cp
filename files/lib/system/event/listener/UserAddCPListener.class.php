@@ -64,7 +64,7 @@ class UserAddCPListener implements EventListener
 				WCF :: getDB()->sendQuery($sql);
 				
 				if ($eventObj->user->isCustomer == 1)
-					JobhandlerUtils :: addJob('createhome', $eventObj->user->userID);
+					JobhandlerUtils :: addJob('createhome', $eventObj->user->userID, array(), 'asap', 100);
 			}
 		}
 	}

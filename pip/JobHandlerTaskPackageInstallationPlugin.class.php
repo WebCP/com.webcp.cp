@@ -14,6 +14,7 @@ require_once (WCF_DIR . 'lib/acp/package/plugin/AbstractXMLPackageInstallationPl
 class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstallationPlugin
 {
 	public $tagName = 'jobhandlertask';
+	public $tableName = 'jobhandler_task';
 
 	/** 
 	 * @see PackageInstallationPlugin::install()
@@ -60,7 +61,7 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 							throw new SystemException("unknown 'nextexec' attribute for jobhandlertask tag");
 											
 						$data = '';
-						$volatile = 0;
+						$volatile = $priority = 0;
 						
 						$jobhandler = $item['jobhandler'];
 						
@@ -72,15 +73,20 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 						if (isset($item['data']))
 							$data = $item['data'];
 							
+						if (isset($item['priority']))
+							$priority = $item['priority'];
+							
 						$sql = "INSERT INTO		cp" . CP_N . "_jobhandler_task 
-												(jobhandler, nextExec, volatile, data, packageID) 
+												(jobhandler, nextExec, volatile, priority, data, packageID) 
 								VALUES 			('" . escapeString($jobhandler) . "',
 												'" . escapeString($nextExec) . "',
 												" . intval($volatile) . ",
+												" . intval($priority) . ",
 												'" . escapeString($data) . "',
 												".$this->installation->getPackageID().")
 								ON DUPLICATE KEY UPDATE 	nextExec = VALUES(nextExec	),
 															volatile = VALUES(volatile),
+															priority = VALUES(priority),
 															data = VALUES(data)";
 						WCF :: getDB()->sendQuery($sql);
 					}
@@ -90,13 +96,41 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 				{
 					if ($this->installation->getAction() == 'update')
 					{
-						$sql = "DELETE FROM	cp".CP_N."_jobhandler_task
+						$sql = "DELETE FROM	cp" . CP_N . "_jobhandler_task
 								WHERE		packageID = ".$this->installation->getPackageID();
 						WCF::getDB()->sendQuery($sql);
 					}
 				}
 			}
 		}
+	}
+	
+	/**
+	 * @see	 PackageInstallationPlugin::hasUninstall()
+	 */
+	public function hasUninstall() 
+	{
+		// call hasUninstall event
+		EventHandler::fireAction($this, 'hasUninstall');
+
+		$sql = "SELECT	COUNT(*) AS count
+				FROM	cp" . CP_N . "_jobhandler_task
+				WHERE	packageID = ".$this->installation->getPackageID();
+		$installationCount = WCF::getDB()->getFirstRow($sql);
+		return $installationCount['count'];
+	}
+	
+	/**
+	 * @see	 PackageInstallationPlugin::uninstall()
+	 */
+	public function uninstall() 
+	{
+		// call uninstall event
+		EventHandler::fireAction($this, 'uninstall');
+		
+		$sql = "DELETE FROM	cp" . CP_N . "_jobhandler_task
+				WHERE		packageID = ".$this->installation->getPackageID();
+		WCF::getDB()->sendQuery($sql);
 	}
 }
 ?>

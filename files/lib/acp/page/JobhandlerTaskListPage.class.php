@@ -48,7 +48,10 @@ class JobhandlerTaskListPage extends SortablePage
 	protected function readJobhandler()
 	{
 		$sql = "SELECT		jobhandler.*
-				FROM		cp" . CP_N . "_jobhandler_task jobhandler
+				FROM		wcf" . WCF_N . "_jobhandler_task jobhandler,
+							wcf" . WCF_N . "_package_dependency package_dependency
+				WHERE 		jobhandler.packageID = package_dependency.dependency
+				AND 		package_dependency.packageID = " . PACKAGE_ID . "
 				ORDER BY	jobhandler.".$this->sortField." ".$this->sortOrder;
 		$result = WCF :: getDB()->sendQuery($sql, $this->itemsPerPage, ($this->pageNo - 1) * $this->itemsPerPage);
 		while ($row = WCF :: getDB()->fetchArray($result))
@@ -79,7 +82,10 @@ class JobhandlerTaskListPage extends SortablePage
 		
 		// count cronjobs
 		$sql = "SELECT	COUNT(*) AS count
-				FROM	cp" . CP_N . "_jobhandler_task jobhandler";
+				FROM	wcf" . WCF_N . "_jobhandler_task jobhandler,
+						wcf" . WCF_N . "_package_dependency package_dependency
+				WHERE 	jobhandler.packageID = package_dependency.dependency
+				AND 	package_dependency.packageID = ".PACKAGE_ID;
 		$row = WCF :: getDB()->getFirstRow($sql);
 		return $row['count'];
 	}
