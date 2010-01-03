@@ -15,7 +15,7 @@ CREATE TABLE cp1_1_diskspace (
   	KEY userID (userID)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE cp1_1_jobhandler_task (
+CREATE TABLE wcf1_jobhandler_task (
 	jobhandlerTaskID int(10) unsigned NOT NULL auto_increment,
 	jobhandler varchar(20) NOT NULL,
 	nextExec varchar(20) NOT NULL default 'asap',

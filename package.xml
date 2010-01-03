@@ -7,7 +7,7 @@
 		<packageDescription>Ein Servercontrolpanel, inspiriert von SysCP</packageDescription>
 		<version>0.5.3-beta</version>
 		<standalone>1</standalone>
-		<date>2009-06-23</date>
+		<date>2010-01-03</date>
 	</packageInformation>
 
 	<authorInformation>
@@ -18,19 +18,19 @@
 
 	<requiredpackages>
 		<requiredpackage minversion="1.1.0 Alpha 1">com.woltlab.wcf</requiredpackage>
-		<requiredpackage file="requirements/com.woltlab.wcf.data.image.tar">com.woltlab.wcf.data.image</requiredpackage>
-		<requiredpackage file="requirements/com.woltlab.wcf.system.style.tar">com.woltlab.wcf.system.style</requiredpackage>
-		<requiredpackage file="requirements/com.woltlab.wcf.data.page.headerMenu.tar">com.woltlab.wcf.data.page.headerMenu</requiredpackage>
-		<requiredpackage file="requirements/com.woltlab.wcf.data.page.tar">com.woltlab.wcf.data.page</requiredpackage>
-		<requiredpackage file="requirements/com.woltlab.wcf.data.help.tar">com.woltlab.wcf.data.help</requiredpackage>
-		<requiredpackage file="requirements/com.woltlab.wcf.data.image.captcha.tar">com.woltlab.wcf.data.image.captcha</requiredpackage>
-		<requiredpackage file="requirements/com.woltlab.wcf.form.user.tar">com.woltlab.wcf.form.user</requiredpackage>
-		<requiredpackage file="requirements/com.woltlab.wcf.data.cronjobs.tar">com.woltlab.wcf.data.cronjobs</requiredpackage>
-		<requiredpackage file="requirements/com.woltlab.wcf.data.feed.reader.tar">com.woltlab.wcf.data.feed.reader</requiredpackage>
-		<!-- <requiredpackage file="requirements/com.toby.inputvalidation.tar">com.toby.inputvalidation</requiredpackage>
-		<requiredpackage file="requirements/com.toby.wcf.userloginsecurity.tar">com.toby.wcf.userloginsecurity</requiredpackage> -->
-		<requiredpackage file="requirements/com.toby.wcf.userlog.tar">com.toby.wcf.userlog</requiredpackage>
-		<requiredpackage file="requirements/com.toby.templatemodifier.float.tar">com.toby.templatemodifier.float</requiredpackage>
+		<requiredpackage>com.woltlab.wcf.data.image</requiredpackage>
+		<requiredpackage>com.woltlab.wcf.system.style</requiredpackage>
+		<requiredpackage>com.woltlab.wcf.data.page.headerMenu</requiredpackage>
+		<requiredpackage>com.woltlab.wcf.data.page</requiredpackage>
+		<requiredpackage>com.woltlab.wcf.data.help</requiredpackage>
+		<requiredpackage>com.woltlab.wcf.data.image.captcha</requiredpackage>
+		<requiredpackage>com.woltlab.wcf.form.user</requiredpackage>
+		<requiredpackage>com.woltlab.wcf.data.cronjobs</requiredpackage>
+		<requiredpackage>com.woltlab.wcf.data.feed.reader</requiredpackage>
+		<!-- <requiredpackage file="requirements/com.toby.inputvalidation.tar.gz">com.toby.inputvalidation</requiredpackage>
+		<requiredpackage file="requirements/com.toby.wcf.userloginsecurity.tar.gz">com.toby.wcf.userloginsecurity</requiredpackage> -->
+		<requiredpackage file="requirements/com.toby.wcf.userlog.tar.gz">com.toby.wcf.userlog</requiredpackage>
+		<requiredpackage file="requirements/com.toby.templatemodifier.float.tar.gz">com.toby.templatemodifier.float</requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">
@@ -45,7 +45,7 @@
 		<pagemenu>pagemenu.xml</pagemenu>
 		<eventlistener>eventlistener.xml</eventlistener>
 		<useroptions>useroptions.xml</useroptions>
-		<packageinstallationplugins>pip.tar</packageinstallationplugins>
+	 	<packageinstallationplugins>pip.tar</packageinstallationplugins>
 		<jobhandlertask>jobhandlertasks.xml</jobhandlertask>
 	</instructions>
 	
