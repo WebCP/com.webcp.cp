@@ -76,7 +76,7 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 						if (isset($item['priority']))
 							$priority = $item['priority'];
 							
-						$sql = "INSERT INTO		cp" . CP_N . "_jobhandler_task 
+						$sql = "INSERT INTO		wcf" . WCF_N . "_jobhandler_task 
 												(jobhandler, nextExec, volatile, priority, data, packageID) 
 								VALUES 			('" . escapeString($jobhandler) . "',
 												'" . escapeString($nextExec) . "',
@@ -96,7 +96,7 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 				{
 					if ($this->installation->getAction() == 'update')
 					{
-						$sql = "DELETE FROM	cp" . CP_N . "_jobhandler_task
+						$sql = "DELETE FROM	wcf" . WCF_N . "_jobhandler_task
 								WHERE		packageID = ".$this->installation->getPackageID();
 						WCF::getDB()->sendQuery($sql);
 					}
@@ -114,7 +114,7 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 		EventHandler::fireAction($this, 'hasUninstall');
 
 		$sql = "SELECT	COUNT(*) AS count
-				FROM	cp" . CP_N . "_jobhandler_task
+				FROM	wcf" . WCF_N . "_jobhandler_task
 				WHERE	packageID = ".$this->installation->getPackageID();
 		$installationCount = WCF::getDB()->getFirstRow($sql);
 		return $installationCount['count'];
@@ -128,7 +128,7 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 		// call uninstall event
 		EventHandler::fireAction($this, 'uninstall');
 		
-		$sql = "DELETE FROM	cp" . CP_N . "_jobhandler_task
+		$sql = "DELETE FROM	wcf" . WCF_N . "_jobhandler_task
 				WHERE		packageID = ".$this->installation->getPackageID();
 		WCF::getDB()->sendQuery($sql);
 	}
