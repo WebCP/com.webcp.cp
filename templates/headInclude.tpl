@@ -5,8 +5,16 @@
 <meta name="keywords" content="{META_KEYWORDS}" />
 <meta name="robots" content="noindex,nofollow" />
 
+{if $specialStyles|isset}
+	<!-- special styles -->
+	{@$specialStyles}
+{/if}
+
 <!-- dynamic styles -->
-<link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_WCF_DIR}style/style-{@$this->getStyle()->styleID}.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_WCF_DIR}style/style-{@$this->getStyle()->styleID}{if PAGE_DIRECTION == 'rtl'}-rtl{/if}.css" />
+
+<!-- print styles -->
+<link rel="stylesheet" type="text/css" media="print" href="{@RELATIVE_WCF_DIR}style/extra/print{if PAGE_DIRECTION == 'rtl'}-rtl{/if}.css" />
 
 <script type="text/javascript">
 	//<![CDATA[
@@ -31,6 +39,7 @@
 				_width: expression(((document.body.clientWidth/screen.width)) < 0.7 ? "{$this->getStyle()->getVariable('page.width.min')}":"{$this->getStyle()->getVariable('page.width.max')}" );
 			}
 		{/if}
+		{if $this->getStyle()->getVariable('user.MSIEFixes.IE6.use')}{@$this->getStyle()->getVariable('user.MSIEFixes.IE6.use')}{/if}
 	</style>
 <![endif]-->
 
@@ -41,6 +50,10 @@
 		{@$this->getStyle()->getVariable('user.MSIEFixes.IE7.use')}
 	</style>
 	{/if}
+<![endif]-->
+
+<!--[if IE 8]>
+	<link rel="stylesheet" type="text/css" media="screen" href="{@RELATIVE_WCF_DIR}style/extra/ie8-fix{if PAGE_DIRECTION == 'rtl'}-rtl{/if}.css" />
 <![endif]-->
 
 {if $this->getStyle()->getVariable('global.favicon')}<link rel="shortcut icon" href="{@RELATIVE_WCF_DIR}icon/favicon/favicon{$this->getStyle()->getVariable('global.favicon')|ucfirst}.ico" type="image/x-icon" />{/if}

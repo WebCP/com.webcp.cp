@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
-<language languagecode="de">
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/language.xsd" languagecode="de">
+	<category name="wcf.acp.package">
+		<item name="wcf.acp.package.step.install.cpPackageInstallationPlugin"><![CDATA[WCFCP wird installiert ...]]></item>
+		<item name="wcf.acp.package.step.uninstall.cpPackageInstallationPlugin"><![CDATA[WCFCP wird deinstalliert ...]]></item>
+		<item name="wcf.acp.package.step.update.cpPackageInstallationPlugin"><![CDATA[WCFCP wird aktualisiert ...]]></item>
+	</category>
 
-		<category name="wcf.user.option">
-			<item name="wcf.user.option.diskspace.values"><![CDATA[<span{if $used > $avail} class="red"{/if}>{$used|float}</span> / {$avail}]]></item>
-		</category>		
+	<category name="wcf.acp.option">
+		<!-- Clock -->
+		<item name="wcf.acp.option.show_clock"><![CDATA[Aktuelle Uhrzeit am Ende der Seite anzeigen]]></item>
+		<item name="wcf.acp.option.show_clock.description"><![CDATA[Im Seitenfuß wird die aktuelle Uhrzeit angezeigt, wenn diese Option aktiviert ist.]]></item>
+
+		<!--  Version number -->
+		<item name="wcf.acp.option.show_version_number"><![CDATA[Versionsnummer der Download Database im Copyright-Hinweis anzeigen]]></item>
+		<item name="wcf.acp.option.show_version_number.description"><![CDATA[Durch Aktivierung dieser Option wird die Versionsnummer im Copyright-Hinweis angezeigt.]]></item>
+
+		<!--  Style Auswahl -->
+		<item name="wcf.acp.option.show_style_chooser"><![CDATA[Stil-Auswahl anzeigen]]></item>
+		<item name="wcf.acp.option.show_style_chooser.description"><![CDATA[Soll eine Liste aller Stile im Fußteil der Seite zur Auswahl angezeigt werden?]]></item>
+
+		<!-- Cookie -->
+		<item name="wcf.acp.option.cookie_path"><![CDATA[Cookiepfad]]></item>
+		<item name="wcf.acp.option.cookie_path.description"><![CDATA[Der Cookiepfad wird absolut zum Document Root angegeben - also z.B. "/forum" für http://www.woltlab.com/forum.]]></item>
+
+		<!-- Online/Offline -->
+		<item name="wcf.acp.option.category.offline.general"><![CDATA[WCFCP temporär deaktivieren]]></item>
+		<item name="wcf.acp.option.category.offline.general.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.offline"><![CDATA[WCFCP deaktivieren]]></item>
+		<item name="wcf.acp.option.offline.description"><![CDATA[]]>Hier kann das WCFCP vorübergehend deaktiviert werden (z.B. für Wartungsarbeiten).</item>
+		<item name="wcf.acp.option.offline_message"><![CDATA[Deaktivierungshinweis]]></item>
+		<item name="wcf.acp.option.offline_message.description"><![CDATA[Eine Nachricht/Ein Hinweis, der während der Deaktivierung des WCFCP angezeigt wird]]></item>
+		<item name="wcf.acp.option.offline_message_allow_html"><![CDATA[HTML-Code im Hinweistext verwenden]]></item>
+		<item name="wcf.acp.option.offline_message_allow_html.description"><![CDATA[Durch Aktivierung dieser Option können Sie zur Formatierung des Textes auch HTML verwenden.]]></item>
+
+		<!-- CP -->
+		
+	</category>
+	<category name="wcf.user.option">
+		<item name="wcf.user.option.diskspace.values"><![CDATA[<span{if $used > $avail} class="red"{/if}>{$used|float}</span> / {$avail}]]></item>
+	</category>		
 </language>

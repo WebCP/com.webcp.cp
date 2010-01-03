@@ -3,8 +3,8 @@
 <data>
 	<import>
 		<categories>
-			<category name="general.offline">
-				<parent>general</parent>
+			<category name="offline.general">
+				<parent>general.offline</parent>
 			</category>
 			
 			<category name="general.system_message">
@@ -12,50 +12,104 @@
 			</category>
 			
 			<category name="cp"></category>
+			
 			<category name="cp.global">
 				<parent>cp</parent>
 				<showorder>1</showorder>
 			</category>
+			
 			<category name="cp.backendpaths">
 				<parent>cp</parent>
 				<showorder>2</showorder>
 			</category>
+			
 			<category name="cp.backendpaths.createpaths">
 				<parent>cp.backendpaths</parent>
 			</category>
+			
 			<category name="cp.backendpaths.countpaths">
 				<parent>cp.backendpaths</parent>
 			</category>
 		</categories>
 
 		<options>
-		    <!-- cp -->
-		    <option name="homedir_prefix">
-		        <categoryname>cp.global</categoryname>
-				<optiontype>text</optiontype>
-		        <defaultvalue>/home/</defaultvalue>
-		    </option>
-		    <option name="user_prefix">
-		        <categoryname>cp.global</categoryname>
-				<optiontype>text</optiontype>
-		        <defaultvalue>web_</defaultvalue>
-		    </option>
-		    <option name="default_create_paths">
-		        <categoryname>cp.backendpaths.createpaths</categoryname>
-				<optiontype>textarea</optiontype>
-		        <defaultvalue>d:{HOMEDIR_PREFIX}/{USERNAME}:0555:{GUID}.{GUID}
+			<!-- cp -->
+			<option name="homedir_prefix">
+		        	<categoryname>cp.global</categoryname>
+					<optiontype>text</optiontype>
+		        	<defaultvalue>/home/</defaultvalue>
+		    	</option>
+		    	<option name="user_prefix">
+		        	<categoryname>cp.global</categoryname>
+					<optiontype>text</optiontype>
+		        	<defaultvalue>web_</defaultvalue>
+		    	</option>
+		    	<option name="default_create_paths">
+		        	<categoryname>cp.backendpaths.createpaths</categoryname>
+					<optiontype>textarea</optiontype>
+		        	<defaultvalue>d:{HOMEDIR_PREFIX}/{USERNAME}:0555:{GUID}.{GUID}
 d:{HOMEDIR_PREFIX}/{USERNAME}/webalizer:0555:{GUID}.{GUID}
 d:{HOMEDIR_PREFIX}/{USERNAME}/logfiles:0750:www-data.{GUID}
 l:/var/log/syscp/{USERNAME}->{HOMEDIR_PREFIX}/{USERNAME}/logfiles:0777:www-data.www-data
 d:{HOMEDIR_PREFIX}/{USERNAME}/tmp:0777:{GUID}.{GUID}
 d:{HOMEDIR_PREFIX}/{USERNAME}/files:0777:{GUID}.{GUID}</defaultvalue>
-		    </option>
-		    <option name="default_count_paths">
-		    	<categoryname>cp.backendpaths.countpaths</categoryname>
+		    	</option>
+		    	<option name="default_count_paths">
+		    		<categoryname>cp.backendpaths.countpaths</categoryname>
+					<optiontype>textarea</optiontype>
+		        	<defaultvalue>{HOMEDIR_PREFIX}/{USERNAME}:logfiles,tmp</defaultvalue>
+		    	</option>
+		    	<!-- cp -->
+
+			<!-- offline -->
+			<option name="offline">
+				<categoryname>offline.general</categoryname>
+				<optiontype>boolean</optiontype>
+				<enableoptions><![CDATA[offline_message,offline_message_allow_html]]></enableoptions>
+			</option>
+				<option name="offline_message">
+				<categoryname>offline.general</categoryname>
 				<optiontype>textarea</optiontype>
-		        <defaultvalue>{HOMEDIR_PREFIX}/{USERNAME}:logfiles,tmp</defaultvalue>
-		    </option>
-		    <!-- cp -->
+			</option>
+			<option name="offline_message_allow_html">
+				<categoryname>offline.general</categoryname>
+				<optiontype>boolean</optiontype>
+			</option>
+			<!-- /offline -->
+			
+			<!-- general.page-->
+			<option name="page_title">
+				<categoryname>general.page</categoryname>
+				<optiontype>text</optiontype>
+				<showorder>1</showorder>
+				<defaultvalue>WCFCP</defaultvalue>
+			</option>
+			<option name="page_description">
+				<categoryname>general.page</categoryname>
+				<optiontype>text</optiontype>
+				<showorder>2</showorder>
+			</option>
+			<option name="page_url">
+				<categoryname>general.page</categoryname>
+				<optiontype>text</optiontype>
+				<showorder>3</showorder>
+			</option>
+			<option name="page_urls">
+				<categoryname>general.page</categoryname>
+				<optiontype>textarea</optiontype>
+				<showorder>4</showorder>
+			</option>
+			<option name="show_version_number">
+				<categoryname>general.page</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<option name="show_style_chooser">
+				<categoryname>general.page</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+			</option>
+			<!-- /general.page-->
 
 			<!-- general.cookie -->
 			<option name="cookie_path">
@@ -78,22 +132,14 @@ d:{HOMEDIR_PREFIX}/{USERNAME}/files:0777:{GUID}.{GUID}</defaultvalue>
 			</option>
 			<!-- /general -->
 
-			<!-- offline -->
-			<option name="offline">
-				<categoryname>general.offline</categoryname>
+			<!-- general.date -->
+			<option name="show_clock">
+				<categoryname>general.date</categoryname>
 				<optiontype>boolean</optiontype>
-				<enableoptions><![CDATA[offline_message,offline_message_allow_html]]></enableoptions>
+				<defaultvalue>1</defaultvalue>
 			</option>
-			<option name="offline_message">
-				<categoryname>general.offline</categoryname>
-				<optiontype>textarea</optiontype>
-			</option>
-			<option name="offline_message_allow_html">
-				<categoryname>general.offline</categoryname>
-				<optiontype>boolean</optiontype>
-			</option>
-			<!-- /offline -->
-			
+			<!-- /general.date -->
+
 			<!-- sysmessage -->
 			<option name="system_message">
 				<categoryname>general.system_message</categoryname>

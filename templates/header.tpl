@@ -7,23 +7,26 @@
 	<a id="top"></a>
 	<div id="userPanel" class="userPanel">
 		<div class="userPanelInner">
-			<p id="userNote"> 
-				{if $this->user->userID != 0}{lang}wbb.header.userNote.user{/lang}{else}{lang}wbb.header.userNote.guest{/lang}{/if}
+			<p id="userNote">
+				{if $this->user->userID != 0}{lang}cp.header.userNote.user{/lang}{else}{lang}wbb.header.userNote.guest{/lang}{/if}
 			</p>
 			<div id="userMenu">
 				<ul>
 					{if $this->user->userID != 0}
-						<li><a href="index.php?action=UserLogout&amp;t={@SECURITY_TOKEN}{@SID_ARG_2ND}"><img src="{icon}logoutS.png{/icon}" alt="" /> <span>{lang}wbb.header.userMenu.logout{/lang}</span></a></li>
-						<li><a href="index.php?form=UserProfileEdit{@SID_ARG_2ND}"><img src="{icon}editS.png{/icon}" alt="" /> <span>{lang}wbb.header.userMenu.profile{/lang}</span></a></li>
-						
+						<li><a href="index.php?action=UserLogout&amp;t={@SECURITY_TOKEN}{@SID_ARG_2ND}"><img src="{icon}logoutS.png{/icon}" alt="" /> <span>{lang}cp.header.userMenu.logout{/lang}</span></a></li>
+						<li><a href="index.php?form=UserProfileEdit{@SID_ARG_2ND}"><img src="{icon}editS.png{/icon}" alt="" /> <span>{lang}cp.header.userMenu.profile{/lang}</span></a></li>
 						{if $additionalUserMenuItems|isset}{@$additionalUserMenuItems}{/if}
 						
 						{if $this->user->getPermission('admin.general.canUseAcp')}
-							<li><a href="acp/index.php?packageID={@PACKAGE_ID}"><img src="{icon}acpS.png{/icon}" alt="" /> <span>{lang}wbb.header.userMenu.acp{/lang}</span></a></li>
+							<li><a href="acp/index.php?packageID={@PACKAGE_ID}"><img src="{icon}acpS.png{/icon}" alt="" /> <span>{lang}cp.header.userMenu.acp{/lang}</span></a></li>
 						{/if}
 					{else}
+						<li><a href="index.php?form=UserLogin{@SID_ARG_2ND}" id="loginButton"><img src="{icon}loginS.png{/icon}" alt="" id="loginButtonImage" /> <span>{lang}cp.header.userMenu.login{/lang}</span></a></li>
+						
+						{if !REGISTER_DISABLED}<li><a href="index.php?page=Register{@SID_ARG_2ND}"><img src="{icon}registerS.png{/icon}" alt="" /> <span>{lang}cp.header.userMenu.register{/lang}</span></a></li>{/if}
+						
 						{if $this->language->countAvailableLanguages() > 1}
-							<li><a id="changeLanguage" class="hidden"><img src="{icon}language{@$this->language->getLanguageCode()|ucfirst}S.png{/icon}" alt="" /> <span>{lang}wbb.header.userMenu.changeLanguage{/lang}</span></a>
+							<li><a id="changeLanguage" class="hidden"><img src="{icon}language{@$this->language->getLanguageCode()|ucfirst}S.png{/icon}" alt="" /> <span>{lang}cp.header.userMenu.changeLanguage{/lang}</span></a>
 								<div class="hidden" id="changeLanguageMenu">
 									<ul>
 										{foreach from=$this->language->getAvailableLanguageCodes() item=guestLanguageCode key=guestLanguageID}
@@ -58,6 +61,55 @@
 		</div>
 	</div>
 	
+	{if !$this->user->userID && !LOGIN_USE_CAPTCHA}
+		<script type="text/javascript">
+			//<![CDATA[
+			document.observe("dom:loaded", function() {
+				var loginFormVisible = false;
+				
+				var loginBox = $('quickLoginBox');
+				var loginButton = $('loginButton');
+				
+				if (loginButton && loginBox) {
+					loginBox.setStyle('left: ' + loginButton.cumulativeOffset()[0] + 'px; top: ' + (loginButton.cumulativeOffset()[1] + loginButton.getHeight() + 5) + 'px; display: none');
+					loginBox.removeClassName('hidden');
+				}
+				
+				function showLoginForm() {
+					
+					
+					if (loginBox) {
+						if (loginBox.visible()) {
+							new Effect.Parallel([
+								new Effect.BlindUp(loginBox, { duration: 0.3 }),
+								new Effect.Fade(loginBox, { duration: 0.3 })
+							], { duration: 0.3 });
+							//loginBox.fade({ duration: 0.3 });
+							loginFormVisible = false;
+						}
+						else {
+							new Effect.Parallel([
+								new Effect.BlindDown(loginBox, { duration: 0.3 }),
+								new Effect.Appear(loginBox, { duration: 0.3 })
+							], { duration: 0.3 });
+							//loginBox.appear({ duration: 0.3 });
+							loginFormVisible = true;
+						}
+					}
+					
+					return false;
+				}
+				
+				document.getElementById('loginButton').onclick = function() { return showLoginForm(); };
+				document.getElementById('loginButton').ondblclick = function() { document.location.href = fixURL('index.php?form=UserLogin{@SID_ARG_2ND_NOT_ENCODED}'); };
+				document.getElementById('quickLoginUsername').onfocus = function() { if (this.value == '{lang}wcf.user.username{/lang}') this.value=''; };
+				document.getElementById('quickLoginUsername').onblur = function() { if (this.value == '') this.value = '{lang}wcf.user.username{/lang}'; };
+				document.getElementById('loginButtonImage').src = document.getElementById('loginButtonImage').src.replace(/loginS\.png/, 'loginOptionsS.png');
+			});
+			//]]>
+		</script>
+	{/if}
+	
 	<div id="header">
 		<div id="logo">
 			<div class="logoInner">
@@ -68,7 +120,7 @@
 					</a>
 				{elseif $this->getStyle()->getVariable('page.logo.image.application.use') == 1}
 					<a href="index.php?page=Index{@SID_ARG_2ND}" class="pageLogo">
-						<img src="{@RELATIVE_WBB_DIR}images/wbb3-header-logo.png" title="{lang}{PAGE_TITLE}{/lang}" alt="" />
+						<img src="{@RELATIVE_CP_DIR}images/cp-header-logo.png" title="{lang}{PAGE_TITLE}{/lang}" alt="" />
 					</a>
 				{/if}
 			</div>
@@ -89,6 +141,13 @@
 		{/if}
 		
 	{/if}
+	{if OFFLINE == 1 && $this->user->getPermission('user.cp.canViewDLDBOffline')}
+		<div class="warning">
+			{lang}cp.global.offline{/lang}
+			<p>{if OFFLINE_MESSAGE_ALLOW_HTML}{@OFFLINE_MESSAGE}{else}{@OFFLINE_MESSAGE|htmlspecialchars|nl2br}{/if}</p>
+		</div>
+	{/if}
 {/capture}
 </div>
 <div id="mainContainer">
+{if $additionalHeaderContents|isset}{@$additionalHeaderContents}{/if}
