@@ -1,19 +1,19 @@
 <?php
-/*
- * +-----------------------------------------+
- * | Copyright (c) 2009 Tobias Friebel		 |
- * +-----------------------------------------+
- * | Authors: Tobias Friebel <TobyF@Web.de>  |
- * +-----------------------------------------+
- *
- * Project: WCF Control Panel
- *
- * $Id$
- */
+// wcf imports
+require_once(WCF_DIR . 'lib/page/util/menu/PageMenuContainer.class.php');
+require_once(WCF_DIR . 'lib/page/util/menu/UserCPMenuContainer.class.php');
+require_once(WCF_DIR . 'lib/system/style/StyleManager.class.php');
 
-require_once (WCF_DIR . 'lib/page/util/menu/PageMenuContainer.class.php');
-require_once (WCF_DIR . 'lib/page/util/menu/UserCPMenuContainer.class.php');
-require_once (WCF_DIR . 'lib/system/style/StyleManager.class.php');
+/**
+ * This class extends the main WCF class by WCFCP specific functions.
+ *
+ * @author		Tobias Friebell
+ * @copyright	2009-2010 Tobias Friebel
+ * @license		LGPL
+ * @package		com.toby.cp
+ * @subpackage	system
+ * @category	WCFCP
+ */
 
 class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 {
@@ -49,7 +49,7 @@ class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 	}
 
 	/**
-	 * Initialises the template engine.
+	 * @see WCF::initTPL()
 	 */
 	protected function initTPL()
 	{
@@ -80,7 +80,7 @@ class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 					{
 						if ($_REQUEST[$type] == $name)
 						{
-							$showOfflineError= false;
+							$showOfflineError = false;
 							break 2;
 						}
 					}
