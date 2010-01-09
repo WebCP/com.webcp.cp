@@ -15,6 +15,25 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 {
 	public $tagName = 'jobhandlertask';
 	public $tableName = 'jobhandler_task';
+	private $cp_n = '1_1';
+	
+	/**
+	 * will create our CP_N, this works in every case
+	 * this PIP operates without CP_N and uses the current parent instead (like SqlPackageInstallationPlugin)
+	 */
+	private function getCP_N()
+	{
+		$standalonePackage = $this->installation->getPackage();
+		
+		if ($standalonePackage->getParentPackageID()) 
+		{
+			// package is a plugin; get parent package
+			$standalonePackage = $standalonePackage->getParentPackage();
+		}
+			
+		//this is our CP_N
+		$this->cp_n = WCF_N.'_'.$standalonePackage->getInstanceNo();
+	}
 
 	/** 
 	 * @see PackageInstallationPlugin::install()
@@ -30,6 +49,8 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 		
 		// Create an array with the data blocks (import or delete) from the xml file.
 		$xml = $xml->getElementTree('data');
+		
+		$this->getCP_N();
 
 		// Loop through the array and install or uninstall cronjobs.
 		foreach ($xml['children'] as $block)
@@ -76,7 +97,7 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 						if (isset($item['priority']))
 							$priority = $item['priority'];
 							
-						$sql = "INSERT INTO		wcf" . WCF_N . "_jobhandler_task 
+						$sql = "INSERT INTO		cp" . $this->cp_n . "_jobhandler_task 
 												(jobhandler, nextExec, volatile, priority, data, packageID) 
 								VALUES 			('" . escapeString($jobhandler) . "',
 												'" . escapeString($nextExec) . "',
@@ -96,7 +117,7 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 				{
 					if ($this->installation->getAction() == 'update')
 					{
-						$sql = "DELETE FROM	wcf" . WCF_N . "_jobhandler_task
+						$sql = "DELETE FROM	cp" . $this->cp_n . "_jobhandler_task
 								WHERE		packageID = ".$this->installation->getPackageID();
 						WCF::getDB()->sendQuery($sql);
 					}
@@ -112,9 +133,11 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 	{
 		// call hasUninstall event
 		EventHandler::fireAction($this, 'hasUninstall');
+		
+		$this->getCP_N();
 
 		$sql = "SELECT	COUNT(*) AS count
-				FROM	wcf" . WCF_N . "_jobhandler_task
+				FROM	cp" . $this->cp_n . "_jobhandler_task
 				WHERE	packageID = ".$this->installation->getPackageID();
 		$installationCount = WCF::getDB()->getFirstRow($sql);
 		return $installationCount['count'];
@@ -128,7 +151,9 @@ class JobHandlerTaskPackageInstallationPlugin extends AbstractXMLPackageInstalla
 		// call uninstall event
 		EventHandler::fireAction($this, 'uninstall');
 		
-		$sql = "DELETE FROM	wcf" . WCF_N . "_jobhandler_task
+		$this->getCP_N();
+		
+		$sql = "DELETE FROM	cp" . $this->cp_n . "_jobhandler_task
 				WHERE		packageID = ".$this->installation->getPackageID();
 		WCF::getDB()->sendQuery($sql);
 	}

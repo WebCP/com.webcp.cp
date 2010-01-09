@@ -29,8 +29,8 @@
 		<requiredpackage>com.woltlab.wcf.data.feed.reader</requiredpackage>
 		<!-- <requiredpackage file="requirements/com.toby.inputvalidation.tar.gz">com.toby.inputvalidation</requiredpackage>
 		<requiredpackage file="requirements/com.toby.wcf.userloginsecurity.tar.gz">com.toby.wcf.userloginsecurity</requiredpackage> -->
-		<requiredpackage file="requirements/com.toby.wcf.userlog.tar.gz">com.toby.wcf.userlog</requiredpackage>
-		<requiredpackage file="requirements/com.toby.templatemodifier.float.tar.gz">com.toby.templatemodifier.float</requiredpackage>
+		<requiredpackage file="requirements/com.toby.wcf.userlog.tar">com.toby.wcf.userlog</requiredpackage>
+		<requiredpackage file="requirements/com.toby.templatemodifier.float.tar">com.toby.templatemodifier.float</requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">
