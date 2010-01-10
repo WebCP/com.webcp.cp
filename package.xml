@@ -5,9 +5,9 @@
 	<packageInformation>
 		<packageName>WCF Controlpanel</packageName>
 		<packageDescription>Ein Servercontrolpanel, inspiriert von SysCP</packageDescription>
-		<version>0.5.3-beta</version>
+		<version>0.6.0-beta</version>
 		<standalone>1</standalone>
-		<date>2010-01-03</date>
+		<date>2010-01-10</date>
 	</packageInformation>
 
 	<authorInformation>
