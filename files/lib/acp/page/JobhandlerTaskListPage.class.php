@@ -48,7 +48,7 @@ class JobhandlerTaskListPage extends SortablePage
 	protected function readJobhandler()
 	{
 		$sql = "SELECT		jobhandler.*
-				FROM		wcf" . WCF_N . "_jobhandler_task jobhandler,
+				FROM		cp" . CP_N . "_jobhandler_task jobhandler,
 							wcf" . WCF_N . "_package_dependency package_dependency
 				WHERE 		jobhandler.packageID = package_dependency.dependency
 				AND 		package_dependency.packageID = " . PACKAGE_ID . "
@@ -82,7 +82,7 @@ class JobhandlerTaskListPage extends SortablePage
 		
 		// count cronjobs
 		$sql = "SELECT	COUNT(*) AS count
-				FROM	wcf" . WCF_N . "_jobhandler_task jobhandler,
+				FROM	cp" . CP_N . "_jobhandler_task jobhandler,
 						wcf" . WCF_N . "_package_dependency package_dependency
 				WHERE 	jobhandler.packageID = package_dependency.dependency
 				AND 	package_dependency.packageID = ".PACKAGE_ID;
