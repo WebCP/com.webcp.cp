@@ -4,7 +4,7 @@
 
 	{include file='headInclude' sandbox=false}
 </head>
-<body>
+<body{if $templateName|isset} id="tpl{$templateName|ucfirst}"{/if}>
 {include file='header' sandbox=false}
 
 <div id="main">

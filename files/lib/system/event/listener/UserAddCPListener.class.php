@@ -35,14 +35,54 @@ class UserAddCPListener implements EventListener
 				{
 					$postFix = intval(str_replace(USER_PREFIX, '', $postFix['name']));
 					$eventObj->username = USER_PREFIX . ++$postFix;
-				}	
+				}
+
+				$eventObj->adminname = WCF :: getUser()->username;
+				$eventObj->adminID = WCF :: getUser()->userID;
+				$eventObj->user->isCustomer = 0;
 			}
+			else
+			{
+				$u = new User($this->user->adminID);
+				$eventObj->adminname = $u->username;
+				$eventObj->adminID = $u->userID;
+			}
+		}
+		elseif ($eventName == 'readFormParameters')
+		{
+			if (isset($_POST['adminname'])) $eventObj->adminname = StringUtil::trim($_POST['adminname']);
+			if (isset($_POST['isCustomer'])) $eventObj->isCustomer = intval($_POST['isCustomer']);
+			else $eventObj->isCustomer = 0;
 		}
 		elseif ($eventName == 'validate')
 		{
 			if (!preg_match('/^[a-z0-9\-_]+$/i', $eventObj->username))
 			{
 				$eventObj->errorType['username'] = 'notValid';
+			}
+			
+			if (!WCF :: getUser()->getPermission('admin.general.isSuperAdmin'))
+			{
+				try 
+				{
+					// get admin
+					$user = new UserSession(null, null, $eventObj->adminname);
+					if (!$user->userID) 
+					{
+						throw new UserInputException('username', 'notFound');
+					}
+					
+					if (!$user->getPermission('admin.general.canUseAcp'))
+					{
+						throw new UserInputException('username', 'notValid');
+					}
+						
+					$eventObj->adminID = $user->userID;
+				}
+				catch (UserInputException $e) 
+				{
+					$this->errorType[$e->getType()] = $e->getType();
+				}
 			}
 		}
 		elseif ($eventName == 'saved')
@@ -52,20 +92,30 @@ class UserAddCPListener implements EventListener
 				// create cp user record
 				$sql = "INSERT IGNORE INTO	cp" . CP_N . "_user
 								(userID,
+								 adminID,
+								 isCustomer,
 								 cpLastActivityTime,
 								 homedir,
 								 guid
 								)
 						VALUES	(" . $eventObj->user->userID . ",
+								 " . $eventObj->adminID . ",
+								 " . $eventObj->user->isCustomer . ",
 								 " . TIME_NOW . ",
 								'" . CPUtils :: getHomeDir($eventObj->user->username) . "',
 								 " . CPUtils :: getNewGUID() . 
 								 ")";
 				WCF :: getDB()->sendQuery($sql);
 				
-				if ($eventObj->user->isCustomer == 1)
+				if ($eventObj->user->isCustomer)
 					JobhandlerUtils :: addJob('createhome', $eventObj->user->userID, array(), 'asap', 100);
 			}
+		}
+		elseif ($eventName == 'assignVariables')
+		{
+			WCF :: getTPL()->assign('adminname', $eventObj->adminname);
+			WCF :: getTPL()->assign('isCustomer', $eventObj->user->isCustomer);
+			WCF :: getTPL()->append('additionalFields', WCF :: getTPL()->fetch('userAddAdmin'));
 		}
 	}
 }

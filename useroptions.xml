@@ -3,61 +3,83 @@
 <data>
 	<import>
 		<categories>
+			<category name="profile.data">
+				<parent>profile</parent>
+			</category>
+			<category name="profile.company">
+				<parent>profile</parent>
+			</category>
+			<category name="profile.person">
+				<parent>profile</parent>
+			</category>
 			<category name="profile.address">
 				<parent>profile</parent>
 			</category>
+			<category name="profile.contact">
+				<parent>profile</parent>
+			</category>
+			
 			<category name="account">
 			</category>
-			<category name="account.service">
+			<category name="account.disk">
 				<parent>account</parent>
 			</category>
 		</categories>
 
 		<options>
-			<option name="isCustomer">
-				<categoryname>profile.address</categoryname>
-				<optiontype>boolean</optiontype>
+			<option name="customerID">
+				<categoryname>profile.data</categoryname>
+				<optiontype>text</optiontype>
 				<visible>0</visible>
 				<editable>3</editable>
 			</option>
+			<option name="customerStart">
+				<categoryname>profile.data</categoryname>
+				<optiontype>date</optiontype>
+				<visible>0</visible>
+				<editable>3</editable>
+			</option>
+			<option name="customerEnd">
+				<categoryname>profile.data</categoryname>
+				<optiontype>date</optiontype>
+				<visible>0</visible>
+				<editable>3</editable>
+			</option>
+			
+			<option name="company">
+				<categoryname>profile.company</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>3</editable>
+			</option>
+			<option name="ustID">
+				<categoryname>profile.company</categoryname>
+				<optiontype>text</optiontype>
+				<visible>0</visible>
+				<editable>0</editable>
+			</option>
+			
 			<option name="title">
-				<categoryname>profile.address</categoryname>
+				<categoryname>profile.person</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
 				<editable>3</editable>
 			</option>
 			<option name="firstname">
-				<categoryname>profile.address</categoryname>
+				<categoryname>profile.person</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
 				<editable>3</editable>
 				<required>1</required>
 			</option>
 			<option name="lastname">
-				<categoryname>profile.address</categoryname>
+				<categoryname>profile.person</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
 				<editable>3</editable>
 				<required>1</required>
 			</option>
-			<option name="customerID">
-				<categoryname>profile.address</categoryname>
-				<optiontype>text</optiontype>
-				<visible>0</visible>
-				<editable>3</editable>
-			</option>
-			<option name="company">
-				<categoryname>profile.address</categoryname>
-				<optiontype>text</optiontype>
-				<visible>0</visible>
-				<editable>3</editable>
-			</option>
-			<option name="ustID">
-				<categoryname>profile.address</categoryname>
-				<optiontype>text</optiontype>
-				<visible>0</visible>
-				<editable>0</editable>
-			</option>
+			
 			<option name="street">
 				<categoryname>profile.address</categoryname>
 				<optiontype>text</optiontype>
@@ -86,29 +108,30 @@
 				<editable>0</editable>
 				<required>1</required>
 			</option>
+			
 			<option name="phone">
-				<categoryname>profile.address</categoryname>
+				<categoryname>profile.contact</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
 				<editable>0</editable>
 				<required>1</required>
 			</option>
 			<option name="fax">
-				<categoryname>profile.address</categoryname>
+				<categoryname>profile.contact</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
 				<editable>0</editable>
 			</option>
 
 			<option name="diskspace">
-				<categoryname>account.service</categoryname>
+				<categoryname>account.disk</categoryname>
 				<optiontype>integer</optiontype>
 				<visible>0</visible>
 				<editable>3</editable>
 				<defaultvalue>500</defaultvalue>
 			</option>
 			<option name="diskspaceUsed">
-				<categoryname>account.service</categoryname>
+				<categoryname>account.disk</categoryname>
 				<optiontype>float</optiontype>
 				<visible>0</visible>
 				<editable>4</editable>
