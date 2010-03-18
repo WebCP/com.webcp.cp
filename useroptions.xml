@@ -50,7 +50,7 @@
 				<categoryname>profile.company</categoryname>
 				<optiontype>text</optiontype>
 				<visible>0</visible>
-				<editable>3</editable>
+				<editable>0</editable>
 			</option>
 			<option name="ustID">
 				<categoryname>profile.company</categoryname>
