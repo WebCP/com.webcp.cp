@@ -51,8 +51,8 @@ class UserAddCPListener implements EventListener
 		elseif ($eventName == 'readFormParameters')
 		{
 			if (isset($_POST['adminname'])) $eventObj->adminname = StringUtil::trim($_POST['adminname']);
-			if (isset($_POST['isCustomer'])) $eventObj->isCustomer = intval($_POST['isCustomer']);
-			else $eventObj->isCustomer = 0;
+			if (isset($_POST['isCustomer'])) $eventObj->user->isCustomer = intval($_POST['isCustomer']);
+			else $eventObj->user->isCustomer = 0;
 		}
 		elseif ($eventName == 'validate')
 		{
