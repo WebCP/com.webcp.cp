@@ -24,6 +24,12 @@ class PathSuggestPage extends AbstractPage
 		parent :: readParameters();
 
 		$this->path = WCF :: getUser()->homeDir;
+		
+		if (isset($_REQUEST['showFullPath']))
+		{
+			if (WCF :: getUser()->checkPermission('admin.general.canUseAcp'))
+				$this->path = HOMEDIR_PREFIX;
+		}
 
 		if (isset($_REQUEST['query']))
 		{
@@ -34,7 +40,8 @@ class PathSuggestPage extends AbstractPage
 			$path = FileUtil :: getRealPath($this->path . '/' . $this->query);
 			$this->path = dirname($path . '.');
 
-			$this->query = str_replace($this->path . '/', '', $path);
+			if (!isset($_REQUEST['showFullPath']))
+				$this->query = str_replace($this->path . '/', '', $path);
 		}
 	}
 
