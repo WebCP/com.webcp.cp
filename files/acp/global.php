@@ -12,7 +12,6 @@
  */
 
 define('RELATIVE_CP_DIR', '../');
-define('IS_ACP', true);
 
 $packageDirs = array();
 require_once(dirname(dirname(__FILE__)).'/config.inc.php');

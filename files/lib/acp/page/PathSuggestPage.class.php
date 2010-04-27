@@ -5,7 +5,7 @@
  *
  * Lizenz: GPL
  *
- * $Id$
+ * $Id: PathSuggestPage.class.php 80 2010-04-11 18:08:28Z toby $
  */
 
 require_once (WCF_DIR . 'lib/page/AbstractPage.class.php');
@@ -23,8 +23,8 @@ class PathSuggestPage extends AbstractPage
 	{
 		parent :: readParameters();
 
-		$this->path = WCF :: getUser()->homeDir;
-
+		$this->path = HOMEDIR_PREFIX;
+				
 		if (isset($_REQUEST['query']))
 		{
 			$this->query = StringUtil :: trim($_REQUEST['query']);
@@ -33,8 +33,6 @@ class PathSuggestPage extends AbstractPage
 
 			$path = FileUtil :: getRealPath($this->path . '/' . $this->query);
 			$this->path = dirname($path . '.');
-
-			$this->query = str_replace($this->path . '/', '', $path);
 		}
 	}
 
@@ -59,7 +57,6 @@ class PathSuggestPage extends AbstractPage
 				continue;
 
 			$dDir = $this->path . '/' . $dir . '/';
-			$dDir = str_replace(WCF :: getUser()->homeDir, '', $dDir);
 			echo "<path><![CDATA[" . StringUtil :: escapeCDATA($dDir) . "]]></path>\n";
 		}
 
