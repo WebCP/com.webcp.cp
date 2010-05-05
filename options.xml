@@ -48,11 +48,8 @@
 		        	<categoryname>cp.backendpaths.createpaths</categoryname>
 					<optiontype>textarea</optiontype>
 		        	<defaultvalue>d:{HOMEDIR_PREFIX}/{USERNAME}:0555:{GUID}.{GUID}
-d:{HOMEDIR_PREFIX}/{USERNAME}/webalizer:0555:{GUID}.{GUID}
-d:{HOMEDIR_PREFIX}/{USERNAME}/logfiles:0750:www-data.{GUID}
-l:/var/log/syscp/{USERNAME}->{HOMEDIR_PREFIX}/{USERNAME}/logfiles:0777:www-data.www-data
-d:{HOMEDIR_PREFIX}/{USERNAME}/tmp:0777:{GUID}.{GUID}
-d:{HOMEDIR_PREFIX}/{USERNAME}/files:0777:{GUID}.{GUID}</defaultvalue>
+d:{HOMEDIR}/tmp:0777:{GUID}.{GUID}
+d:{HOMEDIR}/files:0777:{GUID}.{GUID}</defaultvalue>
 		    	</option>
 		    	<option name="default_count_paths">
 		    		<categoryname>cp.backendpaths.countpaths</categoryname>
