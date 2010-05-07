@@ -2,9 +2,9 @@
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/language.xsd" languagecode="de">
 	<category name="wcf.acp.package">
-		<item name="wcf.acp.package.step.install.cpPackageInstallationPlugin"><![CDATA[WCFCP wird installiert ...]]></item>
-		<item name="wcf.acp.package.step.uninstall.cpPackageInstallationPlugin"><![CDATA[WCFCP wird deinstalliert ...]]></item>
-		<item name="wcf.acp.package.step.update.cpPackageInstallationPlugin"><![CDATA[WCFCP wird aktualisiert ...]]></item>
+		<item name="wcf.acp.package.step.install.cpPackageInstallationPlugin"><![CDATA[WebP wird installiert ...]]></item>
+		<item name="wcf.acp.package.step.uninstall.cpPackageInstallationPlugin"><![CDATA[WebCP wird deinstalliert ...]]></item>
+		<item name="wcf.acp.package.step.update.cpPackageInstallationPlugin"><![CDATA[WebCP wird aktualisiert ...]]></item>
 	</category>
 
 	<category name="wcf.acp.option">
@@ -37,7 +37,44 @@
 		<!-- CP -->
 		
 	</category>
+	
 	<category name="wcf.user.option">
 		<item name="wcf.user.option.diskspace.values"><![CDATA[<span{if $used > $avail} class="red"{/if}>{$used|float}</span> / {$avail}]]></item>
 	</category>		
+	
+	<category name="cp.global">
+		<item name="cp.global.copyright"><![CDATA[<a href="http://dev.hugin-hosting.de"><strong>WCP - Web Controlpanel&reg;{if SHOW_VERSION_NUMBER} {@PACKAGE_VERSION}{/if}</strong>, entwickelt von <strong>Toby</strong></a>]]></item>
+		<item name="cp.global.systemMessage"><![CDATA[Systemmitteilung]]></item>
+		<item name="cp.global.offline"><![CDATA[System außer Betrieb]]></item>
+	</category>
+
+	<category name="cp.header">
+		<item name="cp.header.userMenu.logout"><![CDATA[Abmelden]]></item>
+		<item name="cp.header.userMenu.profile"><![CDATA[Eigene Daten]]></item>
+		<item name="cp.header.userMenu.acp"><![CDATA[Administration]]></item>
+		<item name="cp.header.userMenu.login"><![CDATA[Anmelden]]></item>
+		<item name="cp.header.userMenu.register"><![CDATA[Registrieren]]></item>
+		<item name="cp.header.userMenu.changeLanguage"><![CDATA[Sprache ändern]]></item>
+		<item name="cp.header.userNote.guest"><![CDATA[Sie sind nicht angemeldet]]></item>
+		<item name="cp.header.userNote.user"><![CDATA[Angemeldet als <a href="index.php?page=User&amp;userID={@$this->user->userID}{@SID_ARG_2ND}">{$this->user->username}</a>.]]></item>
+	</category>
+
+	<category name="cp.index">
+		<item name="cp.index.title"><![CDATA[Titel]]></item>
+		<item name="cp.index.address"><![CDATA[Kundendaten]]></item>
+		<item name="cp.index.account"><![CDATA[Accountdaten]]></item>
+	</category>
+
+	<category name="wcf.user.name">
+		<item name="wcf.user.name"><![CDATA[Name]]></item>
+	</category>
+	
+	<category name="wcf.user.option">
+		<item name="wcf.user.option.company"><![CDATA[Firma]]></item>
+		<item name="wcf.user.option.street"><![CDATA[Straße]]></item>
+		<item name="wcf.user.option.city"><![CDATA[Ort]]></item>
+		<item name="wcf.user.option.zipCode"><![CDATA[Postleitzahl]]></item>
+		<item name="wcf.user.option.customerID"><![CDATA[Kundennummer]]></item>
+	</category>
+		
 </language>

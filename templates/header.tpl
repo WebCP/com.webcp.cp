@@ -8,7 +8,7 @@
 	<div id="userPanel" class="userPanel">
 		<div class="userPanelInner">
 			<p id="userNote">
-				{if $this->user->userID != 0}{lang}cp.header.userNote.user{/lang}{else}{lang}wbb.header.userNote.guest{/lang}{/if}
+				{if $this->user->userID != 0}{lang}cp.header.userNote.user{/lang}{else}{lang}cp.header.userNote.guest{/lang}{/if}
 			</p>
 			<div id="userMenu">
 				<ul>
