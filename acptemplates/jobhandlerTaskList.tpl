@@ -4,7 +4,7 @@
 <div class="mainHeadline">
 	<img src="{@RELATIVE_WCF_DIR}icon/cronjobsL.png" alt="" />
 	<div class="headlineContainer">
-		<h2>{lang}cp.acp.jobhandlertask.list{/lang}</h2>
+		<h2>{lang}cp.acp.jobhandler.list{/lang}</h2>
 		<p>{lang}cp.acp.jobhandler.lastRun{/lang}</p>
 	</div>
 </div>
@@ -14,7 +14,7 @@
 </div>
 
 <div class="border titleBarPanel">
-	<div class="containerHead"><h3>{lang}cp.acp.jobhandlertask.list.count{/lang}</h3></div>
+	<div class="containerHead"><h3>{lang}cp.acp.jobhandler.listcount{/lang}</h3></div>
 </div>
 <div class="border borderMarginRemove">
 	<table class="tableList">

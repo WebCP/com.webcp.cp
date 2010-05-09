@@ -117,7 +117,7 @@ class JobhandlerTaskListPage extends SortablePage
 	public function show()
 	{
 		// set active menu item.
-		CPACP :: getMenu()->setActiveMenuItem('cp.acp.menu.link.jobhandlertasks.view');
+		CPACP :: getMenu()->setActiveMenuItem('cp.acp.menu.link.jobhandler');
 		
 		parent :: show();
 	}

@@ -19,7 +19,7 @@
 							{if $errorType.adminname|isset}
 								<p class="innerError">
 									{if $errorType.adminname == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
-									{if $errorType.adminname == 'notValid'}{lang}cp.global.invalidAdmin{/lang}{/if}
+									{if $errorType.adminname == 'notValid'}{lang}cp.global.error.invalidAdmin{/lang}{/if}
 								</p>
 							{/if}
 						</div>

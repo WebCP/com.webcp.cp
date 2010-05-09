@@ -1,6 +1,6 @@
 {include file="documentHeader"}
 <head>
-	<title>{lang}cp.index.title{/lang} - {PAGE_TITLE}</title>
+	<title>{lang}cp.header.menu.start{/lang} - {PAGE_TITLE}</title>
 
 	{include file='headInclude' sandbox=false}
 </head>
@@ -39,7 +39,7 @@
 				<td>{$this->user->street}</td>
 			</tr>
 			<tr class="container-2">
-				<td>{lang}wcf.user.option.zipCode{/lang}/{lang} wcf.user.option.city{/lang}</td>
+				<td>{lang}wcf.user.option.zipCode{/lang} {lang}wcf.user.option.city{/lang}</td>
 				<td>{$this->user->zipCode} {$this->user->city}</td>
 			</tr>
 			<tr class="container-1">

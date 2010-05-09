@@ -2,9 +2,9 @@
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/language.xsd" languagecode="de">
 	<category name="wcf.acp.package">
-		<item name="wcf.acp.package.step.install.cpPackageInstallationPlugin"><![CDATA[WebP wird installiert ...]]></item>
-		<item name="wcf.acp.package.step.uninstall.cpPackageInstallationPlugin"><![CDATA[WebCP wird deinstalliert ...]]></item>
-		<item name="wcf.acp.package.step.update.cpPackageInstallationPlugin"><![CDATA[WebCP wird aktualisiert ...]]></item>
+		<item name="wcf.acp.package.step.install.cpPackageInstallationPlugin"><![CDATA[WCP wird installiert ...]]></item>
+		<item name="wcf.acp.package.step.uninstall.cpPackageInstallationPlugin"><![CDATA[WCP wird deinstalliert ...]]></item>
+		<item name="wcf.acp.package.step.update.cpPackageInstallationPlugin"><![CDATA[WCP wird aktualisiert ...]]></item>
 	</category>
 
 	<category name="wcf.acp.option">
@@ -13,7 +13,7 @@
 		<item name="wcf.acp.option.show_clock.description"><![CDATA[Im Seitenfuß wird die aktuelle Uhrzeit angezeigt, wenn diese Option aktiviert ist.]]></item>
 
 		<!--  Version number -->
-		<item name="wcf.acp.option.show_version_number"><![CDATA[Versionsnummer der Download Database im Copyright-Hinweis anzeigen]]></item>
+		<item name="wcf.acp.option.show_version_number"><![CDATA[Versionsnummer im Copyright-Hinweis anzeigen]]></item>
 		<item name="wcf.acp.option.show_version_number.description"><![CDATA[Durch Aktivierung dieser Option wird die Versionsnummer im Copyright-Hinweis angezeigt.]]></item>
 
 		<!--  Style Auswahl -->
@@ -22,20 +22,59 @@
 
 		<!-- Cookie -->
 		<item name="wcf.acp.option.cookie_path"><![CDATA[Cookiepfad]]></item>
-		<item name="wcf.acp.option.cookie_path.description"><![CDATA[Der Cookiepfad wird absolut zum Document Root angegeben - also z.B. "/forum" für http://www.woltlab.com/forum.]]></item>
+		<item name="wcf.acp.option.cookie_path.description"><![CDATA[Der Cookiepfad wird absolut zum Document Root angegeben - also z.B. "/wcp" für http://www.test.com/wcp.]]></item>
 
 		<!-- Online/Offline -->
-		<item name="wcf.acp.option.category.offline.general"><![CDATA[WCFCP temporär deaktivieren]]></item>
+		<item name="wcf.acp.option.category.offline.general"><![CDATA[WCP temporär deaktivieren]]></item>
 		<item name="wcf.acp.option.category.offline.general.description"><![CDATA[]]></item>
-		<item name="wcf.acp.option.offline"><![CDATA[WCFCP deaktivieren]]></item>
-		<item name="wcf.acp.option.offline.description"><![CDATA[]]>Hier kann das WCFCP vorübergehend deaktiviert werden (z.B. für Wartungsarbeiten).</item>
+		<item name="wcf.acp.option.offline"><![CDATA[WCP deaktivieren]]></item>
+		<item name="wcf.acp.option.offline.description"><![CDATA[]]>Hier kann das WCP vorübergehend deaktiviert werden (z.B. für Wartungsarbeiten).</item>
 		<item name="wcf.acp.option.offline_message"><![CDATA[Deaktivierungshinweis]]></item>
-		<item name="wcf.acp.option.offline_message.description"><![CDATA[Eine Nachricht/Ein Hinweis, der während der Deaktivierung des WCFCP angezeigt wird]]></item>
+		<item name="wcf.acp.option.offline_message.description"><![CDATA[Eine Nachricht/Ein Hinweis, der während der Deaktivierung des WCP angezeigt wird]]></item>
 		<item name="wcf.acp.option.offline_message_allow_html"><![CDATA[HTML-Code im Hinweistext verwenden]]></item>
 		<item name="wcf.acp.option.offline_message_allow_html.description"><![CDATA[Durch Aktivierung dieser Option können Sie zur Formatierung des Textes auch HTML verwenden.]]></item>
 
 		<!-- CP -->
-		
+		<item name="wcf.acp.option.category.cp"><![CDATA[Web Control Panel]]></item>
+		<item name="wcf.acp.option.category.cp.description"><![CDATA[Basiseinstellungen für das WCP]]></item>
+		<item name="wcf.acp.option.category.cp.global"><![CDATA[Globale Einstellungen]]></item>
+		<item name="wcf.acp.option.category.cp.global.description"><![CDATA[Globale Einstellungen des WCPs]]></item>
+		<item name="wcf.acp.option.homedir_prefix"><![CDATA[Heimatverzeichnisprefix]]></item>
+		<item name="wcf.acp.option.homedir_prefix.description"><![CDATA[Hiermit wird festgelegt, welcher Pfad dem Benutzerverzeichnissen vorne angehängt werden soll. Mit /home/ sehen diese Pfade dann z.B. so aus: /home/mmustermann]]></item>
+		<item name="wcf.acp.option.user_prefix"><![CDATA[Benutzerprefix]]></item>
+		<item name="wcf.acp.option.user_prefix.description"><![CDATA[Falls Sie Ihren Benutzern keine individuellen Namen geben wollen, können Sie hier einstellen, mit was die generierten Namen beginnen sollen. Mit web_ sehen die Namen dann z.B. so aus: web_23]]></item>
+		<item name="wcf.acp.option.category.cp.backendpaths"><![CDATA[Pfade]]></item>
+		<item name="wcf.acp.option.category.cp.backendpaths.description"><![CDATA[Hier werden alle Dateisystem-Pfade definiert, die durch Hintergrundtasks benutzt werden]]></item>
+		<item name="wcf.acp.option.category.cp.backendpaths.createpaths"><![CDATA[Pfaderstellung]]></item>
+		<item name="wcf.acp.option.category.cp.backendpaths.createpaths.description"><![CDATA[Diese Dateisystempfade werden erstellt, wenn ein neuer Benutzer als Kunde aktiviert wird. Dabei gilt folgendes Format "Pfadtyp:Pfad:Rechte:Eigentümer.Gruppe". Pfadtyp kann d für Verzeichnis oder l für Link sein. Der Pfad kann alles sein, die Rechte werden immer Oktal angegeben, Eigentümer und Gruppe als Name oder Nummer. Es können auch Variablen verwendet werden, z.B. &#123;HOMEDIR&#125; für das Verzeichnis des anzulegenden Benutzers oder &#123;GUID&#125; für die User/Gruppen-ID des anzulegenden Benutzers.]]></item>
+		<item name="wcf.acp.option.default_create_paths"><![CDATA[Standard-Pfade]]></item>
+		<item name="wcf.acp.option.default_create_paths.description"><![CDATA[Diese Pfade werden für jeden neuen Benutzer angelegt.]]></item>
+		<item name="wcf.acp.option.category.cp.backendpaths.countpaths"><![CDATA[Pfade für Speicherplatzberechnung]]></item>
+		<item name="wcf.acp.option.category.cp.backendpaths.countpaths.description"><![CDATA[Diese Pfade werden berücksichtigt, wenn berechnet wird, wieviel Platz jeder Benutzer verbraucht hat. Dabei gilt folgendes Format "Pfad:auszuschließende Pfade (kommagetrennt)"]]></item>
+		<item name="wcf.acp.option.default_count_paths"><![CDATA[Standard-Pfade]]></item>
+		<item name="wcf.acp.option.default_count_paths.description"><![CDATA[Diese Pfade werden für jeden Benutzer täglich ausgewertet.]]></item>
+	</category>
+	
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.admin.user.canBecomeUser"><![CDATA[Kann Benutzer werden]]></item>
+		<item name="wcf.acp.group.option.admin.user.canBecomeUser.description"><![CDATA[Durch dieses Recht kann ein Administrator sich als einer seiner Benutzer ins System einloggen - ohne dafür das Passwort zu kennen.]]></item>
+		<item name="wcf.acp.group.option.admin.general.isSuperAdmin"><![CDATA[Ist Superadministrator]]></item>
+		<item name="wcf.acp.group.option.admin.general.isSuperAdmin.description"><![CDATA[Administratoren mit diesem Recht dürfen Benutzer anderen Administratoren zuordnen und haben noch andere, weitreichendere Rechte als normale Administratoren.]]></item>
+		<item name="wcf.acp.group.option.category.admin.cp"><![CDATA[ControlPanel]]></item>
+		<item name="wcf.acp.group.option.category.cp"><![CDATA[ControlPanel]]></item>
+	</category>
+	
+	<category name="wcf.user">
+		<item name="wcf.user.name"><![CDATA[Name]]></item>
+	</category>
+	
+	<category name="wcf.user.option">
+		<item name="wcf.user.option.company"><![CDATA[Firma]]></item>
+		<item name="wcf.user.option.street"><![CDATA[Straße]]></item>
+		<item name="wcf.user.option.city"><![CDATA[Ort]]></item>
+		<item name="wcf.user.option.zipCode"><![CDATA[Postleitzahl]]></item>
+		<item name="wcf.user.option.customerID"><![CDATA[Kundennummer]]></item>
+		<item name="wcf.user.option.diskspace"><![CDATA[Speicherplatz (benutzt/verfügbar):]]></item>
 	</category>
 	
 	<category name="wcf.user.option">
@@ -43,9 +82,15 @@
 	</category>		
 	
 	<category name="cp.global">
-		<item name="cp.global.copyright"><![CDATA[<a href="http://dev.hugin-hosting.de"><strong>WCP - Web Controlpanel&reg;{if SHOW_VERSION_NUMBER} {@PACKAGE_VERSION}{/if}</strong>, entwickelt von <strong>Toby</strong></a>]]></item>
+		<item name="cp.global.copyright"><![CDATA[<a href="http://dev.hugin-hosting.de"><strong>WCP - Web Controlpanel{if SHOW_VERSION_NUMBER} {@PACKAGE_VERSION}{/if}</strong>, entwickelt von <strong>Toby</strong></a>]]></item>
 		<item name="cp.global.systemMessage"><![CDATA[Systemmitteilung]]></item>
 		<item name="cp.global.offline"><![CDATA[System außer Betrieb]]></item>
+		<item name="cp.global.yes"><![CDATA[Ja]]></item>
+		<item name="cp.global.no"><![CDATA[Nein]]></item>
+	</category>
+		
+	<category name="cp.global.error">
+		<item name="cp.global.error.invalidAdmin"><![CDATA[Ungültiger Administrator]]></item>
 	</category>
 
 	<category name="cp.header">
@@ -58,23 +103,50 @@
 		<item name="cp.header.userNote.guest"><![CDATA[Sie sind nicht angemeldet]]></item>
 		<item name="cp.header.userNote.user"><![CDATA[Angemeldet als <a href="index.php?page=User&amp;userID={@$this->user->userID}{@SID_ARG_2ND}">{$this->user->username}</a>.]]></item>
 	</category>
+	
+	<category name="cp.header.menu">
+		<item name="cp.header.menu.start"><![CDATA[Übersicht]]></item>
+	</category>
 
 	<category name="cp.index">
 		<item name="cp.index.title"><![CDATA[Titel]]></item>
 		<item name="cp.index.address"><![CDATA[Kundendaten]]></item>
 		<item name="cp.index.account"><![CDATA[Accountdaten]]></item>
 	</category>
-
-	<category name="wcf.user.name">
-		<item name="wcf.user.name"><![CDATA[Name]]></item>
+	
+	<category name="cp.acp">
+		<item name="cp.acp.jumpToCP"><![CDATA[Zum WCP]]></item>
 	</category>
 	
-	<category name="wcf.user.option">
-		<item name="wcf.user.option.company"><![CDATA[Firma]]></item>
-		<item name="wcf.user.option.street"><![CDATA[Straße]]></item>
-		<item name="wcf.user.option.city"><![CDATA[Ort]]></item>
-		<item name="wcf.user.option.zipCode"><![CDATA[Postleitzahl]]></item>
-		<item name="wcf.user.option.customerID"><![CDATA[Kundennummer]]></item>
+	<category name="cp.acp.menu">
+		<item name="cp.acp.menu.link.jobhandler"><![CDATA[Hintergrund-Tasks]]></item>
+		<item name="cp.acp.menu.link"><![CDATA[WCP]]></item>
 	</category>
-		
+
+	<category name="cp.acp.jobhandler">
+		<item name="cp.acp.jobhandler.list"><![CDATA[Aktive Hintergrund-Tasks]]></item>
+		<item name="cp.acp.jobhandler.lastRun"><![CDATA[Letzter Lauf: {$lastRun|shorttime}]]></item>
+		<item name="cp.acp.jobhandler.listcount"><![CDATA[{$jobhandler|count} aktive Hintergrund-Tasks]]></item>
+		<item name="cp.acp.jobhandler.jobhandlerTaskID"><![CDATA[TaskID]]></item>
+		<item name="cp.acp.jobhandler.jobhandler"><![CDATA[Task-Name]]></item>
+		<item name="cp.acp.jobhandler.lastExec"><![CDATA[Letzte Ausführung]]></item>
+		<item name="cp.acp.jobhandler.nextExec"><![CDATA[Nächste Ausführung]]></item>
+		<item name="cp.acp.jobhandler.volatile"><![CDATA[Vergänglich]]></item>
+		<item name="cp.acp.jobhandler.data"><![CDATA[Parameter]]></item>
+		<item name="cp.acp.jobhandler.nextExec.asap"><![CDATA[Bald möglichst]]></item>
+		<item name="cp.acp.jobhandler.nextExec.hourchange"><![CDATA[Stundenwechsel]]></item>
+		<item name="cp.acp.jobhandler.nextExec.daychange"><![CDATA[Tageswechsel]]></item>
+		<item name="cp.acp.jobhandler.nextExec.weekchange"><![CDATA[Wochenwechsel]]></item>
+		<item name="cp.acp.jobhandler.nextExec.monthchange"><![CDATA[Monatswechsel]]></item>
+		<item name="cp.acp.jobhandler.nextExec.yearchange"><![CDATA[Jahreswechsel]]></item>
+	</category>
+
+	<category name="cp.user">
+		<item name="cp.user.general"><![CDATA[CP-Einstellungen]]></item>
+		<item name="cp.user.adminname"><![CDATA[Administrator]]></item>
+		<item name="cp.user.adminname.description"><![CDATA[Dieser Administrator ist für diesen Benutzer zuständig und kann diesen verwalten]]></item>
+		<item name="cp.user.isCustomer"><![CDATA[Ist Kunde]]></item>
+		<item name="cp.user.isCustomer.description"><![CDATA[Benutzer als Kunden aktivieren]]></item>
+	</category>
+
 </language>
