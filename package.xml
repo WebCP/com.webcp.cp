@@ -5,7 +5,7 @@
 	<packageInformation>
 		<packageName>Web ControlPanel</packageName>
 		<packageDescription>Ein Servercontrolpanel, inspiriert von SysCP</packageDescription>
-		<version>0.7.0-beta2</version>
+		<version>0.6.0-beta1</version>
 		<standalone>1</standalone>
 		<date>2010-04-11</date>
 	</packageInformation>
@@ -32,6 +32,13 @@
 		<requiredpackage file="requirements/com.toby.wcf.userlog.tar">com.toby.wcf.userlog</requiredpackage>
 		<requiredpackage file="requirements/com.toby.templatemodifier.float.tar">com.toby.templatemodifier.float</requiredpackage>
 	</requiredpackages>
+	
+	<optionalpackages>
+		<optionalpackage file="optionals/com.toby.cp.ftp.tar">com.toby.cp.ftp</optionalpackage>
+		<optionalpackage file="optionals/com.toby.cp.mysql.tar">com.toby.cp.mysql</optionalpackage>
+		<optionalpackage file="optionals/com.toby.cp.email.tar">com.toby.cp.email</optionalpackage>
+		<optionalpackage file="optionals/com.toby.cp.apache.tar">com.toby.cp.apache</optionalpackage>
+	</optionalpackages>
 
 	<instructions type="install">
 		<languages languagecode="de">de.xml</languages>
