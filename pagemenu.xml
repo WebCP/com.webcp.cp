@@ -3,7 +3,7 @@
 <data>
 	<import>
 		<pagemenuitem name="cp.header.menu.start">
-			<icon>icon/portalM.png</icon>
+			<icon>wcpM.png</icon>
 			<link>index.php</link>
 			<showorder>1</showorder>
 		</pagemenuitem>
