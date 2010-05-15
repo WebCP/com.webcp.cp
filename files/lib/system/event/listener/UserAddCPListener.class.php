@@ -43,7 +43,10 @@ class UserAddCPListener implements EventListener
 			}
 			else
 			{
-				$u = new User($this->user->adminID);
+				$cp = new CPUser($eventObj->user->userID);
+				$eventObj->user->isCustomer = $cp->isCustomer;
+				
+				$u = new User($cp->adminID);
 				$eventObj->adminname = $u->username;
 				$eventObj->adminID = $u->userID;
 			}
@@ -69,12 +72,12 @@ class UserAddCPListener implements EventListener
 					$user = new UserSession(null, null, $eventObj->adminname);
 					if (!$user->userID) 
 					{
-						throw new UserInputException('username', 'notFound');
+						throw new UserInputException('adminname', 'notFound');
 					}
 					
 					if (!$user->getPermission('admin.general.canUseAcp'))
 					{
-						throw new UserInputException('username', 'notValid');
+						throw new UserInputException('adminname', 'notValid');
 					}
 						
 					$eventObj->adminID = $user->userID;

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/language.xsd" languagecode="de">
+	
 	<category name="wcf.acp.package">
 		<item name="wcf.acp.package.step.install.cpPackageInstallationPlugin"><![CDATA[WCP wird installiert ...]]></item>
 		<item name="wcf.acp.package.step.uninstall.cpPackageInstallationPlugin"><![CDATA[WCP wird deinstalliert ...]]></item>
@@ -61,7 +62,9 @@
 		<item name="wcf.acp.group.option.admin.general.isSuperAdmin"><![CDATA[Ist Superadministrator]]></item>
 		<item name="wcf.acp.group.option.admin.general.isSuperAdmin.description"><![CDATA[Administratoren mit diesem Recht dürfen Benutzer anderen Administratoren zuordnen und haben noch andere, weitreichendere Rechte als normale Administratoren.]]></item>
 		<item name="wcf.acp.group.option.category.admin.cp"><![CDATA[ControlPanel]]></item>
+		<item name="wcf.acp.group.option.category.admin.cp.description"><![CDATA[]]></item>
 		<item name="wcf.acp.group.option.category.cp"><![CDATA[ControlPanel]]></item>
+		<item name="wcf.acp.group.option.category.cp.description"><![CDATA[]]></item>
 	</category>
 	
 	<category name="wcf.user">
@@ -69,12 +72,48 @@
 	</category>
 	
 	<category name="wcf.user.option">
+		<item name="wcf.user.option.category.profile.data"><![CDATA[Kundendaten]]></item>
+		<item name="wcf.user.option.customerID"><![CDATA[Kundennummer]]></item>
+		<item name="wcf.user.option.customerStart"><![CDATA[Kunde seit]]></item>
+		<item name="wcf.user.option.customerEnd"><![CDATA[Kunde bis]]></item>
+		<item name="wcf.user.option.customerID.description"><![CDATA[Die Kundennummer des Benutzers]]></item>
+		<item name="wcf.user.option.customerStart.description"><![CDATA[Seit diesem Datum ist dieser Benutzer Kunde (rein informelle Angabe).]]></item>
+		<item name="wcf.user.option.customerEnd.description"><![CDATA[Seit diesem Datum ist dieser Benutzer kein Kunde mehr (rein informelle Angabe).]]></item>
+	
+		<item name="wcf.user.option.category.profile.company"><![CDATA[Firmendaten]]></item>
 		<item name="wcf.user.option.company"><![CDATA[Firma]]></item>
+		<item name="wcf.user.option.ustID"><![CDATA[UstID]]></item>
+		<item name="wcf.user.option.company.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.ustID.description"><![CDATA[Umsatzsteuernummer]]></item>
+		
+		<item name="wcf.user.option.category.profile.person"><![CDATA[Name]]></item>
+		<item name="wcf.user.option.title"><![CDATA[Anrede + Titel]]></item>
+		<item name="wcf.user.option.firstname"><![CDATA[Vorname]]></item>
+		<item name="wcf.user.option.lastname"><![CDATA[Nachname]]></item>
+		<item name="wcf.user.option.title.description"><![CDATA[Anrede (Herr/Frau) plus etwaige Titel (Dr./Prof.)]]></item>
+		<item name="wcf.user.option.firstname.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.lastname.description"><![CDATA[]]></item>
+		
+		<item name="wcf.user.option.category.profile.address"><![CDATA[Adressdaten]]></item>
 		<item name="wcf.user.option.street"><![CDATA[Straße]]></item>
 		<item name="wcf.user.option.city"><![CDATA[Ort]]></item>
 		<item name="wcf.user.option.zipCode"><![CDATA[Postleitzahl]]></item>
-		<item name="wcf.user.option.customerID"><![CDATA[Kundennummer]]></item>
-		<item name="wcf.user.option.diskspace"><![CDATA[Speicherplatz (benutzt/verfügbar):]]></item>
+		<item name="wcf.user.option.country"><![CDATA[Land]]></item>
+		<item name="wcf.user.option.street.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.city.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.zipCode.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.country.description"><![CDATA[]]></item>
+		
+		<item name="wcf.user.option.category.profile.contact"><![CDATA[Kontaktdaten]]></item>
+		<item name="wcf.user.option.phone"><![CDATA[Telefonnummer]]></item>
+		<item name="wcf.user.option.fax"><![CDATA[Faxnummer]]></item>
+		<item name="wcf.user.option.phone.description"><![CDATA[Ist wegen der notwendigen Angaben bei Domainregistrierungen Pflicht.]]></item>
+		<item name="wcf.user.option.fax.description"><![CDATA[Altmodisches Kommunikationsmittel, das noch immer Verwendung findet für Vertragsabschlüsse und dergleichen.]]></item>
+
+		<item name="wcf.user.option.category.account"><![CDATA[WCP-Accountdaten]]></item>
+		<item name="wcf.user.option.category.account.disk"><![CDATA[Speicherplatz]]></item>
+		<item name="wcf.user.option.diskspace"><![CDATA[Speicherplatz (benutzt/verfügbar)]]></item>
+		<item name="wcf.user.option.diskspace.description"><![CDATA[Wieviel Speicherplatz steht diesem Benutzer zur Verfügung?]]></item>
 	</category>
 	
 	<category name="wcf.user.option">
