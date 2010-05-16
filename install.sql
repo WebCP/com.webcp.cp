@@ -7,16 +7,6 @@ CREATE TABLE cp1_1_user (
   	homeDir varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE cp1_1_diskspace (
-  	diskspaceID int(11) unsigned NOT NULL auto_increment PRIMARY KEY,
-  	userID int(11) NOT NULL default '0',
-  	day date NOT NULL,
-  	diskspace bigint(30) unsigned NOT NULL default '0',
-  	mailspace bigint(30) unsigned NOT NULL default '0',
-  	mysqlspace bigint(30) unsigned NOT NULL default '0',
-  	KEY userID (userID)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
 CREATE TABLE cp1_1_jobhandler_task (
 	jobhandlerTaskID int(10) unsigned NOT NULL auto_increment,
 	jobhandler varchar(20) NOT NULL,
