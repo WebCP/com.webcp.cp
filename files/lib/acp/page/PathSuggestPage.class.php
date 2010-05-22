@@ -23,7 +23,7 @@ class PathSuggestPage extends AbstractPage
 	{
 		parent :: readParameters();
 
-		$this->path = HOMEDIR_PREFIX;
+		$this->path = '';
 				
 		if (isset($_REQUEST['query']))
 		{
@@ -50,10 +50,10 @@ class PathSuggestPage extends AbstractPage
 
 		foreach ($dirs as $dir)
 		{
-			if ($dir == '.' || $dir == '..' || !is_dir($this->path . '/' . $dir))
+			if (stripos($dir, '.') === 0 || !is_dir($this->path . '/' . $dir))
 				continue;
 
-			if ($this->query && stripos($dir, $this->query) !== 0)
+			if ($this->query && stripos($this->path . '/' . $dir, $this->query) !== 0)
 				continue;
 
 			$dDir = $this->path . '/' . $dir . '/';

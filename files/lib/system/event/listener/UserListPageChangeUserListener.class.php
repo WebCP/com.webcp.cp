@@ -17,7 +17,7 @@ class UserListPageChangeUserListener implements EventListener
 
 		foreach ($eventObj->users as $user)
 		{
-			if ($user->accessible)
+			if ($user->accessible || WCF::getUser()->getPermission('admin.general.isSuperAdmin'))
 			{
 				$additionalButtons[$user->userID] = ' <a href="index.php?action=UserBecome&amp;userID='.$user->userID.'&amp;url='.$url.'&amp;packageID='.PACKAGE_ID.SID_ARG_2ND.'"><img src="'.RELATIVE_WCF_DIR.'icon/loginS.png" alt="" title="'.WCF::getLanguage()->get('cp.acp.user.button.become').'" /></a>';
 			}
