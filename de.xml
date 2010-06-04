@@ -159,6 +159,8 @@
 	
 	<category name="cp.acp.menu">
 		<item name="cp.acp.menu.link.jobhandler"><![CDATA[Hintergrund-Tasks]]></item>
+		<item name="cp.acp.menu.link.jobhandler.view"><![CDATA[Geplante Tasks]]></item>
+		<item name="cp.acp.menu.link.jobhandler.log"><![CDATA[Task-Logs]]></item>
 		<item name="cp.acp.menu.link"><![CDATA[WCP]]></item>
 	</category>
 

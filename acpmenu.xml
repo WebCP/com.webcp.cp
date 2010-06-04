@@ -9,7 +9,19 @@
 		
 		<acpmenuitem name="cp.acp.menu.link.jobhandler">
 			<parent>cp.acp.menu.link</parent>
+			<showorder>1</showorder>
+		</acpmenuitem>
+		
+		<acpmenuitem name="cp.acp.menu.link.jobhandler.view">
+			<parent>cp.acp.menu.link.jobhandler</parent>
 			<link>index.php?page=JobhandlerTaskList</link>
+			<showorder>1</showorder>
+		</acpmenuitem>
+		
+		<acpmenuitem name="cp.acp.menu.link.jobhandler.log">
+			<parent>cp.acp.menu.link.jobhandler</parent>
+			<link>index.php?page=JobhandlerTaskLogList</link>
+			<showorder>2</showorder>
 		</acpmenuitem>
 	
 	</import>

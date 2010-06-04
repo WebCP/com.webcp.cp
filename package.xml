@@ -31,10 +31,10 @@
 		<requiredpackage file="requirements/com.toby.wcf.userloginsecurity.tar.gz">com.toby.wcf.userloginsecurity</requiredpackage> -->
 		<requiredpackage file="requirements/com.toby.wcf.userlog.tar">com.toby.wcf.userlog</requiredpackage>
 		<requiredpackage file="requirements/com.toby.templatemodifier.float.tar">com.toby.templatemodifier.float</requiredpackage>
-		<requiredpackage file="requirements/com.toby.backendhandler.tar">com.toby.backendhandler</requiredpackage>
 	</requiredpackages>
 	
 	<optionalpackages>
+		<optionalpackage file="optionals/com.toby.backendhandler.tar">com.toby.backendhandler</optionalpackage>
 		<optionalpackage file="optionals/com.toby.cp.ftp.tar">com.toby.cp.ftp</optionalpackage>
 		<optionalpackage file="optionals/com.toby.cp.mysql.tar">com.toby.cp.mysql</optionalpackage>
 		<optionalpackage file="optionals/com.toby.cp.email.tar">com.toby.cp.email</optionalpackage>
