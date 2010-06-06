@@ -17,46 +17,16 @@
 				<parent>cp</parent>
 				<showorder>1</showorder>
 			</category>
-			
-			<category name="cp.backendpaths">
-				<parent>cp</parent>
-				<showorder>2</showorder>
-			</category>
-			
-			<category name="cp.backendpaths.createpaths">
-				<parent>cp.backendpaths</parent>
-			</category>
-			
-			<category name="cp.backendpaths.countpaths">
-				<parent>cp.backendpaths</parent>
-			</category>
 		</categories>
 
 		<options>
 			<!-- cp -->
-			<option name="homedir_prefix">
-		        	<categoryname>cp.global</categoryname>
-					<optiontype>text</optiontype>
-		        	<defaultvalue>/home/</defaultvalue>
-		    	</option>
-		    	<option name="user_prefix">
-		        	<categoryname>cp.global</categoryname>
-					<optiontype>text</optiontype>
-		        	<defaultvalue>web_</defaultvalue>
-		    	</option>
-		    	<option name="default_create_paths">
-		        	<categoryname>cp.backendpaths.createpaths</categoryname>
-					<optiontype>textarea</optiontype>
-		        	<defaultvalue>d:{HOMEDIR_PREFIX}/{USERNAME}:0555:{GUID}.{GUID}
-d:{HOMEDIR}/tmp:0777:{GUID}.{GUID}
-d:{HOMEDIR}/files:0777:{GUID}.{GUID}</defaultvalue>
-		    	</option>
-		    	<option name="default_count_paths">
-		    		<categoryname>cp.backendpaths.countpaths</categoryname>
-					<optiontype>textarea</optiontype>
-		        	<defaultvalue>{HOMEDIR_PREFIX}/{USERNAME}:logfiles,tmp</defaultvalue>
-		    	</option>
-		    	<!-- cp -->
+	    	<option name="user_prefix">
+	        	<categoryname>cp.global</categoryname>
+				<optiontype>text</optiontype>
+	        	<defaultvalue>web_</defaultvalue>
+	    	</option>
+	    	<!-- /cp -->
 
 			<!-- offline -->
 			<option name="offline">

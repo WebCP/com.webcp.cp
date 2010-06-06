@@ -20,17 +20,6 @@ class IndexPage extends AbstractPage
 	protected $displayData = array ();
 
 	/**
-	 * @see Page::readData()
-	 */
-	public function readData()
-	{
-		$this->addDisplay('wcf.user.option.diskspace', WCF :: getLanguage()->getDynamicVariable('wcf.user.option.diskspace.values', array('used' => WCF :: getUser()->diskspaceUsed, 
-			'avail' => WCF :: getUser()->diskspace)));
-		
-		parent :: readData();
-	}
-
-	/**
 	 * @see Page::assignVariables()
 	 */
 	public function assignVariables()

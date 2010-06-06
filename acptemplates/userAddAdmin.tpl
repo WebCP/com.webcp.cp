@@ -30,14 +30,14 @@
 					<script type="text/javascript">//<![CDATA[
 						inlineHelp.register('adminname');
 					//]]></script>
-				
 					{/if}
+					
 					<div class="formElement{if $errorType.isCustomer|isset} formError{/if}">
 						<div class="formFieldLabel">
 							<label for="isCustomer">{lang}cp.user.isCustomer{/lang}</label>
 						</div>
 						<div class="formField">
-							<input type="checkbox" class="inputText" id="isCustomer" name="isCustomer" value="1" {if $isCustomer}checked="checked" {/if}/>
+							<input type="checkbox" id="isCustomer" name="isCustomer" value="1" {if $isCustomer}checked="checked" {/if}/>
 						</div>
 						<div class="formFieldDesc hidden" id="isCustomerHelpMessage">
 							<p>{lang}cp.user.isCustomer.description{/lang}</p>

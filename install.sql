@@ -2,9 +2,7 @@ CREATE TABLE cp1_1_user (
   	userID int(10) unsigned NOT NULL auto_increment PRIMARY KEY,
   	adminID int(10) unsigned NOT NULL default '0',
   	isCustomer tinyint(1) unsigned NOT NULL default '0',
-  	guid int(5) NOT NULL default '0',
   	cpLastActivityTime int(10) NOT NULL default 0,
-  	homeDir varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE cp1_1_jobhandler_task (

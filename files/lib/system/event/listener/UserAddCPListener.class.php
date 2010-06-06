@@ -12,44 +12,43 @@ require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
 
 class UserAddCPListener implements EventListener
 {
+	private static $cpUser;
+	
 	/**
 	 * @see EventListener::execute()
 	 */
 	public function execute($eventObj, $className, $eventName)
 	{
-		if ($eventName == 'readParameters')
+		if ($eventName == 'readParameters' && $className == 'UserAddForm')
 		{
-			if (empty($eventObj->username))
-			{
-				$sql = "SELECT 	username AS name
-						FROM 	wcf" . WCF_N . "_user
-						ORDER BY SUBSTRING_INDEX(username, '" . USER_PREFIX . "', -1) + 0 DESC
-						LIMIT 1";
-				$postFix = WCF :: getDB()->getFirstRow($sql);
-	
-				if (empty($postFix))
-				{
-					$eventObj->username = USER_PREFIX . '1';
-				}
-				else
-				{
-					$postFix = intval(str_replace(USER_PREFIX, '', $postFix['name']));
-					$eventObj->username = USER_PREFIX . ++$postFix;
-				}
+			$sql = "SELECT 	username AS name
+					FROM 	wcf" . WCF_N . "_user
+					ORDER BY SUBSTRING_INDEX(username, '" . USER_PREFIX . "', -1) + 0 DESC
+					LIMIT 1";
+			$postFix = WCF :: getDB()->getFirstRow($sql);
 
-				$eventObj->adminname = WCF :: getUser()->username;
-				$eventObj->adminID = WCF :: getUser()->userID;
-				$eventObj->user->isCustomer = 0;
+			if (empty($postFix))
+			{
+				$eventObj->username = USER_PREFIX . '1';
 			}
 			else
 			{
-				$cp = new CPUser($eventObj->user->userID);
-				$eventObj->user->isCustomer = $cp->isCustomer;
-				
-				$u = new User($cp->adminID);
-				$eventObj->adminname = $u->username;
-				$eventObj->adminID = $u->userID;
+				$postFix = intval(str_replace(USER_PREFIX, '', $postFix['name']));
+				$eventObj->username = USER_PREFIX . ++$postFix;
 			}
+
+			$eventObj->adminname = WCF :: getUser()->username;
+			$eventObj->adminID = WCF :: getUser()->userID;
+			$eventObj->user->isCustomer = 0;
+		}
+		elseif ($eventName == 'readData' && $className == 'UserEditForm')
+		{
+			self :: $cpUser = new CPUser($eventObj->userID);
+			$eventObj->user->isCustomer = self :: $cpUser->isCustomer;
+
+			$u = new User(self :: $cpUser->adminID);
+			$eventObj->adminname = $u->username;
+			$eventObj->adminID = $u->userID;
 		}
 		elseif ($eventName == 'readFormParameters')
 		{
@@ -97,21 +96,14 @@ class UserAddCPListener implements EventListener
 								(userID,
 								 adminID,
 								 isCustomer,
-								 cpLastActivityTime,
-								 homedir,
-								 guid
+								 cpLastActivityTime
 								)
 						VALUES	(" . $eventObj->user->userID . ",
 								 " . $eventObj->adminID . ",
 								 " . $eventObj->user->isCustomer . ",
-								 " . TIME_NOW . ",
-								'" . CPUtils :: getHomeDir($eventObj->user->username) . "',
-								 " . CPUtils :: getNewGUID() . 
-								 ")";
+								 " . TIME_NOW . " 
+								)";
 				WCF :: getDB()->sendQuery($sql);
-				
-				if ($eventObj->user->isCustomer)
-					JobhandlerUtils :: addJob('createhome', $eventObj->user->userID, array(), 'asap', 100);
 			}
 		}
 		elseif ($eventName == 'assignVariables')

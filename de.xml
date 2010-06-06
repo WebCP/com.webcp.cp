@@ -40,20 +40,8 @@
 		<item name="wcf.acp.option.category.cp.description"><![CDATA[Basiseinstellungen für das WCP]]></item>
 		<item name="wcf.acp.option.category.cp.global"><![CDATA[Globale Einstellungen]]></item>
 		<item name="wcf.acp.option.category.cp.global.description"><![CDATA[Globale Einstellungen des WCPs]]></item>
-		<item name="wcf.acp.option.homedir_prefix"><![CDATA[Heimatverzeichnisprefix]]></item>
-		<item name="wcf.acp.option.homedir_prefix.description"><![CDATA[Hiermit wird festgelegt, welcher Pfad dem Benutzerverzeichnissen vorne angehängt werden soll. Mit /home/ sehen diese Pfade dann z.B. so aus: /home/mmustermann]]></item>
 		<item name="wcf.acp.option.user_prefix"><![CDATA[Benutzerprefix]]></item>
 		<item name="wcf.acp.option.user_prefix.description"><![CDATA[Falls Sie Ihren Benutzern keine individuellen Namen geben wollen, können Sie hier einstellen, mit was die generierten Namen beginnen sollen. Mit web_ sehen die Namen dann z.B. so aus: web_23]]></item>
-		<item name="wcf.acp.option.category.cp.backendpaths"><![CDATA[Pfade]]></item>
-		<item name="wcf.acp.option.category.cp.backendpaths.description"><![CDATA[Hier werden alle Dateisystem-Pfade definiert, die durch Hintergrundtasks benutzt werden]]></item>
-		<item name="wcf.acp.option.category.cp.backendpaths.createpaths"><![CDATA[Pfaderstellung]]></item>
-		<item name="wcf.acp.option.category.cp.backendpaths.createpaths.description"><![CDATA[Diese Dateisystempfade werden erstellt, wenn ein neuer Benutzer als Kunde aktiviert wird. Dabei gilt folgendes Format "Pfadtyp:Pfad:Rechte:Eigentümer.Gruppe". Pfadtyp kann d für Verzeichnis oder l für Link sein. Der Pfad kann alles sein, die Rechte werden immer Oktal angegeben, Eigentümer und Gruppe als Name oder Nummer. Es können auch Variablen verwendet werden, z.B. &#123;HOMEDIR&#125; für das Verzeichnis des anzulegenden Benutzers oder &#123;GUID&#125; für die User/Gruppen-ID des anzulegenden Benutzers.]]></item>
-		<item name="wcf.acp.option.default_create_paths"><![CDATA[Standard-Pfade]]></item>
-		<item name="wcf.acp.option.default_create_paths.description"><![CDATA[Diese Pfade werden für jeden neuen Benutzer angelegt.]]></item>
-		<item name="wcf.acp.option.category.cp.backendpaths.countpaths"><![CDATA[Pfade für Speicherplatzberechnung]]></item>
-		<item name="wcf.acp.option.category.cp.backendpaths.countpaths.description"><![CDATA[Diese Pfade werden berücksichtigt, wenn berechnet wird, wieviel Platz jeder Benutzer verbraucht hat. Dabei gilt folgendes Format "Pfad:auszuschließende Pfade (kommagetrennt)"]]></item>
-		<item name="wcf.acp.option.default_count_paths"><![CDATA[Standard-Pfade]]></item>
-		<item name="wcf.acp.option.default_count_paths.description"><![CDATA[Diese Pfade werden für jeden Benutzer täglich ausgewertet.]]></item>
 	</category>
 	
 	<category name="wcf.acp.group">
@@ -111,14 +99,7 @@
 		<item name="wcf.user.option.fax.description"><![CDATA[Altmodisches Kommunikationsmittel, das noch immer Verwendung findet für Vertragsabschlüsse und dergleichen.]]></item>
 
 		<item name="wcf.user.option.category.account"><![CDATA[WCP-Accountdaten]]></item>
-		<item name="wcf.user.option.category.account.disk"><![CDATA[Speicherplatz]]></item>
-		<item name="wcf.user.option.diskspace"><![CDATA[Speicherplatz (benutzt/verfügbar)]]></item>
-		<item name="wcf.user.option.diskspace.description"><![CDATA[Wieviel Speicherplatz steht diesem Benutzer zur Verfügung?]]></item>
 	</category>
-	
-	<category name="wcf.user.option">
-		<item name="wcf.user.option.diskspace.values"><![CDATA[<span{if $used > $avail} class="red"{/if}>{$used|float}</span> / {$avail}]]></item>
-	</category>		
 	
 	<category name="cp.global">
 		<item name="cp.global.copyright"><![CDATA[<a href="http://dev.hugin-hosting.de"><strong>WCP - Web Controlpanel{if SHOW_VERSION_NUMBER} {@PACKAGE_VERSION}{/if}</strong>, entwickelt von <strong>Toby</strong></a>]]></item>
@@ -158,28 +139,7 @@
 	</category>
 	
 	<category name="cp.acp.menu">
-		<item name="cp.acp.menu.link.jobhandler"><![CDATA[Hintergrund-Tasks]]></item>
-		<item name="cp.acp.menu.link.jobhandler.view"><![CDATA[Geplante Tasks]]></item>
-		<item name="cp.acp.menu.link.jobhandler.log"><![CDATA[Task-Logs]]></item>
 		<item name="cp.acp.menu.link"><![CDATA[WCP]]></item>
-	</category>
-
-	<category name="cp.acp.jobhandler">
-		<item name="cp.acp.jobhandler.list"><![CDATA[Aktive Hintergrund-Tasks]]></item>
-		<item name="cp.acp.jobhandler.lastRun"><![CDATA[Letzter Lauf: {$lastRun|shorttime}]]></item>
-		<item name="cp.acp.jobhandler.listcount"><![CDATA[{$jobhandler|count} aktive Hintergrund-Tasks]]></item>
-		<item name="cp.acp.jobhandler.jobhandlerTaskID"><![CDATA[TaskID]]></item>
-		<item name="cp.acp.jobhandler.jobhandler"><![CDATA[Task-Name]]></item>
-		<item name="cp.acp.jobhandler.lastExec"><![CDATA[Letzte Ausführung]]></item>
-		<item name="cp.acp.jobhandler.nextExec"><![CDATA[Nächste Ausführung]]></item>
-		<item name="cp.acp.jobhandler.volatile"><![CDATA[Vergänglich]]></item>
-		<item name="cp.acp.jobhandler.data"><![CDATA[Parameter]]></item>
-		<item name="cp.acp.jobhandler.nextExec.asap"><![CDATA[Bald möglichst]]></item>
-		<item name="cp.acp.jobhandler.nextExec.hourchange"><![CDATA[Stundenwechsel]]></item>
-		<item name="cp.acp.jobhandler.nextExec.daychange"><![CDATA[Tageswechsel]]></item>
-		<item name="cp.acp.jobhandler.nextExec.weekchange"><![CDATA[Wochenwechsel]]></item>
-		<item name="cp.acp.jobhandler.nextExec.monthchange"><![CDATA[Monatswechsel]]></item>
-		<item name="cp.acp.jobhandler.nextExec.yearchange"><![CDATA[Jahreswechsel]]></item>
 	</category>
 
 	<category name="cp.user">
