@@ -12,8 +12,6 @@ require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
 
 class UserAddCPListener implements EventListener
 {
-	private static $cpUser;
-	
 	/**
 	 * @see EventListener::execute()
 	 */
@@ -43,18 +41,17 @@ class UserAddCPListener implements EventListener
 		}
 		elseif ($eventName == 'readData' && $className == 'UserEditForm')
 		{
-			self :: $cpUser = new CPUser($eventObj->userID);
-			$eventObj->user->isCustomer = self :: $cpUser->isCustomer;
+			$eventObj->cpUser = new CPUser($eventObj->userID);
 
-			$u = new User(self :: $cpUser->adminID);
+			$u = new User($eventObj->cpUser->adminID);
 			$eventObj->adminname = $u->username;
 			$eventObj->adminID = $u->userID;
 		}
 		elseif ($eventName == 'readFormParameters')
 		{
-			if (isset($_POST['adminname'])) $eventObj->adminname = StringUtil::trim($_POST['adminname']);
-			if (isset($_POST['isCustomer'])) $eventObj->user->isCustomer = intval($_POST['isCustomer']);
-			else $eventObj->user->isCustomer = 0;
+			if (isset($_POST['adminname'])) $eventObj->cpUser->adminname = StringUtil::trim($_POST['adminname']);
+			if (isset($_POST['isCustomer'])) $eventObj->cpUser->isCustomer = intval($_POST['isCustomer']);
+			else $eventObj->cpUser->isCustomer = 0;
 		}
 		elseif ($eventName == 'validate')
 		{
@@ -68,7 +65,7 @@ class UserAddCPListener implements EventListener
 				try 
 				{
 					// get admin
-					$user = new UserSession(null, null, $eventObj->adminname);
+					$user = new UserSession(null, null, $eventObj->cpUser->adminname);
 					if (!$user->userID) 
 					{
 						throw new UserInputException('adminname', 'notFound');
@@ -79,7 +76,7 @@ class UserAddCPListener implements EventListener
 						throw new UserInputException('adminname', 'notValid');
 					}
 						
-					$eventObj->adminID = $user->userID;
+					$eventObj->cpUser->adminID = $user->userID;
 				}
 				catch (UserInputException $e) 
 				{
@@ -89,7 +86,7 @@ class UserAddCPListener implements EventListener
 		}
 		elseif ($eventName == 'saved')
 		{
-			if (!$eventObj->user->homedir)
+			if (!$eventObj->cpUser->userID)
 			{
 				// create cp user record
 				$sql = "INSERT IGNORE INTO	cp" . CP_N . "_user
@@ -99,17 +96,25 @@ class UserAddCPListener implements EventListener
 								 cpLastActivityTime
 								)
 						VALUES	(" . $eventObj->user->userID . ",
-								 " . $eventObj->adminID . ",
-								 " . $eventObj->user->isCustomer . ",
+								 " . $eventObj->cpUser->adminID . ",
+								 " . $eventObj->cpUser->isCustomer . ",
 								 " . TIME_NOW . " 
 								)";
+				WCF :: getDB()->sendQuery($sql);
+			}
+			else
+			{
+				// create cp user record
+				$sql = "UPDATE 	cp" . CP_N . "_user
+						SET		isCustomer = " . $eventObj->cpUser->isCustomer . "
+						WHERE	userID = " . $eventObj->user->userID;
 				WCF :: getDB()->sendQuery($sql);
 			}
 		}
 		elseif ($eventName == 'assignVariables')
 		{
-			WCF :: getTPL()->assign('adminname', $eventObj->adminname);
-			WCF :: getTPL()->assign('isCustomer', $eventObj->user->isCustomer);
+			WCF :: getTPL()->assign('adminname', $eventObj->cpUser->adminname);
+			WCF :: getTPL()->assign('isCustomer', $eventObj->cpUser->isCustomer);
 			WCF :: getTPL()->append('additionalFields', WCF :: getTPL()->fetch('userAddAdmin'));
 		}
 	}

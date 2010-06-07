@@ -5,7 +5,7 @@
  *
  * Lizenz: GPL
  *
- * $Id: PathSuggestPage.class.php 80 2010-04-11 18:08:28Z toby $
+ * $Id$
  */
 
 require_once (WCF_DIR . 'lib/page/AbstractPage.class.php');
