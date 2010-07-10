@@ -53,8 +53,6 @@
 		<pagemenu>pagemenu.xml</pagemenu>
 		<eventlistener>eventlistener.xml</eventlistener>
 		<useroptions>useroptions.xml</useroptions>
-	 	<packageinstallationplugins>pip.tar</packageinstallationplugins>
-		<jobhandlertask>jobhandlertasks.xml</jobhandlertask>
 	</instructions>
 	
 	<instructions type="update" fromversion="0.*">
@@ -68,8 +66,6 @@
 		<pagemenu>pagemenu.xml</pagemenu>
 		<eventlistener>eventlistener.xml</eventlistener>
 		<useroptions>useroptions.xml</useroptions>
-		<packageinstallationplugins>pip.tar</packageinstallationplugins>
-		<jobhandlertask>jobhandlertasks.xml</jobhandlertask>
 	</instructions>
 
 </package>
