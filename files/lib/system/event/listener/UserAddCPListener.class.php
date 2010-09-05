@@ -9,6 +9,7 @@
  */
 
 require_once(WCF_DIR.'lib/system/event/EventListener.class.php');
+require_once(CP_DIR.'lib/data/user/CPUser.class.php');
 
 class UserAddCPListener implements EventListener
 {
@@ -37,7 +38,7 @@ class UserAddCPListener implements EventListener
 
 			$eventObj->adminname = WCF :: getUser()->username;
 			$eventObj->adminID = WCF :: getUser()->userID;
-			$eventObj->user->isCustomer = 0;
+			$eventObj->cpUser->isCustomer = 0;
 		}
 		elseif ($eventName == 'readData' && $className == 'UserEditForm')
 		{
@@ -49,7 +50,7 @@ class UserAddCPListener implements EventListener
 		}
 		elseif ($eventName == 'readFormParameters')
 		{
-			if (isset($_POST['adminname'])) $eventObj->cpUser->adminname = StringUtil::trim($_POST['adminname']);
+			if (isset($_POST['adminname'])) $eventObj->adminname = StringUtil::trim($_POST['adminname']);
 			if (isset($_POST['isCustomer'])) $eventObj->cpUser->isCustomer = intval($_POST['isCustomer']);
 			else $eventObj->cpUser->isCustomer = 0;
 		}
@@ -60,12 +61,12 @@ class UserAddCPListener implements EventListener
 				$eventObj->errorType['username'] = 'notValid';
 			}
 			
-			if (!WCF :: getUser()->getPermission('admin.general.isSuperAdmin'))
+			if (WCF :: getUser()->getPermission('admin.general.isSuperAdmin'))
 			{
 				try 
 				{
 					// get admin
-					$user = new UserSession(null, null, $eventObj->cpUser->adminname);
+					$user = new UserSession(null, null, $eventObj->adminname);
 					if (!$user->userID) 
 					{
 						throw new UserInputException('adminname', 'notFound');
@@ -83,10 +84,14 @@ class UserAddCPListener implements EventListener
 					$this->errorType[$e->getType()] = $e->getType();
 				}
 			}
+			else
+			{
+				$eventObj->cpUser->adminID = WCF :: getUser()->userID;
+			}
 		}
 		elseif ($eventName == 'saved')
 		{
-			if (!$eventObj->cpUser->userID)
+			if (!isset($eventObj->cpUser->userID))
 			{
 				// create cp user record
 				$sql = "INSERT IGNORE INTO	cp" . CP_N . "_user
@@ -113,7 +118,7 @@ class UserAddCPListener implements EventListener
 		}
 		elseif ($eventName == 'assignVariables')
 		{
-			WCF :: getTPL()->assign('adminname', $eventObj->cpUser->adminname);
+			WCF :: getTPL()->assign('adminname', $eventObj->adminname);
 			WCF :: getTPL()->assign('isCustomer', $eventObj->cpUser->isCustomer);
 			WCF :: getTPL()->append('additionalFields', WCF :: getTPL()->fetch('userAddAdmin'));
 		}
