@@ -50,17 +50,20 @@ class PathSuggestPage extends AbstractPage
 
 		$dirs = @scandir($this->path);
 
-		foreach ($dirs as $dir)
+		if (is_array($dirs)
 		{
-			if ($dir == '.' || $dir == '..' || !is_dir($this->path . '/' . $dir))
-				continue;
+			foreach ($dirs as $dir)
+			{
+				if ($dir == '.' || $dir == '..' || !is_dir($this->path . '/' . $dir))
+					continue;
 
-			if ($this->query && stripos($dir, $this->query) !== 0)
-				continue;
+				if ($this->query && stripos($dir, $this->query) !== 0)
+					continue;
 
-			$dDir = $this->path . '/' . $dir . '/';
-			$dDir = str_replace(WCF :: getUser()->homeDir, '', $dDir);
-			echo "<path><![CDATA[" . StringUtil :: escapeCDATA($dDir) . "]]></path>\n";
+				$dDir = $this->path . '/' . $dir . '/';
+				$dDir = str_replace(WCF :: getUser()->homeDir, '', $dDir);
+				echo "<path><![CDATA[" . StringUtil :: escapeCDATA($dDir) . "]]></path>\n";
+			}
 		}
 
 		echo '</suggestions>';
