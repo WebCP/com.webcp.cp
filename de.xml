@@ -53,6 +53,8 @@
 		<item name="wcf.acp.group.option.category.admin.cp.description"><![CDATA[]]></item>
 		<item name="wcf.acp.group.option.category.cp"><![CDATA[ControlPanel]]></item>
 		<item name="wcf.acp.group.option.category.cp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.cp.canViewOffline"><![CDATA[Kann ControlPanel im Offline-Modus sehen]]></item>
+		<item name="wcf.acp.group.option.user.cp.canViewOffline.description"><![CDATA[Mitglieder dieser Benutzergruppe können das ControlPanel auch dann sehen, wenn es sich gerade im Offline-Modus befindet.]]></item>
 	</category>
 	
 	<category name="wcf.user">
@@ -113,18 +115,13 @@
 		<item name="cp.global.error.invalidAdmin"><![CDATA[Ungültiger Administrator]]></item>
 	</category>
 
-	<category name="cp.header">
-		<item name="cp.header.userMenu.logout"><![CDATA[Abmelden]]></item>
-		<item name="cp.header.userMenu.profile"><![CDATA[Eigene Daten]]></item>
-		<item name="cp.header.userMenu.acp"><![CDATA[Administration]]></item>
-		<item name="cp.header.userMenu.login"><![CDATA[Anmelden]]></item>
-		<item name="cp.header.userMenu.register"><![CDATA[Registrieren]]></item>
-		<item name="cp.header.userMenu.changeLanguage"><![CDATA[Sprache ändern]]></item>
-		<item name="cp.header.userNote.guest"><![CDATA[Sie sind nicht angemeldet]]></item>
-		<item name="cp.header.userNote.user"><![CDATA[Angemeldet als <a href="index.php?page=User&amp;userID={@$this->user->userID}{@SID_ARG_2ND}">{$this->user->username}</a>.]]></item>
-	</category>
-	
 	<category name="cp.header.menu">
+		<item name="cp.header.menu.logout"><![CDATA[Abmelden]]></item>
+		<item name="cp.header.menu.profile"><![CDATA[Eigene Daten]]></item>
+		<item name="cp.header.menu.acp"><![CDATA[Administration]]></item>
+		<item name="cp.header.menu.changeLanguage"><![CDATA[Sprache ändern]]></item>
+		<item name="cp.header.menu.user"><![CDATA[Angemeldet als {$this->user->username}.]]></item>
+		<item name="cp.header.menu.guest"><![CDATA[Sie sind nicht angemeldet.]]></item>
 		<item name="cp.header.menu.start"><![CDATA[Übersicht]]></item>
 	</category>
 
