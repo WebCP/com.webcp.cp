@@ -2,18 +2,21 @@
 <!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/headerMenu.dtd">
 <data>
 	<import>
-		<pagemenuitem name="cp.header.menu.profile">
-			<icon>editM.png</icon>
-			<link>index.php?form=UserProfileEdit</link>
-			<showorder>2</showorder>
-		</pagemenuitem>
+		
 		<pagemenuitem name="cp.header.menu.start">
-			<icon>wcpM.png</icon>
+			<icon>wcpS.png</icon>
 			<link>index.php</link>
 			<showorder>1</showorder>
 		</pagemenuitem>
+		
+		<pagemenuitem name="cp.header.menu.profile">
+			<icon>editS.png</icon>
+			<link>index.php?form=UserProfileEdit</link>
+			<showorder>2</showorder>
+		</pagemenuitem>
+		
 		<pagemenuitem name="cp.header.menu.acp">
-			<icon>acpM.png</icon>
+			<icon>acpS.png</icon>
 			<link>acp/index.php</link>
 			<showorder>20</showorder>
 			<permissions>admin.general.canUseAcp</permissions>
