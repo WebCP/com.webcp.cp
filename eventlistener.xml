@@ -7,6 +7,7 @@
 			<eventName>loadInstance</eventName>
 			<listenerClassFile>lib/system/event/listener/UserAuthCPListener.class.php</listenerClassFile>
 		</eventlistener>
+		
 		<eventlistener>
 			<eventClassName>UserAddForm</eventClassName>
 			<eventName>validate</eventName>
@@ -15,6 +16,7 @@
 			<inherit>1</inherit>
 			<nice>-127</nice>
 		</eventlistener>
+		
 		<eventlistener>
 			<eventClassName>UserAddForm</eventClassName>
 			<eventName>readParameters</eventName>
@@ -22,6 +24,7 @@
 			<environment>admin</environment>
 			<nice>-127</nice>
 		</eventlistener>
+		
 		<eventlistener>
 			<eventClassName>UserEditForm</eventClassName>
 			<eventName>readData</eventName>
@@ -29,6 +32,7 @@
 			<environment>admin</environment>
 			<nice>-127</nice>
 		</eventlistener>
+		
 		<eventlistener>
 			<eventClassName>UserAddForm</eventClassName>
 			<eventName>saved</eventName>
@@ -37,6 +41,7 @@
 			<inherit>1</inherit>
 			<nice>-127</nice>
 		</eventlistener>
+		
 		<eventlistener>
 			<eventClassName>UserAddForm</eventClassName>
 			<eventName>assignVariables</eventName>
@@ -45,6 +50,7 @@
 			<inherit>1</inherit>
 			<nice>-127</nice>
 		</eventlistener>
+		
 		<eventlistener>
 			<eventClassName>UserAddForm</eventClassName>
 			<eventName>readFormParameters</eventName>
@@ -53,6 +59,7 @@
 			<inherit>1</inherit>
 			<nice>-127</nice>
 		</eventlistener>
+		
 		<eventlistener>
 			<eventClassName>UserListPage</eventClassName>
 			<eventName>assignVariables</eventName>
