@@ -5,9 +5,9 @@
 	<packageInformation>
 		<packageName>Web ControlPanel</packageName>
 		<packageDescription>Ein Servercontrolpanel, inspiriert von SysCP</packageDescription>
-		<version>0.6.0-beta2</version>
+		<version>1.0.0 RC1</version>
 		<standalone>1</standalone>
-		<date>2010-09-25</date>
+		<date>2010-10-09</date>
 	</packageInformation>
 
 	<authorInformation>
@@ -27,8 +27,6 @@
 		<requiredpackage file="requirements/com.woltlab.wcf.form.user.tar">com.woltlab.wcf.form.user</requiredpackage>
 		<requiredpackage file="requirements/com.woltlab.wcf.data.cronjobs.tar">com.woltlab.wcf.data.cronjobs</requiredpackage>
 		<requiredpackage file="requirements/com.woltlab.wcf.data.feed.reader.tar">com.woltlab.wcf.data.feed.reader</requiredpackage>
-		<!-- <requiredpackage file="requirements/com.toby.inputvalidation.tar.gz">com.toby.inputvalidation</requiredpackage>
-		<requiredpackage file="requirements/com.toby.wcf.userloginsecurity.tar.gz">com.toby.wcf.userloginsecurity</requiredpackage> -->
 		<requiredpackage file="requirements/com.toby.wcf.userlog.tar">com.toby.wcf.userlog</requiredpackage>
 		<requiredpackage file="requirements/com.toby.templatemodifier.float.tar">com.toby.templatemodifier.float</requiredpackage>
 	</requiredpackages>
