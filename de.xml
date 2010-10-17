@@ -145,6 +145,9 @@
 		<item name="cp.user.adminname.description"><![CDATA[Dieser Administrator ist für diesen Benutzer zuständig und kann diesen verwalten]]></item>
 		<item name="cp.user.isCustomer"><![CDATA[Ist Kunde]]></item>
 		<item name="cp.user.isCustomer.description"><![CDATA[Benutzer als Kunden aktivieren]]></item>
+		<item name="cp.user.welcomeMailSubject"><![CDATA[Willkommen bei {PAGE_TITLE}!]]></item>
+		<item name="cp.user.sendWelcomeMail"><![CDATA[Willkommensmail senden]]></item>
+		<item name="cp.user.sendWelcomeMail.description"><![CDATA[Setzt das Passwort und sendet eine Willkommensmail an den Benutzer. Diese Mail wird aus der ACP-Notiz "newUserMail" generiert.]]></item>
 	</category>
 
 </language>

@@ -39,23 +39,37 @@ class UserAddCPListener implements EventListener
 			$eventObj->adminname = WCF :: getUser()->username;
 			$eventObj->adminID = WCF :: getUser()->userID;
 			$eventObj->cpUser->isCustomer = 0;
+			$eventObj->sendWelcomeMail = 1;
+			$eventObj->password = UserRegistrationUtil :: getNewPassword();
+			$eventObj->confirmPassword = $eventObj->password;
 		}
 		elseif ($eventName == 'readData' && $className == 'UserEditForm')
 		{
-			$eventObj->cpUser = new CPUser($eventObj->userID);
+			// if user is editet and we do not save, get old data for display
+			if (!count($_POST))
+			{
+				$eventObj->cpUser = new CPUser($eventObj->userID);
 
-			$u = new User($eventObj->cpUser->adminID);
-			$eventObj->adminname = $u->username;
-			$eventObj->adminID = $u->userID;
+				$u = new User($eventObj->cpUser->adminID);
+				$eventObj->adminname = $u->username;
+				$eventObj->adminID = $u->userID;
+				$eventObj->sendWelcomeMail = 0;
+			}
 		}
 		elseif ($eventName == 'readFormParameters')
 		{
 			if (isset($_POST['adminname'])) $eventObj->adminname = StringUtil::trim($_POST['adminname']);
+			else $eventObj->adminname = '';
+			
 			if (isset($_POST['isCustomer'])) $eventObj->cpUser->isCustomer = intval($_POST['isCustomer']);
 			else $eventObj->cpUser->isCustomer = 0;
+			
+			if (isset($_POST['sendWelcomeMail'])) $eventObj->sendWelcomeMail = intval($_POST['sendWelcomeMail']);
+			else $eventObj->sendWelcomeMail = 0;
 		}
 		elseif ($eventName == 'validate')
 		{
+			// username muss be unixcompatible
 			if (!preg_match('/^[a-z0-9\-_]+$/i', $eventObj->username))
 			{
 				$eventObj->errorType['username'] = 'notValid';
@@ -65,6 +79,11 @@ class UserAddCPListener implements EventListener
 			{
 				try 
 				{
+					if (empty($eventObj->adminname))
+					{
+						throw new UserInputException('adminname', 'empty');
+					}
+					
 					// get admin
 					$user = new UserSession(null, null, $eventObj->adminname);
 					if (!$user->userID) 
@@ -81,45 +100,77 @@ class UserAddCPListener implements EventListener
 				}
 				catch (UserInputException $e) 
 				{
-					$this->errorType[$e->getType()] = $e->getType();
+					$eventObj->errorType[$e->getField()] = $e->getType();
 				}
 			}
 			else
 			{
 				$eventObj->cpUser->adminID = WCF :: getUser()->userID;
 			}
+			
+			// create new password, if neccessary
+			if ($eventObj->sendWelcomeMail && $eventObj->password == '')
+			{
+				$eventObj->password = UserRegistrationUtil :: getNewPassword();
+				$eventObj->confirmPassword = $eventObj->password;
+			}
 		}
 		elseif ($eventName == 'saved')
 		{
-			if (!isset($eventObj->cpUser->userID))
+			// create cp user record
+			$sql = "INSERT IGNORE INTO	cp" . CP_N . "_user
+							(userID,
+							 adminID,
+							 isCustomer,
+							 cpLastActivityTime
+							)
+					VALUES	(" . $eventObj->user->userID . ",
+							 " . $eventObj->cpUser->adminID . ",
+							 " . $eventObj->cpUser->isCustomer . ",
+							 " . TIME_NOW . " 
+							)
+					ON DUPLICATE KEY UPDATE
+							adminID = VALUES(adminID),
+							isCustomer = VALUES(isCustomer)";
+			WCF :: getDB()->sendQuery($sql);
+			
+			if ($eventObj->sendWelcomeMail == 1)
 			{
-				// create cp user record
-				$sql = "INSERT IGNORE INTO	cp" . CP_N . "_user
-								(userID,
-								 adminID,
-								 isCustomer,
-								 cpLastActivityTime
-								)
-						VALUES	(" . $eventObj->user->userID . ",
-								 " . $eventObj->cpUser->adminID . ",
-								 " . $eventObj->cpUser->isCustomer . ",
-								 " . TIME_NOW . " 
-								)";
-				WCF :: getDB()->sendQuery($sql);
-			}
-			else
-			{
-				// create cp user record
-				$sql = "UPDATE 	cp" . CP_N . "_user
-						SET		isCustomer = " . $eventObj->cpUser->isCustomer . "
-						WHERE	userID = " . $eventObj->user->userID;
-				WCF :: getDB()->sendQuery($sql);
+				$welcomeMail = ACPNoteUtil :: getFormattedNote('newUserMail', 
+																$eventObj->languageID, 
+																$eventObj->user, 
+																array('password' => $eventObj->password));
+				
+				if (MAIL_USE_FORMATTED_ADDRESS)	
+					$from = MAIL_FROM_NAME . ' <' . MAIL_FROM_ADDRESS . '>';
+				else 
+					$from = MAIL_FROM_ADDRESS;
+
+				//disable for next save (if edit)
+				$eventObj->sendWelcomeMail = 0;
+				
+				if (empty($welcomeMail))
+					return;
+				
+				try 
+				{
+					require_once(WCF_DIR.'lib/data/mail/Mail.class.php');
+					
+					$mail = new Mail(array($eventObj->user->username => $eventObj->user->email), 
+									 WCF :: getLanguage()->get('cp.user.welcomeMailSubject', array('PAGE_TITLE' => PAGE_TITLE)), 
+									 $welcomeMail, 
+									 $from);
+					$mail->send();
+				}
+				catch (SystemException $e) {} // ignore errors		
 			}
 		}
 		elseif ($eventName == 'assignVariables')
 		{
 			WCF :: getTPL()->assign('adminname', $eventObj->adminname);
 			WCF :: getTPL()->assign('isCustomer', $eventObj->cpUser->isCustomer);
+			WCF :: getTPL()->assign('errorType', $eventObj->errorType);
+			WCF :: getTPL()->assign('sendWelcomeMail', $eventObj->sendWelcomeMail);
 			WCF :: getTPL()->append('additionalFields', WCF :: getTPL()->fetch('userAddAdmin'));
 		}
 	}

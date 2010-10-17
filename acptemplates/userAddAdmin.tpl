@@ -15,7 +15,6 @@
 								suggestion.init('adminname');
 								//]]>
 							</script>
-							
 							{if $errorType.adminname|isset}
 								<p class="innerError">
 									{if $errorType.adminname == 'empty'}{lang}wcf.global.error.empty{/lang}{/if}
@@ -45,5 +44,20 @@
 					</div>
 					<script type="text/javascript">//<![CDATA[
 						inlineHelp.register('isCustomer');
+					//]]></script>
+					
+					<div class="formElement">
+						<div class="formFieldLabel">
+							<label for="isCustomer">{lang}cp.user.sendWelcomeMail{/lang}</label>
+						</div>
+						<div class="formField">
+							<input type="checkbox" id="sendWelcomeMail" name="sendWelcomeMail" value="1" {if $sendWelcomeMail}checked="checked" {/if}/>
+						</div>
+						<div class="formFieldDesc hidden" id="sendWelcomeMailHelpMessage">
+							<p>{lang}cp.user.sendWelcomeMail.description{/lang}</p>
+						</div>
+					</div>
+					<script type="text/javascript">//<![CDATA[
+						inlineHelp.register('sendWelcomeMail');
 					//]]></script>
 				</fieldset>
