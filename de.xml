@@ -29,7 +29,7 @@
 		<item name="wcf.acp.option.category.offline.general"><![CDATA[WCP temporär deaktivieren]]></item>
 		<item name="wcf.acp.option.category.offline.general.description"><![CDATA[]]></item>
 		<item name="wcf.acp.option.offline"><![CDATA[WCP deaktivieren]]></item>
-		<item name="wcf.acp.option.offline.description"><![CDATA[]]>Hier kann das WCP vorübergehend deaktiviert werden (z.B. für Wartungsarbeiten).</item>
+		<item name="wcf.acp.option.offline.description"><![CDATA[Hier kann das WCP vorübergehend deaktiviert werden (z.B. für Wartungsarbeiten).]]></item>
 		<item name="wcf.acp.option.offline_message"><![CDATA[Deaktivierungshinweis]]></item>
 		<item name="wcf.acp.option.offline_message.description"><![CDATA[Eine Nachricht/Ein Hinweis, der während der Deaktivierung des WCP angezeigt wird]]></item>
 		<item name="wcf.acp.option.offline_message_allow_html"><![CDATA[HTML-Code im Hinweistext verwenden]]></item>
