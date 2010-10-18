@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "http://www.woltlab.com/DTDs/language.dtd">
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/language.xsd" languagecode="en">
+	
+	<category name="wcf.acp.package">
+		<item name="wcf.acp.package.step.install.cpPackageInstallationPlugin"><![CDATA[Installing WCP ...]]></item>
+		<item name="wcf.acp.package.step.uninstall.cpPackageInstallationPlugin"><![CDATA[Deinstalling WCP ...]]></item>
+		<item name="wcf.acp.package.step.update.cpPackageInstallationPlugin"><![CDATA[Updating WCP aktualisiert ...]]></item>
+	</category>
+
+	<category name="wcf.acp.option">
+		<!-- Clock -->
+		<item name="wcf.acp.option.show_clock"><![CDATA[Current time at the end of the page]]></item>
+		<item name="wcf.acp.option.show_clock.description"><![CDATA[In the footer the current time is displayed when this option is enabled.]]></item>
+
+		<!--  Version number -->
+		<item name="wcf.acp.option.show_version_number"><![CDATA[Version number in the copyright notice]]></item>
+		<item name="wcf.acp.option.show_version_number.description"><![CDATA[By enabling this option, the version number in the copyright notice will appear.]]></item>
+
+		<!--  Style Auswahl -->
+		<item name="wcf.acp.option.show_style_chooser"><![CDATA[Show style selector]]></item>
+		<item name="wcf.acp.option.show_style_chooser.description"><![CDATA[Show a list of all styles in the footer of the page to choose?]]></item>
+
+		<!-- Cookie -->
+		<item name="wcf.acp.option.cookie_path"><![CDATA[Cookie path]]></item>
+		<item name="wcf.acp.option.cookie_path.description"><![CDATA[The cookie path is given absolutely to the Document Root - for example "/wcp" for http://www.test.com/wcp.]]></item>
+
+		<!-- Online/Offline -->
+		<item name="wcf.acp.option.category.offline.general"><![CDATA[Set WCP temporary offline]]></item>
+		<item name="wcf.acp.option.category.offline.general.description"><![CDATA[]]></item>
+		<item name="wcf.acp.option.offline"><![CDATA[Deactivate WCP]]></item>
+		<item name="wcf.acp.option.offline.description"><![CDATA[Here, the WCP will be temporarily disabled(for example for maintenance).]]></item>
+		<item name="wcf.acp.option.offline_message"><![CDATA[Offline notice]]></item>
+		<item name="wcf.acp.option.offline_message.description"><![CDATA[A Message / A Note that is displayed during the deactivation of the WCP]]></item>
+		<item name="wcf.acp.option.offline_message_allow_html"><![CDATA[Use HTML-Code in offline notice]]></item>
+		<item name="wcf.acp.option.offline_message_allow_html.description"><![CDATA[Enabling this option allows you to format the text using HTML.]]></item>
+
+		<!-- CP -->
+		<item name="wcf.acp.option.category.cp"><![CDATA[Web Control Panel]]></item>
+		<item name="wcf.acp.option.category.cp.description"><![CDATA[Basic settings for WCP]]></item>
+		<item name="wcf.acp.option.category.cp.global"><![CDATA[Global settings]]></item>
+		<item name="wcf.acp.option.category.cp.global.description"><![CDATA[Global settings for WCPs]]></item>
+		<item name="wcf.acp.option.user_prefix"><![CDATA[User prefix]]></item>
+		<item name="wcf.acp.option.user_prefix.description"><![CDATA[If you wont to give your users any individual name, you can set with which to begin the generated name. With web_ the names looks like: web_23]]></item>
+	</category>
+	
+	<category name="wcf.acp.group">
+		<item name="wcf.acp.group.option.admin.user.canBecomeUser"><![CDATA[Can become User]]></item>
+		<item name="wcf.acp.group.option.admin.user.canBecomeUser.description"><![CDATA[This right allows an administrator to be one of it´s users without having to know the password.]]></item>
+		<item name="wcf.acp.group.option.admin.general.isSuperAdmin"><![CDATA[Ist Superadministrator]]></item>
+		<item name="wcf.acp.group.option.admin.general.isSuperAdmin.description"><![CDATA[Administrators with this right may assign user to other administrators and have other, broader rights than normal administrators.]]></item>
+		<item name="wcf.acp.group.option.category.admin.cp"><![CDATA[ControlPanel]]></item>
+		<item name="wcf.acp.group.option.category.admin.cp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.category.cp"><![CDATA[ControlPanel]]></item>
+		<item name="wcf.acp.group.option.category.cp.description"><![CDATA[]]></item>
+		<item name="wcf.acp.group.option.user.cp.canViewOffline"><![CDATA[Can see ControlPanel in offline mode]]></item>
+		<item name="wcf.acp.group.option.user.cp.canViewOffline.description"><![CDATA[Members of these groups can see and use the control panel if it is currently in offline mode.]]></item>
+	</category>
+	
+	<category name="wcf.user">
+		<item name="wcf.user.name"><![CDATA[Name]]></item>
+	</category>
+	
+	<category name="wcf.user.option">
+		<item name="wcf.user.option.category.profile.data"><![CDATA[Customer data]]></item>
+		<item name="wcf.user.option.customerID"><![CDATA[Customer number]]></item>
+		<item name="wcf.user.option.customerStart"><![CDATA[Customer since]]></item>
+		<item name="wcf.user.option.customerEnd"><![CDATA[Customer to]]></item>
+		<item name="wcf.user.option.customerID.description"><![CDATA[Customer number of this user]]></item>
+		<item name="wcf.user.option.customerStart.description"><![CDATA[Since that date, this user is customer (formal info).]]></item>
+		<item name="wcf.user.option.customerEnd.description"><![CDATA[Since that date, this user isn´t customer (formal info).]]></item>
+	
+		<item name="wcf.user.option.category.profile.company"><![CDATA[Company data]]></item>
+		<item name="wcf.user.option.company"><![CDATA[Company]]></item>
+		<item name="wcf.user.option.ustID"><![CDATA[VATIN]]></item>
+		<item name="wcf.user.option.company.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.ustID.description"><![CDATA[VAT number]]></item>
+		
+		<item name="wcf.user.option.category.profile.person"><![CDATA[Name]]></item>
+		<item name="wcf.user.option.title"><![CDATA[Title]]></item>
+		<item name="wcf.user.option.firstname"><![CDATA[First name]]></item>
+		<item name="wcf.user.option.lastname"><![CDATA[Last name]]></item>
+		<item name="wcf.user.option.title.description"><![CDATA[Style (manner of adress))]]></item>
+		<item name="wcf.user.option.firstname.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.lastname.description"><![CDATA[]]></item>
+		
+		<item name="wcf.user.option.category.profile.address"><![CDATA[Adressdaten]]></item>
+		<item name="wcf.user.option.street"><![CDATA[Street]]></item>
+		<item name="wcf.user.option.city"><![CDATA[City]]></item>
+		<item name="wcf.user.option.zipCode"><![CDATA[Zip code]]></item>
+		<item name="wcf.user.option.country"><![CDATA[Land]]></item>
+		<item name="wcf.user.option.street.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.city.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.zipCode.description"><![CDATA[]]></item>
+		<item name="wcf.user.option.country.description"><![CDATA[]]></item>
+		
+		<item name="wcf.user.option.category.profile.contact"><![CDATA[Contact]]></item>
+		<item name="wcf.user.option.phone"><![CDATA[Telephone]]></item>
+		<item name="wcf.user.option.fax"><![CDATA[Faxn]]></item>
+		<item name="wcf.user.option.phone.description"><![CDATA[Because of the necessary information for domain registration.]]></item>
+		<item name="wcf.user.option.fax.description"><![CDATA[Old-fashioned means of communication that still finds use for contracts and more.]]></item>
+
+		<item name="wcf.user.option.category.account"><![CDATA[WCP-Account data]></item>
+	</category>
+	
+	<category name="cp.global">
+		<item name="cp.global.copyright"><![CDATA[<a href="http://dev.hugin-hosting.de"><strong>WCP - Web Controlpanel{if SHOW_VERSION_NUMBER} {@PACKAGE_VERSION}{/if}</strong>, developed by <strong>Toby</strong></a>]]></item>
+		<item name="cp.global.systemMessage"><![CDATA[System message]]></item>
+		<item name="cp.global.offline"><![CDATA[System offline]]></item>
+		<item name="cp.global.yes"><![CDATA[Yes]]></item>
+		<item name="cp.global.no"><![CDATA[No]]></item>
+	</category>
+		
+	<category name="cp.global.error">
+		<item name="cp.global.error.invalidAdmin"><![CDATA[Invalid administrator]]></item>
+	</category>
+
+	<category name="cp.header.menu">
+		<item name="cp.header.menu.logout"><![CDATA[Log out]]></item>
+		<item name="cp.header.menu.profile"><![CDATA[Own data]]></item>
+		<item name="cp.header.menu.acp"><![CDATA[Administration]]></item>
+		<item name="cp.header.menu.changeLanguage"><![CDATA[Choose Language]]></item>
+		<item name="cp.header.menu.user"><![CDATA[Logged in as {$this->user->username}.]]></item>
+		<item name="cp.header.menu.guest"><![CDATA[You are not logged in.]]></item>
+		<item name="cp.header.menu.start"><![CDATA[Overview]]></item>
+	</category>
+
+	<category name="cp.index">
+		<item name="cp.index.title"><![CDATA[Title]]></item>
+		<item name="cp.index.address"><![CDATA[Customer data]]></item>
+		<item name="cp.index.account"><![CDATA[Account data]]></item>
+	</category>
+	
+	<category name="cp.acp">
+		<item name="cp.acp.jumpToCP"><![CDATA[Swap to WCP]]></item>
+	</category>
+	
+	<category name="cp.acp.menu">
+		<item name="cp.acp.menu.link"><![CDATA[WCP]]></item>
+	</category>
+
+	<category name="cp.user">
+		<item name="cp.user.general"><![CDATA[CP-Settings]]></item>
+		<item name="cp.user.adminname"><![CDATA[Administrator]]></item>
+		<item name="cp.user.adminname.description"><![CDATA[This administrator is responsible for that user and can manage this.]]></item>
+		<item name="cp.user.isCustomer"><![CDATA[Is customer]]></item>
+		<item name="cp.user.isCustomer.description"><![CDATA[Activate user as customer]]></item>
+	</category>
+
+</language>
