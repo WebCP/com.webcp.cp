@@ -139,7 +139,9 @@ class UserAddCPListener implements EventListener
 				$welcomeMail = ACPNoteUtil :: getFormattedNote('newUserMail', 
 																$eventObj->languageID, 
 																$eventObj->user, 
-																array('password' => $eventObj->password));
+																array('password' => $eventObj->password,
+																	  'PAGE_TITLE' => PAGE_TITLE,
+																	  'PAGE_URL' => PAGE_URL));
 				
 				if (MAIL_USE_FORMATTED_ADDRESS)	
 					$from = MAIL_FROM_NAME . ' <' . MAIL_FROM_ADDRESS . '>';

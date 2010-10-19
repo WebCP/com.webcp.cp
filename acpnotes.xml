@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data>
 	<import>
-		<acpnotes> 
-			<name>newUserMail</name>
+		<acpnote name="newUserMail">
 			<language>de</language>
 			<text><![CDATA[Hallo {$user->title} {$user->lastname},
-			Willkommen bei WebCP!
-			
-			{$password}
-			]]>
-			</text>
-		</acpnotes>
+Willkommen bei {PAGE_TITLE}!
+				
+Ihr Passwort ist: {$password}
+	
+Sie können sich unter {PAGE_URL} ins System einloggen.]]></text>
+		</acpnote>
 	</import>
 </data>

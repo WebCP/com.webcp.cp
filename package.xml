@@ -41,6 +41,7 @@
 
 	<instructions type="install">
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="en">en.xml</languages>
 		<options>options.xml</options>
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
@@ -57,6 +58,7 @@
 	
 	<instructions type="update" fromversion="1.*">
 		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="en">en.xml</languages>
 		<options>options.xml</options>
 		<files>files.tar</files>
 		<templates>templates.tar</templates>
