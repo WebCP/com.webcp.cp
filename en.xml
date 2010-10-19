@@ -5,7 +5,7 @@
 	<category name="wcf.acp.package">
 		<item name="wcf.acp.package.step.install.cpPackageInstallationPlugin"><![CDATA[Installing WCP ...]]></item>
 		<item name="wcf.acp.package.step.uninstall.cpPackageInstallationPlugin"><![CDATA[Deinstalling WCP ...]]></item>
-		<item name="wcf.acp.package.step.update.cpPackageInstallationPlugin"><![CDATA[Updating WCP aktualisiert ...]]></item>
+		<item name="wcf.acp.package.step.update.cpPackageInstallationPlugin"><![CDATA[Updating WCP ...]]></item>
 	</category>
 
 	<category name="wcf.acp.option">
