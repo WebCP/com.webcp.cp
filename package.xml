@@ -56,6 +56,22 @@
 		<acpnotes>acpnotes.xml</acpnotes>
 	</instructions>
 	
+	<instructions type="update" fromversion="0.*">
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="en">en.xml</languages>
+		<options>options.xml</options>
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<acptemplates>acptemplates.tar</acptemplates>
+		<acpmenu>acpmenu.xml</acpmenu>
+		<groupoptions>groupoptions.xml</groupoptions>
+		<pagemenu>pagemenu.xml</pagemenu>
+		<eventlistener>eventlistener.xml</eventlistener>
+		<useroptions>useroptions.xml</useroptions>
+		<acpnotes>acpnotes.xml</acpnotes>
+		<style default="true">basicstyle-modified-style.tgz</style>
+	</instructions>
+	
 	<instructions type="update" fromversion="1.*">
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="en">en.xml</languages>
