@@ -5,7 +5,8 @@
 			<language>de</language>
 			<text><![CDATA[Hallo {$user->title} {$user->lastname},
 Willkommen bei {PAGE_TITLE}!
-				
+
+Ihr Benutzername ist: {$user->username}
 Ihr Passwort ist: {$password}
 	
 Sie können sich unter {PAGE_URL} ins System einloggen.]]></text>
