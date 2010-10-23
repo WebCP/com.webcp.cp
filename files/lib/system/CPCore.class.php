@@ -37,6 +37,7 @@ class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 	{
 		if ((!isset($_REQUEST['form']) || $_REQUEST['form'] != 'UserLogin') &&
 			(!isset($_REQUEST['page']) || $_REQUEST['page'] != 'Captcha') &&
+			(!isset($_REQUEST['page']) || $_REQUEST['page'] != 'LegalNotice') &&
 			(!isset($_REQUEST['action']) || $_REQUEST['action'] == 'UserLogout')
 		   )
 		{
@@ -57,15 +58,20 @@ class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 		StyleManager :: changeStyle(0);
 
 		global $packageDirs;
+		
 		require_once (WCF_DIR . 'lib/system/template/StructuredTemplate.class.php');
+		
 		self :: $tplObj= new StructuredTemplate(self :: getStyle()->templatePackID,
 												self :: getLanguage()->getLanguageID(),
 												ArrayUtil :: appendSuffix($packageDirs, 'templates/')
 												);
+												
 		$this->assignDefaultTemplateVariables();
+		
 		self::getTPL()->assign('executeCronjobs',
 								WCF::getCache()->get('cronjobs-'.PACKAGE_ID, 'nextExec') < TIME_NOW
 								);
+								
 		self::getTPL()->assign('timezone', DateUtil::getTimezone());
 
 		// check offline mode
@@ -96,7 +102,10 @@ class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 		}
 
 		// user ban
-		if (self :: getUser()->banned && (!isset ($_REQUEST['page']) || $_REQUEST['page'] != 'LegalNotice') && (!isset ($_REQUEST['action']) || $_REQUEST['action'] != 'UserLogout'))
+		if (self :: getUser()->banned 
+			&& (!isset ($_REQUEST['page']) || $_REQUEST['page'] != 'LegalNotice') 
+			&& (!isset ($_REQUEST['action']) || $_REQUEST['action'] != 'UserLogout')
+			)
 		{
 			require_once (WCF_DIR . 'lib/system/exception/PermissionDeniedException.class.php');
 			throw new PermissionDeniedException();

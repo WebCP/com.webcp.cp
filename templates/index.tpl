@@ -18,73 +18,71 @@
 	</div>
 
 	{if $userMessages|isset}{@$userMessages}{/if}
-<div class="contentHeader"> </div>
+	
+	<div class="contentHeader"> 
+	
+	</div>
+	
 	<div class="border"> 
 		<div class="containerHead"><h3>{lang}cp.index.address{/lang}</h3></div> 
 	</div> 
 	<div class="border borderMarginRemove"> 
 		<table class="tableList"> 
-		<thead>
-			<tr class="tableHead">
-				<th colspan="2"></th>
-			<tr>
-		</thead>
-		<tbody>
-			<tr class="container-1">
-				<td>{lang}wcf.user.name{/lang}</td>
-				<td>{$this->user->title} {$this->user->firstname} {$this->user->lastname}</td>
-			</tr>
-			<tr class="container-2">
-				<td>{lang}wcf.user.option.company{/lang}</td>
-				<td>{$this->user->company}</td>
-			</tr>
-			<tr class="container-1">
-				<td>{lang}wcf.user.option.street{/lang}</td>
-				<td>{$this->user->street}</td>
-			</tr>
-			<tr class="container-2">
-				<td>{lang}wcf.user.option.zipCode{/lang} {lang}wcf.user.option.city{/lang}</td>
-				<td>{$this->user->zipCode} {$this->user->city}</td>
-			</tr>
-			<tr class="container-1">
-				<td>{lang}wcf.user.email{/lang}</td>
-				<td>{$this->user->email}</td>
-			</tr>
-			<tr class="container-2">
-				<td>{lang}wcf.user.option.customerID{/lang}</td>
-				<td>{$this->user->customerID}</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-	<br /><br />
+			<tbody>
+				<tr class="container-1">
+					<td>{lang}wcf.user.name{/lang}</td>
+					<td>{$this->user->title} {$this->user->firstname} {$this->user->lastname}</td>
+				</tr>
+				<tr class="container-2">
+					<td>{lang}wcf.user.option.company{/lang}</td>
+					<td>{$this->user->company}</td>
+				</tr>
+				<tr class="container-1">
+					<td>{lang}wcf.user.option.street{/lang}</td>
+					<td>{$this->user->street}</td>
+				</tr>
+				<tr class="container-2">
+					<td>{lang}wcf.user.option.zipCode{/lang} {lang}wcf.user.option.city{/lang}</td>
+					<td>{$this->user->zipCode} {$this->user->city}</td>
+				</tr>
+				<tr class="container-1">
+					<td>{lang}wcf.user.email{/lang}</td>
+					<td>{$this->user->email}</td>
+				</tr>
+				<tr class="container-2">
+					<td>{lang}wcf.user.option.customerID{/lang}</td>
+					<td>{$this->user->customerID}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<br />
+	<br />
+	
 	<div class="border"> 
 		<div class="containerHead"><h3>{lang}cp.index.account{/lang}</h3></div> 
 	</div> 
 	<div class="border borderMarginRemove"> 
 		<table class="tableList"> 
-		<thead>
-			<tr class="tableHead">
-				<td colspan="2"></td>
-			<tr>
-		</thead>
-		<tbody>
-			<tr class="container-1">
-				<td>{lang}wcf.user.username{/lang}</td>
-				<td>{$this->user->username}</td>
-			</tr>
-			{foreach from=$displayData key=desc item=item}
-				<tr class="container-{cycle values='2,1'}">
-					<td>{lang}{$desc}{/lang}</td>
-					<td>{@$item}</td>
+			<tbody>
+				<tr class="container-1">
+					<td>{lang}wcf.user.username{/lang}</td>
+					<td>{$this->user->username}</td>
 				</tr>
-			{/foreach}
-		</tbody>
-	</table>
-
-</div>
-<div class="contentFooter"> 
-			</div> 
+				{foreach from=$displayData key=desc item=item}
+					<tr class="container-{cycle values='2,1'}">
+						<td>{lang}{$desc}{/lang}</td>
+						<td>{@$item}</td>
+					</tr>
+				{/foreach}
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="contentFooter">
+	
+	</div> 
 </div>
 
 {include file='footer' sandbox=false}
