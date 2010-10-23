@@ -18,11 +18,15 @@
 	</div>
 
 	{if $userMessages|isset}{@$userMessages}{/if}
-
-	<table class="tableList">
+<div class="contentHeader"> </div>
+	<div class="border"> 
+		<div class="containerHead"><h3>{lang}cp.index.address{/lang}</h3></div> 
+	</div> 
+	<div class="border borderMarginRemove"> 
+		<table class="tableList"> 
 		<thead>
 			<tr class="tableHead">
-				<td colspan="2">{lang}cp.index.address{/lang}</td>
+				<th colspan="2"></th>
 			<tr>
 		</thead>
 		<tbody>
@@ -52,11 +56,16 @@
 			</tr>
 		</tbody>
 	</table>
+</div>
 	<br /><br />
-	<table class="tableList">
+	<div class="border"> 
+		<div class="containerHead"><h3>{lang}cp.index.account{/lang}</h3></div> 
+	</div> 
+	<div class="border borderMarginRemove"> 
+		<table class="tableList"> 
 		<thead>
 			<tr class="tableHead">
-				<td colspan="2">{lang}cp.index.account{/lang}</td>
+				<td colspan="2"></td>
 			<tr>
 		</thead>
 		<tbody>
@@ -73,6 +82,9 @@
 		</tbody>
 	</table>
 
+</div>
+<div class="contentFooter"> 
+			</div> 
 </div>
 
 {include file='footer' sandbox=false}
