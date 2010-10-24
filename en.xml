@@ -134,7 +134,15 @@
 	<category name="cp.acp">
 	    <item name="cp.acp.index"><![CDATA[WCP - Web Controlpanel]]></item>
 	    <item name="cp.acp.index.news"><![CDATA[News]]></item>
-	    <item name="cp.acp.index.credits"><![CDATA[Development]]></item>
+	    <item name="cp.acp.index.credits"><![CDATA[About WCP - Web Controlpanel]]></item>
+		<item name="cp.acp.index.credits.designer"><![CDATA[Design]]></item>
+		<item name="cp.acp.index.credits.developedBy"><![CDATA[Software developed by]]></item>
+		<item name="cp.acp.index.credits.developer"><![CDATA[Developer]]></item>
+		<item name="cp.acp.index.credits.translators"><![CDATA[Translation]]></item>
+	    <item name="cp.acp.index.updates"><![CDATA[Updates]]></item>
+		<item name="cp.acp.index.updates.description"><![CDATA[The following updates are available:]]></item>
+		<item name="cp.acp.index.updates.startUpdate"><![CDATA[Update now]]></item>
+		<item name="cp.acp.index.updates.update"><![CDATA[{$update.packageName} Version {$update.packageVersion}{if $update.instanceNo > 1} (#{$update.instanceNo}){/if}<br />Update to {$update.updateVersion} ({$update.updateType})]]></item>
 		<item name="cp.acp.jumpToCP"><![CDATA[Swap to WCP]]></item>
 	</category>
 	
