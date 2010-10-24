@@ -132,6 +132,9 @@
 	</category>
 	
 	<category name="cp.acp">
+	    <item name="cp.acp.index"><![CDATA[WCP - Web Controlpanel]]></item>
+	    <item name="cp.acp.index.news"><![CDATA[News]]></item>
+	    <item name="cp.acp.index.credits"><![CDATA[Development]]></item>
 		<item name="cp.acp.jumpToCP"><![CDATA[Swap to WCP]]></item>
 	</category>
 	
