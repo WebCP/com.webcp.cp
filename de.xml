@@ -139,6 +139,7 @@
 		<item name="cp.acp.index.credits.developedBy"><![CDATA[Software entwickelt von]]></item>
 		<item name="cp.acp.index.credits.developer"><![CDATA[Programmierung]]></item>
 		<item name="cp.acp.index.credits.translators"><![CDATA[Übersetzung]]></item>
+		<item name="cp.acp.index.credits.betatest"><![CDATA[Betatester & Bugfinder]]></item>
 		<item name="cp.acp.index.updates"><![CDATA[Updates]]></item>
 		<item name="cp.acp.index.updates.description"><![CDATA[Es stehen derzeit folgende Updates zur Verfügung:]]></item>
 		<item name="cp.acp.index.updates.startUpdate"><![CDATA[Update jetzt durchführen]]></item>

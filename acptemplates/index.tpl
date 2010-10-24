@@ -88,22 +88,27 @@
 
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cp.acp.index.credits.developedBy{/lang}</p>
-			<p class="formField">Toby</p>
+			<p class="formField">Tobias Friebel</p>
 		</div>
 
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cp.acp.index.credits.developer{/lang}</p>
-			<p class="formField">Toby</p>
+			<p class="formField">Tobias Friebel, Rico Peters</p>
 		</div>
 
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cp.acp.index.credits.designer{/lang}</p>
-			<p class="formField">Toby</p>
+			<p class="formField">Tobias Friebel, Rico Peters</p>
 		</div>
 
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cp.acp.index.credits.translators{/lang}</p>
 			<p class="formField">Panther</p>
+		</div>
+		
+		<div class="formElement">
+			<p class="formFieldLabel">{lang}cp.acp.index.credits.betatest{/lang}</p>
+			<p class="formField">Rico Peters</p>
 		</div>
 	</div>
 </div>
