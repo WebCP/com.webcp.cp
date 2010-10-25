@@ -10,7 +10,7 @@
 <div id="main">
 
 	<div class="mainHeadline">
-		<img src="{@RELATIVE_CP_DIR}icon/indexL.png" alt="" />
+		<img src="{icon}indexL.png{/icon}" alt="" />
 		<div class="headlineContainer">
 			<h2>{PAGE_TITLE}</h2>
 			<p>{PAGE_DESCRIPTION}</p>
@@ -23,14 +23,14 @@
 	
 	</div>
 	
-	<div class="border"> 
+	<div class="subTabMenu"> 
 		<div class="containerHead"><h3>{lang}cp.index.address{/lang}</h3></div> 
 	</div> 
-	<div class="border borderMarginRemove"> 
+	<div class="border tabMenuContent"> 
 		<table class="tableList"> 
 			<tbody>
 				<tr class="container-1">
-					<td>{lang}wcf.user.name{/lang}</td>
+					<td width="40%">{lang}wcf.user.name{/lang}</td>
 					<td>{$this->user->title} {$this->user->firstname} {$this->user->lastname}</td>
 				</tr>
 				<tr class="container-2">
@@ -60,14 +60,14 @@
 	<br />
 	<br />
 	
-	<div class="border"> 
+	<div class="subTabMenu"> 
 		<div class="containerHead"><h3>{lang}cp.index.account{/lang}</h3></div> 
 	</div> 
-	<div class="border borderMarginRemove"> 
+	<div class="border tabMenuContent"> 
 		<table class="tableList"> 
 			<tbody>
 				<tr class="container-1">
-					<td>{lang}wcf.user.username{/lang}</td>
+					<td width="40%">{lang}wcf.user.username{/lang}</td>
 					<td>{$this->user->username}</td>
 				</tr>
 				{foreach from=$displayData key=desc item=item}
