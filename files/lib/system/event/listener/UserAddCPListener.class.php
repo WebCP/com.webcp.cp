@@ -134,6 +134,9 @@ class UserAddCPListener implements EventListener
 							isCustomer = VALUES(isCustomer)";
 			WCF :: getDB()->sendQuery($sql);
 			
+			//get all data for other listener!
+			$eventObj->cpUser = new CPUser($eventObj->user->userID);
+			
 			if ($eventObj->sendWelcomeMail == 1)
 			{
 				$welcomeMail = ACPNoteUtil :: getFormattedNote('newUserMail', 
