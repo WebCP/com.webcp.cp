@@ -1,45 +1,5 @@
 <div id="headerContainer">
 	<a id="top"></a>
-	
-	<div id="header">
-		<div id="logo">
-			<div class="logoInner">
-				<h1 class="pageTitle"><a href="index.php?page=Index{@SID_ARG_2ND}">{lang}{PAGE_TITLE}{/lang}</a></h1>
-				{if $this->getStyle()->getVariable('page.logo.image')}
-					<a href="index.php?page=Index{@SID_ARG_2ND}" class="pageLogo">
-						<img src="{$this->getStyle()->getVariable('page.logo.image')}" title="{lang}{PAGE_TITLE}{/lang}" alt="" />
-					</a>
-				{elseif $this->getStyle()->getVariable('page.logo.image.application.use') == 1}
-					<a href="index.php?page=Index{@SID_ARG_2ND}" class="pageLogo">
-						<img src="{@RELATIVE_CP_DIR}images/cp-header-logo.png" title="{lang}{PAGE_TITLE}{/lang}" alt="" />
-					</a>
-				{/if}
-			</div>
-		</div>
-	</div>
-
-{* user messages system*}
-{capture append=userMessages}
-	{if $this->user->userID}
-		
-		{if SYSTEM_MESSAGE == 1}
-			<div class="warning">
-				{lang}cp.global.systemMessage{/lang}
-				<p>{if SYSTEM_MESSAGE_ALLOW_HTML}{@SYSTEM_MESSAGE_TEXT}{else}{@SYSTEM_MESSAGE_TEXT|htmlspecialchars|nl2br}{/if}</p></p>
-			</div>
-		{/if}
-		
-	{/if}
-	{if OFFLINE == 1 && $this->user->getPermission('user.cp.canViewDLDBOffline')}
-		<div class="warning">
-			{lang}cp.global.offline{/lang}
-			<p>{if OFFLINE_MESSAGE_ALLOW_HTML}{@OFFLINE_MESSAGE}{else}{@OFFLINE_MESSAGE|htmlspecialchars|nl2br}{/if}</p>
-		</div>
-	{/if}
-{/capture}
-</div>
-
-<div id="navContainer">
 	<div id="userPanel" class="userPanel">
 		<div class="userPanelInner">
 			<p id="userNote">
@@ -81,13 +41,51 @@
 				</ul>
 			</div>
 		</div>
+	</div>	
+<div class="rahmen">
+	<div id="header">
+		<div id="logo">
+			<div class="logoInner">
+				<h1 class="pageTitle"><a href="index.php?page=Index{@SID_ARG_2ND}">{lang}{PAGE_TITLE}{/lang}</a></h1>
+				{if $this->getStyle()->getVariable('page.logo.image')}
+					<a href="index.php?page=Index{@SID_ARG_2ND}" class="pageLogo">
+						<img src="{$this->getStyle()->getVariable('page.logo.image')}" title="{lang}{PAGE_TITLE}{/lang}" alt="" />
+					</a>
+				{elseif $this->getStyle()->getVariable('page.logo.image.application.use') == 1}
+					<a href="index.php?page=Index{@SID_ARG_2ND}" class="pageLogo">
+						<img src="{@RELATIVE_CP_DIR}images/cp-header-logo.png" title="{lang}{PAGE_TITLE}{/lang}" alt="" />
+					</a>
+				{/if}
+			</div>
+		</div>
 	</div>
-
-	{if $this->user->userID}
-		{include file=headerMenu}
-	{/if}
 </div>
-
+{* user messages system*}
+{capture append=userMessages}
+	{if $this->user->userID}
+		
+		{if SYSTEM_MESSAGE == 1}
+			<div class="warning">
+				{lang}cp.global.systemMessage{/lang}
+				<p>{if SYSTEM_MESSAGE_ALLOW_HTML}{@SYSTEM_MESSAGE_TEXT}{else}{@SYSTEM_MESSAGE_TEXT|htmlspecialchars|nl2br}{/if}</p></p>
+			</div>
+		{/if}
+		
+	{/if}
+	{if OFFLINE == 1 && $this->user->getPermission('user.cp.canViewDLDBOffline')}
+		<div class="warning">
+			{lang}cp.global.offline{/lang}
+			<p>{if OFFLINE_MESSAGE_ALLOW_HTML}{@OFFLINE_MESSAGE}{else}{@OFFLINE_MESSAGE|htmlspecialchars|nl2br}{/if}</p>
+		</div>
+	{/if}
+{/capture}
+</div>
+<div class="rahmen">
+{if $this->user->userID}
+<div id="navContainer">
+{include file=headerMenu}
+</div>
+{/if}
 <div id="mainContainer">
 	
 {if $additionalHeaderContents|isset}{@$additionalHeaderContents}{/if}

@@ -1,5 +1,6 @@
 {if $additionalFooterContents|isset}{@$additionalFooterContents}{/if}
 </div>
+</div>
 <div id="footerContainer">
 	<div id="footer">
 		{include file=footerMenu}

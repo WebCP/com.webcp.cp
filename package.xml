@@ -52,7 +52,7 @@
 		<pagemenu>pagemenu.xml</pagemenu>
 		<eventlistener>eventlistener.xml</eventlistener>
 		<useroptions>useroptions.xml</useroptions>
-		<style default="true">basicstyle-modified-style.tgz</style>
+		<style default="true">wcp_web_control_style.tgz</style>
 		<acpnotes>acpnotes.xml</acpnotes>
 	</instructions>
 	
@@ -69,7 +69,7 @@
 		<eventlistener>eventlistener.xml</eventlistener>
 		<useroptions>useroptions.xml</useroptions>
 		<acpnotes>acpnotes.xml</acpnotes>
-		<style default="true">basicstyle-modified-style.tgz</style>
+		<style default="true">wcp_web_control_style.tgz</style>
 	</instructions>
 	
 	<instructions type="update" fromversion="1.*">
@@ -85,7 +85,7 @@
 		<eventlistener>eventlistener.xml</eventlistener>
 		<useroptions>useroptions.xml</useroptions>
 		<acpnotes>acpnotes.xml</acpnotes>
-		<style default="true">basicstyle-modified-style.tgz</style>
+		<style default="true">wcp_web_control_style.tgz</style>
 	</instructions>
 
 </package>
