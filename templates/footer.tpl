@@ -2,6 +2,7 @@
 </div>
 </div>
 <div id="footerContainer">
+<div class="rahmen">
 	<div id="footer">
 		{include file=footerMenu}
 		<div id="footerOptions" class="footerOptions">
@@ -16,5 +17,6 @@
 		<p class="copyright">
 			{lang}cp.global.copyright{/lang}
 		</p>
+	</div>
 	</div>
 </div>
