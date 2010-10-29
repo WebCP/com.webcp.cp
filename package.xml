@@ -54,6 +54,7 @@
 		<useroptions>useroptions.xml</useroptions>
 		<style default="true">wcp_web_control_style.tgz</style>
 		<acpnotes>acpnotes.xml</acpnotes>
+		<feedsource>feedsource.xml</feedsource>
 	</instructions>
 	
 	<instructions type="update" fromversion="0.*">

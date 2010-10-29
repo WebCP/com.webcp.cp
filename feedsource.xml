@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://www.woltlab.com/DTDs/feedsource.dtd">
+<data>
+	<import>
+		<feedsource name="wcfdev-newtrac">
+			<url><![CDATA[http://dev.hugin-hosting.de/trac/timeline?ticket=on&milestone=on&changeset=on&wiki=on&max=50&authors=&daysback=90&format=rss]]></url>
+			<cycle>120</cycle>
+		</feedsource>
+	</import>
+</data>
