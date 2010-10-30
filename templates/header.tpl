@@ -71,7 +71,7 @@
 			</div>
 		{/if}
 		
-		{if $updates|count > 0}
+		{if $updates|isset && $updates|count > 0}
 			<form method="post" action="acp/index.php">
 				<div class="error" id="updates-content">
 					<h3 class="subHeadline">{lang}cp.acp.index.updates{/lang}</h3>
