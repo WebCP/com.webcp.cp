@@ -72,16 +72,22 @@
 		{/if}
 		
 		{if $updates|count > 0}
-			<div class="error">
-				{lang}cp.global.updateMessage{/lang}
-				<ul>
-					{foreach from=$updates item=update}
-						<li{if $update.version.updateType == 'security'} class="formError"{/if}>
-							{lang}cp.acp.index.updates.update{/lang}
-						</li>
-					{/foreach}
-				</ul>				
-			</div>
+			<form method="post" action="acp/index.php">
+				<div class="error" id="updates-content">
+					<h3 class="subHeadline">{lang}cp.acp.index.updates{/lang}</h3>
+					<p class="description">{lang}cp.acp.index.updates.description{/lang}</p>
+					
+					<ul>
+						{foreach from=$updates item=update}
+							<li{if $update.version.updateType == 'security'} class="formError"{/if}>
+								{lang}cp.acp.index.updates.update{/lang}
+							</li>
+						{/foreach}
+					</ul>
+					
+					<p><input type="submit" value="{lang}cp.acp.index.updates.startUpdate{/lang}" /></p>
+				</div>
+			</form>
 		{/if}
 		
 	{/if}
