@@ -71,8 +71,21 @@
 			</div>
 		{/if}
 		
+		{if $updates|count > 0}
+			<div class="error">
+				{lang}cp.global.updateMessage{/lang}
+				<ul>
+					{foreach from=$updates item=update}
+						<li{if $update.version.updateType == 'security'} class="formError"{/if}>
+							{lang}cp.acp.index.updates.update{/lang}
+						</li>
+					{/foreach}
+				</ul>				
+			</div>
+		{/if}
+		
 	{/if}
-	{if OFFLINE == 1 && $this->user->getPermission('user.cp.canViewDLDBOffline')}
+	{if OFFLINE == 1 && $this->user->getPermission('user.cp.canViewOffline')}
 		<div class="warning">
 			{lang}cp.global.offline{/lang}
 			<p>{if OFFLINE_MESSAGE_ALLOW_HTML}{@OFFLINE_MESSAGE}{else}{@OFFLINE_MESSAGE|htmlspecialchars|nl2br}{/if}</p>

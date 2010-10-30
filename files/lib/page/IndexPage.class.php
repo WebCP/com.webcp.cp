@@ -18,6 +18,22 @@ class IndexPage extends AbstractPage
 	public $templateName = 'index';
 	
 	protected $displayData = array ();
+	protected $updates = array ();
+
+	/**
+	 * @see Page::readData()
+	 */
+	public function readData()
+	{
+		parent :: readData();
+		
+		// updates
+		if (WCF :: getUser()->getPermission('admin.system.package.canUpdatePackage'))
+		{
+			require_once (WCF_DIR . 'lib/acp/package/update/PackageUpdate.class.php');
+			$this->updates = PackageUpdate :: getAvailableUpdates();
+		}
+	}
 
 	/**
 	 * @see Page::assignVariables()
@@ -26,7 +42,10 @@ class IndexPage extends AbstractPage
 	{
 		parent :: assignVariables();
 		
-		WCF :: getTPL()->assign('displayData', $this->displayData);
+		WCF :: getTPL()->assign(array (
+			'displayData' => $this->displayData, 
+			'updates' => $this->updates
+		));
 	}
 
 	/**
