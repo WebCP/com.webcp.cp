@@ -50,7 +50,7 @@ class PathSuggestPage extends AbstractPage
 
 		$dirs = @scandir($this->path);
 
-		if (is_array($dirs)
+		if (is_array($dirs))
 		{
 			foreach ($dirs as $dir)
 			{
