@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE style SYSTEM "http://www.woltlab.com/DTDs/SXF/style.dtd">
+<style>
+	<general>
+		<stylename><![CDATA[WCP - Web Control]]></stylename>
+		<version><![CDATA[1.0.0]]></version>
+		<date><![CDATA[2009-11-22]]></date>
+		<copyright><![CDATA[WCFDev.net]]></copyright>
+		<license><![CDATA[GPL]]></license>
+	</general>
+	<author>
+		<authorname><![CDATA[TommyGFX]]></authorname>
+		<authorurl><![CDATA[http://www.wcfdev.net]]></authorurl>
+	</author>
+	<files>
+		<variables>variables.xml</variables>
+		<images>images.tar</images>
+	</files>
+</style>

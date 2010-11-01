@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE variables SYSTEM "http://www.woltlab.com/DTDs/SXF/variables.dtd">
+<variables>
+	<variable name="buttons.large.background.color"><![CDATA[]]></variable>
+	<variable name="buttons.large.background.color.hover"><![CDATA[]]></variable>
+	<variable name="buttons.large.background.image"><![CDATA[url("../images/wcp_design/largeButtons.png")]]></variable>
+	<variable name="buttons.large.background.image.hover"><![CDATA[url("../images/wcp_design/largeButtons.png")]]></variable>
+	<variable name="buttons.large.border.inner.color"><![CDATA[#fff]]></variable>
+	<variable name="buttons.large.border.inner.color.hover"><![CDATA[#fff]]></variable>
+	<variable name="buttons.large.border.inner.style"><![CDATA[solid]]></variable>
+	<variable name="buttons.large.border.inner.width"><![CDATA[0px]]></variable>
+	<variable name="buttons.large.border.outer.color"><![CDATA[#999]]></variable>
+	<variable name="buttons.large.border.outer.color.hover"><![CDATA[#999]]></variable>
+	<variable name="buttons.large.border.outer.style"><![CDATA[solid]]></variable>
+	<variable name="buttons.large.border.outer.width"><![CDATA[0px]]></variable>
+	<variable name="buttons.large.caption.color"><![CDATA[#fff]]></variable>
+	<variable name="buttons.large.caption.color.hover"><![CDATA[#333]]></variable>
+	<variable name="buttons.large.caption.hide"><![CDATA[]]></variable>
+	<variable name="buttons.small.background.color"><![CDATA[#115c87]]></variable>
+	<variable name="buttons.small.background.color.hover"><![CDATA[#0b3f5d]]></variable>
+	<variable name="buttons.small.background.image"><![CDATA[url("../images/wcp_design/smallButtons.png")]]></variable>
+	<variable name="buttons.small.background.image.hover"><![CDATA[url("../images/wcp_design/smallButtonsHover.png")]]></variable>
+	<variable name="buttons.small.border.inner.color"><![CDATA[#fff]]></variable>
+	<variable name="buttons.small.border.inner.color.hover"><![CDATA[#fff]]></variable>
+	<variable name="buttons.small.border.inner.style"><![CDATA[solid]]></variable>
+	<variable name="buttons.small.border.inner.width"><![CDATA[1px]]></variable>
+	<variable name="buttons.small.border.outer.color"><![CDATA[#999]]></variable>
+	<variable name="buttons.small.border.outer.color.hover"><![CDATA[#999]]></variable>
+	<variable name="buttons.small.border.outer.style"><![CDATA[solid]]></variable>
+	<variable name="buttons.small.border.outer.width"><![CDATA[1px]]></variable>
+	<variable name="buttons.small.caption.color"><![CDATA[#fff]]></variable>
+	<variable name="buttons.small.caption.color.hover"><![CDATA[#777]]></variable>
+	<variable name="buttons.small.caption.hide"><![CDATA[]]></variable>
+	<variable name="container.border.inner.color"><![CDATA[#fff]]></variable>
+	<variable name="container.border.outer.color"><![CDATA[#999]]></variable>
+	<variable name="container.border.outer.style"><![CDATA[solid]]></variable>
+	<variable name="container.border.outer.width"><![CDATA[1px]]></variable>
+	<variable name="container.head.background.color"><![CDATA[#03466a]]></variable>
+	<variable name="container.head.background.image"><![CDATA[url("../images/wcp_design/container.png")]]></variable>
+	<variable name="container.head.font.2nd.color"><![CDATA[#fff]]></variable>
+	<variable name="container.head.font.color"><![CDATA[#fff]]></variable>
+	<variable name="container.head.link.color"><![CDATA[#fff]]></variable>
+	<variable name="container.head.link.color.hover"><![CDATA[#fff]]></variable>
+	<variable name="container1.background.color"><![CDATA[#f7f7f7]]></variable>
+	<variable name="container1.font.2nd.color"><![CDATA[]]></variable>
+	<variable name="container1.font.color"><![CDATA[]]></variable>
+	<variable name="container1.link.color"><![CDATA[#333]]></variable>
+	<variable name="container1.link.color.hover"><![CDATA[#333]]></variable>
+	<variable name="container2.background.color"><![CDATA[#efefef]]></variable>
+	<variable name="container2.font.2nd.color"><![CDATA[]]></variable>
+	<variable name="container2.font.color"><![CDATA[]]></variable>
+	<variable name="container2.link.color"><![CDATA[#333]]></variable>
+	<variable name="container2.link.color.hover"><![CDATA[#333]]></variable>
+	<variable name="container3.background.color"><![CDATA[#b3c5d0]]></variable>
+	<variable name="container3.font.2nd.color"><![CDATA[]]></variable>
+	<variable name="container3.font.color"><![CDATA[]]></variable>
+	<variable name="container3.link.color"><![CDATA[#333]]></variable>
+	<variable name="container3.link.color.hover"><![CDATA[#333]]></variable>
+	<variable name="container4.background.color"><![CDATA[#fff]]></variable>
+	<variable name="container4.font.2nd.color"><![CDATA[]]></variable>
+	<variable name="container4.font.color"><![CDATA[]]></variable>
+	<variable name="container4.link.color"><![CDATA[#333]]></variable>
+	<variable name="container4.link.color.hover"><![CDATA[#333]]></variable>
+	<variable name="divider.color"><![CDATA[#bbb]]></variable>
+	<variable name="divider.style"><![CDATA[solid]]></variable>
+	<variable name="divider.width"><![CDATA[1px]]></variable>
+	<variable name="global.favicon"><![CDATA[darkBlue]]></variable>
+	<variable name="global.icons.location"><![CDATA[icon/]]></variable>
+	<variable name="global.images.location"><![CDATA[images/wcp_design/]]></variable>
+	<variable name="global.title.font"><![CDATA[]]></variable>
+	<variable name="global.title.font.alignment"><![CDATA[]]></variable>
+	<variable name="global.title.font.color"><![CDATA[]]></variable>
+	<variable name="global.title.font.padding.left"><![CDATA[]]></variable>
+	<variable name="global.title.font.padding.right"><![CDATA[]]></variable>
+	<variable name="global.title.font.padding.top"><![CDATA[]]></variable>
+	<variable name="global.title.font.size"><![CDATA[]]></variable>
+	<variable name="global.title.font.style"><![CDATA[]]></variable>
+	<variable name="global.title.font.weight"><![CDATA[]]></variable>
+	<variable name="global.title.hide"><![CDATA[position: absolute; top: -9000px; left: -9000px;]]></variable>
+	<variable name="input.background.color"><![CDATA[#fff]]></variable>
+	<variable name="input.background.color.focus"><![CDATA[#ffd]]></variable>
+	<variable name="input.border.color"><![CDATA[#999]]></variable>
+	<variable name="input.border.color.focus"><![CDATA[#08f]]></variable>
+	<variable name="input.border.style"><![CDATA[solid]]></variable>
+	<variable name="input.border.width"><![CDATA[1px]]></variable>
+	<variable name="input.font"><![CDATA['Trebuchet MS', Arial, sans-serif]]></variable>
+	<variable name="input.font.color"><![CDATA[#333]]></variable>
+	<variable name="input.font.color.focus"><![CDATA[#000]]></variable>
+	<variable name="input.font.size"><![CDATA[.85em]]></variable>
+	<variable name="menu.dropdown.background.color"><![CDATA[#f7f7f7]]></variable>
+	<variable name="menu.dropdown.background.color.hover"><![CDATA[#e0e0e0]]></variable>
+	<variable name="menu.dropdown.background.image"><![CDATA[]]></variable>
+	<variable name="menu.dropdown.background.image.hover"><![CDATA[]]></variable>
+	<variable name="menu.dropdown.link.color"><![CDATA[#000]]></variable>
+	<variable name="menu.dropdown.link.color.hover"><![CDATA[#555]]></variable>
+	<variable name="menu.main.active.background.color"><![CDATA[]]></variable>
+	<variable name="menu.main.active.background.color.hover"><![CDATA[]]></variable>
+	<variable name="menu.main.active.caption.color"><![CDATA[#fff]]></variable>
+	<variable name="menu.main.active.caption.color.hover"><![CDATA[#000]]></variable>
+	<variable name="menu.main.background.color"><![CDATA[]]></variable>
+	<variable name="menu.main.background.color.hover"><![CDATA[]]></variable>
+	<variable name="menu.main.background.image"><![CDATA[]]></variable>
+	<variable name="menu.main.background.image.hover"><![CDATA[url("../images/wcp_design/mainMenuActive.png")]]></variable>
+	<variable name="menu.main.bar.divider.show"><![CDATA[1px]]></variable>
+	<variable name="menu.main.bar.hide"><![CDATA[#f7f7f7]]></variable>
+	<variable name="menu.main.caption.color"><![CDATA[#000]]></variable>
+	<variable name="menu.main.caption.color.hover"><![CDATA[#fff]]></variable>
+	<variable name="menu.main.caption.hide"><![CDATA[]]></variable>
+	<variable name="menu.main.position"><![CDATA[text-align:left;margin:0 auto 0 0]]></variable>
+	<variable name="menu.tab.active.background.color"><![CDATA[#1b74a7]]></variable>
+	<variable name="menu.tab.active.background.color.hover"><![CDATA[#1b74a7]]></variable>
+	<variable name="menu.tab.active.caption.color"><![CDATA[#fff]]></variable>
+	<variable name="menu.tab.active.caption.color.hover"><![CDATA[#999]]></variable>
+	<variable name="menu.tab.background.color"><![CDATA[#e8e8e8]]></variable>
+	<variable name="menu.tab.background.color.hover"><![CDATA[#fff]]></variable>
+	<variable name="menu.tab.background.image"><![CDATA[]]></variable>
+	<variable name="menu.tab.background.image.hover"><![CDATA[]]></variable>
+	<variable name="menu.tab.button.active.background.color"><![CDATA[#2e434f]]></variable>
+	<variable name="menu.tab.button.active.background.color.hover"><![CDATA[#21313a]]></variable>
+	<variable name="menu.tab.button.active.caption.color"><![CDATA[#fff]]></variable>
+	<variable name="menu.tab.button.active.caption.color.hover"><![CDATA[#fff]]></variable>
+	<variable name="menu.tab.button.background.color"><![CDATA[]]></variable>
+	<variable name="menu.tab.button.background.color.hover"><![CDATA[#21313a]]></variable>
+	<variable name="menu.tab.button.border.color"><![CDATA[#aaa]]></variable>
+	<variable name="menu.tab.button.border.color.hover"><![CDATA[#bbb]]></variable>
+	<variable name="menu.tab.button.border.style"><![CDATA[solid]]></variable>
+	<variable name="menu.tab.button.caption.color"><![CDATA[#ddd]]></variable>
+	<variable name="menu.tab.button.caption.color.hover"><![CDATA[#fff]]></variable>
+	<variable name="menu.tab.caption.color"><![CDATA[#666]]></variable>
+	<variable name="menu.tab.caption.color.hover"><![CDATA[#333]]></variable>
+	<variable name="messages.color.cycle"><![CDATA[1]]></variable>
+	<variable name="messages.footer.alignment"><![CDATA[right]]></variable>
+	<variable name="messages.framed"><![CDATA[1]]></variable>
+	<variable name="messages.sidebar.alignment"><![CDATA[left]]></variable>
+	<variable name="messages.sidebar.avatar.framed"><![CDATA[0]]></variable>
+	<variable name="messages.sidebar.color.cycle"><![CDATA[0]]></variable>
+	<variable name="messages.sidebar.divider.use"><![CDATA[1]]></variable>
+	<variable name="messages.sidebar.text.alignment"><![CDATA[center]]></variable>
+	<variable name="page.alignment"><![CDATA[center]]></variable>
+	<variable name="page.alignment.margin"><![CDATA[margin-left:auto;margin-right:auto;]]></variable>
+	<variable name="page.background.color"><![CDATA[#e1e1e1]]></variable>
+	<variable name="page.background.image"><![CDATA[]]></variable>
+	<variable name="page.background.image.alignment"><![CDATA[center top]]></variable>
+	<variable name="page.background.image.attachment"><![CDATA[scroll]]></variable>
+	<variable name="page.background.image.repeat"><![CDATA[no-repeat]]></variable>
+	<variable name="page.font"><![CDATA['Trebuchet MS', Arial, sans-serif]]></variable>
+	<variable name="page.font.2nd.color"><![CDATA[#222]]></variable>
+	<variable name="page.font.2nd.size"><![CDATA[.85em]]></variable>
+	<variable name="page.font.color"><![CDATA[#000]]></variable>
+	<variable name="page.font.line.height"><![CDATA[1.5]]></variable>
+	<variable name="page.font.size"><![CDATA[.8em]]></variable>
+	<variable name="page.frame.background.color"><![CDATA[]]></variable>
+	<variable name="page.frame.border.color"><![CDATA[]]></variable>
+	<variable name="page.frame.border.style"><![CDATA[]]></variable>
+	<variable name="page.frame.border.width"><![CDATA[]]></variable>
+	<variable name="page.frame.margin"><![CDATA[]]></variable>
+	<variable name="page.frame.padding.horizontal"><![CDATA[]]></variable>
+	<variable name="page.frame.padding.vertical"><![CDATA[]]></variable>
+	<variable name="page.header.background.color"><![CDATA[]]></variable>
+	<variable name="page.header.background.image"><![CDATA[]]></variable>
+	<variable name="page.header.background.image.alignment"><![CDATA[]]></variable>
+	<variable name="page.header.background.image.repeat"><![CDATA[]]></variable>
+	<variable name="page.header.height"><![CDATA[100px]]></variable>
+	<variable name="page.link.color"><![CDATA[#000]]></variable>
+	<variable name="page.link.color.active"><![CDATA[#08f]]></variable>
+	<variable name="page.link.color.hover"><![CDATA[#333]]></variable>
+	<variable name="page.link.external.color"><![CDATA[#000]]></variable>
+	<variable name="page.link.external.color.hover"><![CDATA[#08f]]></variable>
+	<variable name="page.logo.image"><![CDATA[images/wcp_design/logo.png]]></variable>
+	<variable name="page.logo.image.alignment"><![CDATA[left]]></variable>
+	<variable name="page.logo.image.padding.left"><![CDATA[0px]]></variable>
+	<variable name="page.logo.image.padding.right"><![CDATA[0px]]></variable>
+	<variable name="page.logo.image.padding.top"><![CDATA[5px]]></variable>
+	<variable name="page.title.font"><![CDATA['Trebuchet MS', Arial, sans-serif]]></variable>
+	<variable name="page.title.font.color"><![CDATA[#000]]></variable>
+	<variable name="page.title.font.size"><![CDATA[1.3em]]></variable>
+	<variable name="page.title.font.style"><![CDATA[]]></variable>
+	<variable name="page.title.font.weight"><![CDATA[bold]]></variable>
+	<variable name="page.width"><![CDATA[]]></variable>
+	<variable name="page.width.max"><![CDATA[100%]]></variable>
+	<variable name="page.width.min"><![CDATA[460px]]></variable>
+	<variable name="selection.background.color"><![CDATA[#b3c6d0]]></variable>
+	<variable name="selection.background.image"><![CDATA[]]></variable>
+	<variable name="selection.border.color"><![CDATA[#08f]]></variable>
+	<variable name="selection.border.style"><![CDATA[solid]]></variable>
+	<variable name="selection.border.width"><![CDATA[1px]]></variable>
+	<variable name="selection.font.2nd.color"><![CDATA[#333]]></variable>
+	<variable name="selection.font.color"><![CDATA[#333]]></variable>
+	<variable name="selection.link.color"><![CDATA[#000]]></variable>
+	<variable name="table.head.active.background.color"><![CDATA[#809dae]]></variable>
+	<variable name="table.head.active.background.color.hover"><![CDATA[#b0c2cd]]></variable>
+	<variable name="table.head.active.border.bottom.color"><![CDATA[#08f]]></variable>
+	<variable name="table.head.active.border.bottom.color.hover"><![CDATA[#08f]]></variable>
+	<variable name="table.head.active.caption.color"><![CDATA[#000]]></variable>
+	<variable name="table.head.active.caption.color.hover"><![CDATA[#333]]></variable>
+	<variable name="table.head.background.color"><![CDATA[#b0c2cd]]></variable>
+	<variable name="table.head.background.color.hover"><![CDATA[#809dae]]></variable>
+	<variable name="table.head.background.image"><![CDATA[]]></variable>
+	<variable name="table.head.background.image.hover"><![CDATA[]]></variable>
+	<variable name="table.head.border.bottom.color"><![CDATA[#999]]></variable>
+	<variable name="table.head.border.bottom.color.hover"><![CDATA[#999]]></variable>
+	<variable name="table.head.border.bottom.style"><![CDATA[solid]]></variable>
+	<variable name="table.head.caption.color"><![CDATA[#444]]></variable>
+	<variable name="table.head.caption.color.hover"><![CDATA[#333]]></variable>
+	<variable name="user.additional.style.input1"><![CDATA[]]></variable>
+	<variable name="user.additional.style.input1.use"><![CDATA[html {
+	background-color: #d4d4d4;
+}
+#headerContainer {
+	background-color: #115c87;
+	background-image: url("../images/wcp_design/header.png");
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+
+#header {
+	border-width: 0 !important;
+}
+
+#logo {
+	margin: 0;
+	border-width: 0 !important;
+}
+#userPanel {
+	background-image: url("../images/wcp_design/userPanel.png"); 
+	background-repeat: repeat-x; 
+	background-position: left bottom; 
+	max-width: 100%;
+	min-width: 100%;
+	width: 100%;
+}
+
+.userPanelInner {
+	max-width: 80%; 
+	min-width: 770px; 
+	margin: 0 auto;
+}
+.userPanel, .userPanel a {
+	color: #ebf1f6;
+}
+
+.userPanel a:hover {
+	color: #fff;
+}
+
+.userPanel .border, .userPanel .popupMenu a {
+	color: #57595a;
+}
+#mainMenu {
+	max-width: 100%;
+	min-width: 100%;
+	width: 100%;
+}
+
+#mainMenu
+{
+  font-size: 1.1em;
+  margin-left:0;
+  margin-right:0;
+  max-width: 20%;
+  min-width: 150px;
+}
+
+#mainMenu > div > ul > li
+{
+  display: block;
+}
+
+.largeButtons a {
+	line-height: 1; 
+	background-image: url("../images/wcp_design/largeButtons.png"); 
+	background-position: right 0; 
+	background-repeat: no-repeat;
+	padding: 0 7px 0 0;
+}
+#mainMenu > div > ul > li
+{
+  display: block;
+}
+.largeButtons a img {
+	margin-top: 5px; 
+	margin-left: 7px; 
+	position: absolute;
+}
+.largeButtons a span {
+	color: #fff; 
+	background-image: url("../images/wcp_design/largeButtons.png"); 
+	background-position: left 0;
+	background-repeat: no-repeat; 
+	padding: 9px 3px 0 36px; 
+	display: block; 
+	height: 25px; 
+	cursor: pointer;
+}
+.largeButtons a:hover {
+	background-position: right -86px;
+}
+.largeButtons a:hover span {
+	color: #000; 
+	background-position: left -86px;
+}
+.userCredits {
+	background: url("../images/wcp_design/userCredits.png"); 
+}
+.container-3 {
+	background: #b3c5d0 url("../images/wcp_design/message.png"); 
+	background-position: left bottom; 
+	background-repeat: no-repeat;
+}
+.messageNumber {
+	color: #fff !important;
+}
+#footer {
+	border: 0px;
+}
+
+#mainContainer
+{
+  float: left;
+  margin-left:0;
+  margin-right:0;
+  width: 80%;
+  min-width: 700px;
+  float: left;
+  padding-left: 15px;
+}
+
+#footerContainer {
+  clear: both;
+	background-color: #d4d4d4;
+	border-top: 1px solid #b1b1b1;
+}
+#navContainer
+{
+  float:left;
+  margin-left:0;
+  margin-right:0;
+  max-width: 20%;
+  min-width: 150px;
+}
+
+.rahmen {
+margin: 0 auto;
+min-width: 770px;
+max-width: 80%;
+}
+
+.red {
+color: red;
+}
+]]></variable>
+	<variable name="user.additional.style.input2"><![CDATA[]]></variable>
+	<variable name="user.additional.style.input2.use"><![CDATA[/* 
+
+WoltLab Blue Sunrise V.1.1.0
+Declarations #2 
+
+*/
+
+/* Uncheck this textarea to deactivate the invalid style declarations. */
+
+/* Special Styles */
+
+* {-o-text-overflow: ellipsis;}
+
+/* rounded completely 5px */
+.message, .messageInner, .quoteBox, fieldset, .info, .success, .warning, .error, .help, #userCard, .userCardInner, .second .border, .second .border .content, .avatarSelect li.container-4, .avatarSelect li label, .floatedElement, .popupMenu, .loginPopup, .loginPopup .container-1 {-webkit-border-radius: 5px; -moz-border-radius: 5px;}
+
+/* message left 5px */
+.messageLeft .messageContent, .messageLeft .messageContentInner {-webkit-border-top-right-radius: 5px; -moz-border-radius-topright: 5px; -webkit-border-bottom-right-radius: 5px; -moz-border-radius-bottomright: 5px;}
+
+/* message right 5px */
+.messageRight .messageContent, .messageRight .messageContentInner {-webkit-border-top-left-radius: 5px; -moz-border-radius-topleft: 5px; -webkit-border-bottom-left-radius: 5px; -moz-border-radius-bottomleft: 5px;}
+
+/* message framed left & right 5px */
+.messageFramedLeft .messageContent, .messageFramedLeft .messageContentInner, .messageFramedRight .messageContent, .messageFramedRight .messageContentInner {-webkit-border-radius: 5px; -moz-border-radius: 5px;}
+
+/* message top 5px */
+.messageTop .messageContent, .messageTop .messageContentInner {-webkit-border-radius: 0; -moz-border-radius: 0;}
+
+/* message framed top 5px */
+.messageFramedTop .messageContent, .messageFramedTop .messageContentInner {-webkit-border-radius: 5px; -moz-border-radius: 5px;}
+
+/* rounded completely 3px */
+textarea, select, input[type="text"], input[type="password"], .memberList li, .smallButtons > ul > li, .smallButtons > ul > li > a, .extraButton, .extraButton a, .optionButtons > ul > li, .optionButtons > ul > li > a, .subTabMenu .containerHead li a, .pmUsageBar, .statBar, .userAvatarFramed, .userAvatarFramed a, .userAvatarFramed img {-webkit-border-radius: 3px; -moz-border-radius: 3px;}
+
+/* rounded completely 1px */
+.pmUsageBar > div, .statBar > div {-webkit-border-radius: 1px; -moz-border-radius: 1px;}
+
+/* rounded top left & right 5px */
+.popupMenu li:first-child a, #boardlist .border, .titleBarPanel, .titleBarPanel .containerHead, .messagePreview, .subTabMenu, .subTabMenu .containerHead, .containerHead, .messageTop .messageSidebar, .messageFramedTop .messageSidebar, .thumbnailButtons {-webkit-border-top-left-radius: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-right-radius: 5px; -moz-border-radius-topright: 5px;}
+
+/* rounded top left & right 3px */
+.codeBox {-webkit-border-top-left-radius: 3px; -webkit-border-top-right-radius: 3px; -moz-border-radius-topleft: 3px; -moz-border-radius-topright: 3px;}
+
+/* rounded top left 5px */
+.tabMenu li:first-child, .tabMenu li:first-child a {-webkit-border-top-left-radius: 5px; -moz-border-radius-topleft: 5px;}
+/* rounded top right 5px */
+.tabMenu li:last-child, .tabMenu li:last-child a {-webkit-border-top-right-radius: 5px; -moz-border-radius-topright: 5px;}
+
+/* rounded bottom left & right 5px */
+.searchInputMenu .pageMenu, .popupMenu li:last-child a, .twoRows li:last-child {-webkit-border-bottom-left-radius: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-right-radius: 5px; -moz-border-radius-bottomright: 5px;}
+
+/* rounded bottom left & right 3px */
+#boardlist .border .boardlistInner, .twoRows li:last-child a, .datalist li:last-child {-webkit-border-bottom-left-radius: 3px; -webkit-border-bottom-right-radius: 3px; -moz-border-radius-bottomleft: 3px; -moz-border-radius-bottomright: 3px;}
+
+/* remove bottom generally */
+.popupMenu li a, #boardlist .border .boardlistInner:first-child {-webkit-border-bottom-left-radius: 0; -moz-border-radius-bottomleft: 0; -webkit-border-bottom-right-radius: 0; -moz-border-radius-bottomright: 0;}
+
+/* remove generally important */
+.mceToolbar .popupMenu, .mceToolbar .popupMenu li, .mceToolbar .popupMenu li a, .second fieldset .editor, .second fieldset .border, .attachmentPreview, .attachmentPreview li, .tableList td.containerHead {-webkit-border-top-left-radius: 0 !important; -webkit-border-top-right-radius: 0 !important; -webkit-border-bottom-right-radius: 0 !important; -moz-border-radius-topleft: 0 !important; -webkit-border-bottom-left-radius: 0 !important; -moz-border-radius-topright: 0 !important; -moz-border-radius-bottomleft: 0 !important; -moz-border-radius-bottomright: 0 !important;}
+
+/* login popup special */
+.loginPopup input#quickLoginUsername {-webkit-border-top-right-radius: 0; -webkit-border-bottom-right-radius: 0; -moz-border-radius-topright: 0; -moz-border-radius-bottomright: 0;}
+.loginPopup input#quickLoginPassword {-webkit-border-top-left-radius: 0; -webkit-border-bottom-left-radius: 0; -moz-border-radius-topleft: 0; -moz-border-radius-bottomleft: 0;}
+
+/* search box special */
+input#searchInput {-webkit-border-radius: 12px; -moz-border-radius: 12px;}
+
+/* box shadow special */
+.galleryPhotoEdit img, .galleryAlbumCover img {-webkit-box-shadow: 0 3px 7px #666; -moz-box-shadow: 0 3px 7px #666;}
+.galleryIndex li.floatedElement .thumbnail img, .squared .thumbnail img {-webkit-box-shadow: 0 1px 3px #666; -moz-box-shadow: 0 1px 3px #666;}
+.galleryIndex li.floatedElement:hover, .avatarSelect li label:hover {-webkit-box-shadow: 0 1px 3px #999; -moz-box-shadow: 0 1px 3px #999;}
+.galleryPhoto img {-webkit-box-shadow: 0 3px 7px #666; -moz-box-shadow: 0 3px 7px #666; margin: 10px;}
+
+.imageViewerCurrentImage {-webkit-box-shadow: 0 3px 23px #000; -moz-box-shadow: 0 3px 23px #000;}
+
+/* EOF */
+]]></variable>
+	<variable name="user.comment"><![CDATA[]]></variable>
+	<variable name="user.MSIEFixes.IE6"><![CDATA[]]></variable>
+	<variable name="user.MSIEFixes.IE6.use"><![CDATA[#userPanel {max-width: 100%; min-width: 100%; width: 100%; text-align: center; background-color: #6f92b1;}
+.userPanelInner {_width: expression(((document.body.clientWidth/screen.width)) < 0.7 ? "760px":"80%"); text-align: left;}
+#mainMenu {max-width: 100%; min-width: 100%; width: 100%; text-align: center;}
+.mainMenuInner {_width: expression(((document.body.clientWidth/screen.width)) < 0.7 ? "760px":"80%"); text-align: left;}
+
+.largeButtons a {display: inline-block;}
+.largeButtons a span {display: inline-block;}]]></variable>
+	<variable name="user.MSIEFixes.IE7"><![CDATA[]]></variable>
+	<variable name="user.MSIEFixes.IE7.use"><![CDATA[0]]></variable>
+</variables>
