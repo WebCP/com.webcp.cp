@@ -36,7 +36,7 @@
 			<div class="container-1">
 				<h3 class="subHeadline">{lang}cp.acp.index.updates{/lang}</h3>
 				<p class="description">{lang}cp.acp.index.updates.description{/lang}</p>
-				
+
 				<ul>
 					{foreach from=$updates item=update}
 						<li{if $update.version.updateType == 'security'} class="formError"{/if}>
@@ -45,7 +45,7 @@
 						</li>
 					{/foreach}
 				</ul>
-				
+
 				<p><input type="submit" value="{lang}cp.acp.index.updates.startUpdate{/lang}" /></p>
 				<input type="hidden" name="packageID" value="{@PACKAGE_ID}" />
 				{@SID_INPUT_TAG}
@@ -58,12 +58,12 @@
 	<div class="border tabMenuContent hidden" id="news-content">
 		<div class="container-1">
 			<h3 class="subHeadline">{lang}cp.acp.index.news{/lang}</h3>
-			
+
 			{foreach from=$news item=newsItem}
 				{*<div>
 					<p class="smallFont">{if $newsItem.author}{$newsItem.author} | {/if}{@$newsItem.pubDate|time}</p>
 					<h4><a href="{@RELATIVE_WCF_DIR}acp/dereferrer.php?url={$newsItem.link|rawurlencode}" class="externalURL">{@$newsItem.title}</a></h4>
-					
+
 					{@$newsItem.description}
 				</div>*}
 				<div class="message content">
@@ -98,14 +98,14 @@
 
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cp.acp.index.credits.designer{/lang}</p>
-			<p class="formField">Tobias Friebel, Rico Peters</p>
+			<p class="formField">Christoph Summerer, Rico Peters</p>
 		</div>
 
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cp.acp.index.credits.translators{/lang}</p>
 			<p class="formField">Panther</p>
 		</div>
-		
+
 		<div class="formElement">
 			<p class="formFieldLabel">{lang}cp.acp.index.credits.betatest{/lang}</p>
 			<p class="formField">Rico Peters</p>

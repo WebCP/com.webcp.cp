@@ -5,9 +5,9 @@
 	<packageInformation>
 		<packageName>Web ControlPanel</packageName>
 		<packageDescription>Ein Servercontrolpanel, inspiriert von SysCP</packageDescription>
-		<version>1.0.0 RC2</version>
+		<version>1.0.0 RC2 pl1</version>
 		<standalone>1</standalone>
-		<date>2010-10-22</date>
+		<date>2010-11-05</date>
 	</packageInformation>
 
 	<authorInformation>
@@ -57,23 +57,7 @@
 		<feedsource>feedsource.xml</feedsource>
 	</instructions>
 	
-	<instructions type="update" fromversion="0.*">
-		<languages languagecode="de">de.xml</languages>
-		<languages languagecode="en">en.xml</languages>
-		<options>options.xml</options>
-		<files>files.tar</files>
-		<templates>templates.tar</templates>
-		<acptemplates>acptemplates.tar</acptemplates>
-		<acpmenu>acpmenu.xml</acpmenu>
-		<groupoptions>groupoptions.xml</groupoptions>
-		<pagemenu>pagemenu.xml</pagemenu>
-		<eventlistener>eventlistener.xml</eventlistener>
-		<useroptions>useroptions.xml</useroptions>
-		<acpnotes>acpnotes.xml</acpnotes>
-		<style default="true">wcp_web_control_style.tgz</style>
-	</instructions>
-	
-	<instructions type="update" fromversion="1.*">
+	<instructions type="update" fromversion="1.0.0 RC2">
 		<languages languagecode="de">de.xml</languages>
 		<languages languagecode="en">en.xml</languages>
 		<options>options.xml</options>
