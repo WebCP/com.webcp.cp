@@ -37,6 +37,7 @@
 		<optionalpackage file="optionals/com.toby.cp.mysql.tar">com.toby.cp.mysql</optionalpackage>
 		<optionalpackage file="optionals/com.toby.cp.email.tar">com.toby.cp.email</optionalpackage>
 		<optionalpackage file="optionals/com.toby.cp.apache2.tar">com.toby.cp.apache2</optionalpackage>
+		<optionalpackage file="optionals/com.toby.cp.nginx.tar">com.toby.cp.nginx</optionalpackage>
 	</optionalpackages>
 
 	<instructions type="install">
