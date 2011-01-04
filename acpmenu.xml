@@ -3,7 +3,7 @@
 <data>
 	<import>
 		<acpmenuitem name="cp.acp.menu.link">
-			<icon>icon/cpL.png</icon>
+			<icon>icon/wcpL.png</icon>
 			<showorder>3</showorder>
 		</acpmenuitem>
 	</import>
