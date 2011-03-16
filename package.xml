@@ -58,5 +58,9 @@
 		<acpnotes>acpnotes.xml</acpnotes>
 		<feedsource>feedsource.xml</feedsource>
 	</instructions>
+	
+	<instructions type="update" fromversion="1.0.0">
+		<files>files.tar</files>
+	</instructions>
 
 </package>
