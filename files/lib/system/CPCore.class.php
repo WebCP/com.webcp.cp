@@ -19,9 +19,9 @@ class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 {
 	protected static $pageMenuObj= null;
 	protected static $userCPMenuObj= null;
-	public static $availablePagesDuringOfflineMode = array(
+	public static $alwaysAvailablePages = array(
 		'page' => array('Captcha', 'LegalNotice'),
-		'form' => array('UserLogin'),
+		'form' => array('UserLogin', 'LostPassword'),
 		'action' => array('UserLogout')
 	);
 
@@ -40,17 +40,27 @@ class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 	 */
 	protected function initAuth()
 	{
-		if ((!isset($_REQUEST['form']) || $_REQUEST['form'] != 'UserLogin') &&
-			(!isset($_REQUEST['page']) || $_REQUEST['page'] != 'Captcha') &&
-			(!isset($_REQUEST['page']) || $_REQUEST['page'] != 'LegalNotice') &&
-			(!isset($_REQUEST['action']) || $_REQUEST['action'] == 'UserLogout')
-		   )
+		$requestLogin = true;
+		foreach (self :: $alwaysAvailablePages as $type => $names)
 		{
-			if (WCF::getUser()->userID == 0)
+			if (isset ($_REQUEST[$type]))
 			{
-				HeaderUtil::redirect('index.php?form=UserLogin'.SID_ARG_2ND_NOT_ENCODED);
-				exit;
+				foreach ($names as $name)
+				{
+					if ($_REQUEST[$type] == $name)
+					{
+						$requestLogin = false;
+						break 2;
+					}
+				}
+				break;
 			}
+		}
+
+		if (WCF::getUser()->userID == 0 && $requestLogin)
+		{
+			HeaderUtil::redirect('index.php?form=UserLogin'.SID_ARG_2ND_NOT_ENCODED);
+			exit;
 		}
 	}
 
@@ -83,7 +93,7 @@ class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 		if (OFFLINE && !self :: getUser()->getPermission('admin.general.canUseAcp'))
 		{
 			$showOfflineError= true;
-			foreach (self :: $availablePagesDuringOfflineMode as $type => $names)
+			foreach (self :: $alwaysAvailablePages as $type => $names)
 			{
 				if (isset ($_REQUEST[$type]))
 				{
