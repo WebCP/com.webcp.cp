@@ -8,8 +8,8 @@ require_once(WCF_DIR . 'lib/system/style/StyleManager.class.php');
  * This class extends the main WCF class by WCFCP specific functions.
  *
  * @author		Tobias Friebell
- * @copyright	2009-2010 Tobias Friebel
- * @license		LGPL
+ * @copyright	2009-2011 Tobias Friebel
+ * @license		GPL
  * @package		com.toby.cp
  * @subpackage	system
  * @category	WCFCP
@@ -19,6 +19,11 @@ class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 {
 	protected static $pageMenuObj= null;
 	protected static $userCPMenuObj= null;
+	public static $availablePagesDuringOfflineMode = array(
+		'page' => array('Captcha', 'LegalNotice'),
+		'form' => array('UserLogin'),
+		'action' => array('UserLogout')
+	);
 
 	/**
 	 * Calls all init functions of the WCF class.
@@ -58,20 +63,20 @@ class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 		StyleManager :: changeStyle(0);
 
 		global $packageDirs;
-		
+
 		require_once (WCF_DIR . 'lib/system/template/StructuredTemplate.class.php');
-		
+
 		self :: $tplObj= new StructuredTemplate(self :: getStyle()->templatePackID,
 												self :: getLanguage()->getLanguageID(),
 												ArrayUtil :: appendSuffix($packageDirs, 'templates/')
 												);
-												
+
 		$this->assignDefaultTemplateVariables();
-		
+
 		self::getTPL()->assign('executeCronjobs',
 								WCF::getCache()->get('cronjobs-'.PACKAGE_ID, 'nextExec') < TIME_NOW
 								);
-								
+
 		self::getTPL()->assign('timezone', DateUtil::getTimezone());
 
 		// check offline mode
@@ -102,8 +107,8 @@ class CPCore extends WCF implements PageMenuContainer, UserCPMenuContainer
 		}
 
 		// user ban
-		if (self :: getUser()->banned 
-			&& (!isset ($_REQUEST['page']) || $_REQUEST['page'] != 'LegalNotice') 
+		if (self :: getUser()->banned
+			&& (!isset ($_REQUEST['page']) || $_REQUEST['page'] != 'LegalNotice')
 			&& (!isset ($_REQUEST['action']) || $_REQUEST['action'] != 'UserLogout')
 			)
 		{

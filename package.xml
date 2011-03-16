@@ -5,9 +5,9 @@
 	<packageInformation>
 		<packageName>Web ControlPanel</packageName>
 		<packageDescription>Ein Servercontrolpanel, inspiriert von SysCP</packageDescription>
-		<version>1.0.0</version>
+		<version>1.0.1</version>
 		<standalone>1</standalone>
-		<date>2010-12-12</date>
+		<date>2011-03-16</date>
 	</packageInformation>
 
 	<authorInformation>
