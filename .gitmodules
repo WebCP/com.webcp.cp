@@ -1,3 +1,15 @@
 [submodule "optionals/com.webcp.nginx"]
 	path = optionals/com.webcp.nginx
 	url = https://github.com/WebCP/com.webcp.nginx.git
+[submodule "optionals/com.webcp.mysql"]
+	path = optionals/com.webcp.mysql
+	url = https://github.com/WebCP/com.webcp.mysql.git
+[submodule "optionals/com.webcp.apache2"]
+	path = optionals/com.webcp.apache2
+	url = https://github.com/WebCP/com.webcp.apache2.git
+[submodule "optionals/com.webcp.email"]
+	path = optionals/com.webcp.email
+	url = https://github.com/WebCP/com.webcp.email.git
+[submodule "optionals/com.webcp.ftp"]
+	path = optionals/com.webcp.ftp
+	url = https://github.com/WebCP/com.webcp.ftp.git
