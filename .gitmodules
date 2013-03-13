@@ -1,0 +1,3 @@
+[submodule "optionals/com.webcp.nginx"]
+	path = optionals/com.webcp.nginx
+	url = https://github.com/WebCP/com.webcp.nginx.git
