@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE package SYSTEM "DTD/package.dtd">
-<package name="com.burningpedia.cp">
+<package name="com.webcp.cp">
 
 	<packageInformation>
 		<packageName>Web ControlPanel</packageName>
 		<packageDescription>Ein Servercontrolpanel, inspiriert von SysCP</packageDescription>
-		<version>1.0.2</version>
+		<version>1.5.0</version>
 		<standalone>1</standalone>
-		<date>2011-03-16</date>
+		<date>2013-03-13</date>
 	</packageInformation>
 
 	<authorInformation>
@@ -31,14 +31,13 @@
 		<requiredpackage file="requirements/com.toby.templatemodifier.float.tar">com.toby.templatemodifier.float</requiredpackage>
 		<requiredpackage file="requirements/com.toby.acpnotes.tar">com.toby.acpnotes</requiredpackage>
 	</requiredpackages>
-	
+
 	<optionalpackages>
-		<optionalpackage file="optionals/com.burningpedia.cp.ftp.tar">com.burningpedia.cp.ftp</optionalpackage>
-		<optionalpackage file="optionals/com.burningpedia.cp.mysql.tar">com.burningpedia.cp.mysql</optionalpackage>
-		<optionalpackage file="optionals/com.burningpedia.cp.email.tar">com.burningpedia.cp.email</optionalpackage>
-		<optionalpackage file="optionals/com.burningpedia.cp.apache2.tar">com.burningpedia.cp.apache2</optionalpackage>
-		<optionalpackage file="optionals/com.burningpedia.cp.nginx.tar">com.burningpedia.cp.nginx</optionalpackage>
-		<optionalpackage file="optionals/com.burningpedia.cp.nonPublicIcons.tar">com.burningpedia.cp.nonPublicIcons</optionalpackage>
+		<optionalpackage file="optionals/com.webcp.ftp.tar">com.webcp.ftp</optionalpackage>
+		<optionalpackage file="optionals/com.webcp.mysql.tar">com.webcp.mysql</optionalpackage>
+		<optionalpackage file="optionals/com.webcp.email.tar">com.webcp.email</optionalpackage>
+		<optionalpackage file="optionals/com.webcp.apache2.tar">com.webcp.apache2</optionalpackage>
+		<optionalpackage file="optionals/com.webcp.nginx.tar">com.webcp.nginx</optionalpackage>
 	</optionalpackages>
 
 	<instructions type="install">
@@ -57,10 +56,6 @@
 		<style default="true">wcp_web_control_style.tgz</style>
 		<acpnotes>acpnotes.xml</acpnotes>
 		<feedsource>feedsource.xml</feedsource>
-	</instructions>
-	
-	<instructions type="update" fromversion="1.0.0">
-		<files>files.tar</files>
 	</instructions>
 
 </package>
